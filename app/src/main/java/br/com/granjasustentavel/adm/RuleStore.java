@@ -19,7 +19,7 @@ public final class RuleStore {
   synchronized(RuleStore.class){
    if(cache!=null)return cache;
    File f=new File(c.getFilesDir(),FILE);
-   if(!f.exists())return Collections.emptyList();
+   if(!f.exists()){try(InputStream in=c.getAssets().open("regras.csv")){cache=Collections.unmodifiableList(parse(in));return cache;}catch(java.io.FileNotFoundException e){return Collections.emptyList();}}
    try(InputStream in=new FileInputStream(f)){cache=Collections.unmodifiableList(parse(in));return cache;}
   }
  }
