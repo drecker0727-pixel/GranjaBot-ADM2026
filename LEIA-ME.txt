@@ -1,0 +1,1 @@
+GranjaBot ADM: aplicativo Android para WhatsApp Business. Nenhuma regra pré-instalada. Importe CSV pelo aplicativo. O envio de mensagens depende da disponibilidade da ação de resposta nas notificações do WhatsApp Business. Não é API oficial.
