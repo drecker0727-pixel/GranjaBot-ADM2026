@@ -1,0 +1,1534 @@
+"sep=,"
+"received_message","pattern_matching","reply_message","multiple_replies","multiple_reply_delay","multiple_reply_delay_max","recipients","contacts","ignored_contacts","reply_delay","reply_delay_max","specific_times","monday","tuesday","wednesday","thursday","friday","saturday","sunday","pause_type","pause_value","disabled","subrule_of","go_to_rule","req_screen_off","req_charging","req_silent","req_do_not_disturb","req_car_mode","prev_rule_timeout","priority_alert","probability","package_names","label","_id","cancel_delays","sheets_out_mode","sheets_out_spreadsheet_id","sheets_out_sheet_name","sheets_out_columns","webhook_out_mode","webhook_out_url","webhook_out_auth_user","webhook_out_auth_pw","webhook_out_headers","multiple_reply_delays"
+"!menu","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","1","0","0","","","","0","","","","",""
+"!começar","none","🤖 ADM | Granja Sustentável
+🌱 Bem-vindo à Granja Sustentável! Ao criar sua conta, você recebe 1 galinha comum, 3 ovos e 5 unidades de ração. Cuide da alimentação e acompanhe sua produção diariamente. Digite !site para acessar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","2","0","0","","","","0","","","","",""
+"!site","none","🤖 ADM | Granja Sustentável
+🌐 Acesse a Granja Sustentável pelo site oficial informado na descrição do grupo. Confira sempre o endereço antes de entrar com seus dados.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","3","0","0","","","","0","","","","",""
+"!galinhas","none","🤖 ADM | Granja Sustentável
+🐔 Produção por ciclo de 24 horas:
+Comum: 1 ovo e 0,8 ração/dia.
+Premium: 3 ovos e 2 rações/dia.
+Rara: 5 ovos e 3 rações/dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","4","0","0","","","","0","","","","",""
+"!ovos","none","🤖 ADM | Granja Sustentável
+🥚 Cada ovo vendido diretamente ao sistema vale *R$ 0,40*. Confira seu estoque e use o botão Vender ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","5","0","0","","","","0","","","","",""
+"!racao","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","6","0","0","","","","0","","","","",""
+"!incubadora","none","🤖 ADM | Granja Sustentável
+🐣 A incubação normal leva 15 dias. Você pode acelerar a incubação por R$ 5,00 via Pix, quando a opção estiver disponível no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","7","0","0","","","","0","","","","",""
+"!pix","none","🤖 ADM | Granja Sustentável
+💳 Compras de ração e galinhas são feitas pela opção de pagamento Pix dentro do jogo. Não envie Pix para números compartilhados no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","8","0","0","","","","0","","","","",""
+"!saque","none","🤖 ADM | Granja Sustentável
+💰 Saque mínimo: R$ 10,00. Os pedidos são processados imediatamente ou em até 48 horas, conforme a política da granja. Solicite pela carteira do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","9","0","0","","","","0","","","","",""
+"!vip","none","🤖 ADM | Granja Sustentável
+👑 Pacote VIP permanente: R$ 49,99. Inclui 1 galinha Premium, 6 unidades de ração e 5 ovos. Consulte a loja para disponibilidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","10","0","0","","","","0","","","","",""
+"!precos","none","🤖 ADM | Granja Sustentável
+🛒 Galinhas na loja:
+Comum: R$ 4,99
+Premium: R$ 64,99
+Rara: R$ 140,99
+Ração: R$ 0,50/unidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","11","0","0","","","","0","","","","",""
+"!comum","none","🤖 ADM | Granja Sustentável
+🐔 Galinha comum: 1 ovo por dia, consome 0,8 ração por dia. Vida prevista: 183 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","12","0","0","","","","0","","","","",""
+"!premium","none","🤖 ADM | Granja Sustentável
+✨ Galinha Premium: 3 ovos por dia, consome 2 rações por dia. Vida prevista: 221 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","13","0","0","","","","0","","","","",""
+"!rara","none","🤖 ADM | Granja Sustentável
+💎 Galinha Rara: 5 ovos por dia, consome 3 rações por dia. Vida prevista: 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","14","0","0","","","","0","","","","",""
+"!ciclo","none","🤖 ADM | Granja Sustentável
+⏰ Cada ciclo de produção da granja corresponde a 24 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","15","0","0","","","","0","","","","",""
+"!fomeracao","none","🤖 ADM | Granja Sustentável
+⚠️ Se faltar ração, a galinha para de produzir. Após 12 horas sem alimentação, pode morrer e desaparecer da lista de galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","16","0","0","","","","0","","","","",""
+"!carteira","none","🤖 ADM | Granja Sustentável
+💰 A carteira mostra o saldo gerado no jogo. Para solicitar retirada, abra a seção Carteira. Digite !saque para conhecer as condições.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","17","0","0","","","","0","","","","",""
+"!vender","none","🤖 ADM | Granja Sustentável
+🥚 Para vender ovos, abra a granja e toque em Vender ovos. O valor atual informado é R$ 0,40 por ovo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","18","0","0","","","","0","","","","",""
+"!comprar","none","🤖 ADM | Granja Sustentável
+🛒 Abra a Loja dentro do jogo para comprar galinhas ou ração e conferir os valores antes do pagamento.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","19","0","0","","","","0","","","","",""
+"!acelerar","none","🤖 ADM | Granja Sustentável
+⚡ Aceleração de incubação: R$ 5,00 via Pix. Utilize apenas o botão da incubadora no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","20","0","0","","","","0","","","","",""
+"!acessorios","none","🤖 ADM | Granja Sustentável
+🎩 Acessórios do galo: coroa, colar, laço, óculos, chapéu e cachecol. Preço informado: R$ 2,50 cada, sujeito à disponibilidade na loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","21","0","0","","","","0","","","","",""
+"!app","none","🤖 ADM | Granja Sustentável
+📲 No Android, abra o site da granja no Chrome e procure Instalar app ou Adicionar à tela inicial. No iPhone, abra no Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","22","0","0","","","","0","","","","",""
+"!login","none","🤖 ADM | Granja Sustentável
+🔐 Para entrar, abra o site oficial e use o e-mail e a senha cadastrados. Nunca compartilhe sua senha nem códigos de verificação no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","23","0","0","","","","0","","","","",""
+"!cadastro","none","🤖 ADM | Granja Sustentável
+📝 Abra o site oficial, escolha Criar conta e siga as instruções. Verifique seu e-mail se a confirmação for solicitada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","24","0","0","","","","0","","","","",""
+"!senha","none","🤖 ADM | Granja Sustentável
+🔑 Esqueceu a senha? Use a opção de recuperação de senha na tela de login da granja. Não envie senhas no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","25","0","0","","","","0","","","","",""
+"!suporte","none","🤖 ADM | Granja Sustentável
+🛠️ Precisa de ajuda? Descreva o problema para a administração do grupo, sem divulgar senhas, dados bancários ou códigos de acesso.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","26","0","0","","","","0","","","","",""
+"!ajuda","none","🤖 ADM | Granja Sustentável
+🤖 Sou o ADM! Digite !menu para ver os comandos. Se o problema for com conta, pagamento ou saque, fale com a administração do grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","27","0","0","","","","0","","","","",""
+"!regras","none","🤖 ADM | Granja Sustentável
+📜 Regras da comunidade: respeito entre participantes, nada de spam, golpes ou links suspeitos. Não compartilhe senhas, códigos nem dados bancários. Para ajuda, use !suporte.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","28","0","0","","","","0","","","","",""
+"!grupo","none","🤖 ADM | Granja Sustentável
+🐔🌱 Este é o grupo da comunidade Granja Sustentável. Digite !menu para consultar os comandos do ADM.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","29","0","0","","","","0","","","","",""
+"!bot","none","🤖 ADM | Granja Sustentável
+🤖 Olá! Sou o ADM, assistente automático da comunidade. Digite !menu para começar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","30","0","0","","","","0","","","","",""
+"!teste","none","🤖 ADM | Granja Sustentável
+✅ ADM funcionando! Digite !menu para ver os comandos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","31","0","0","","","","0","","","","",""
+"!saldo","none","🤖 ADM | Granja Sustentável
+💰 Seu saldo é individual. Consulte o valor atualizado na seção Carteira dentro do jogo. O ADM não acessa sua conta.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","32","0","0","","","","0","","","","",""
+"!estoque","none","🤖 ADM | Granja Sustentável
+📦 Consulte a quantidade de ovos, ração e galinhas no painel da sua fazenda. O bot não acessa dados individuais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","33","0","0","","","","0","","","","",""
+"!seguranca","none","🤖 ADM | Granja Sustentável
+🔒 Atenção: não envie senha, código de confirmação ou dados bancários no grupo. Faça pagamentos apenas pelo fluxo oficial do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","34","0","0","","","","0","","","","",""
+"!atualizacao","none","🤖 ADM | Granja Sustentável
+📢 Para saber das novidades da Granja Sustentável, acompanhe os avisos da administração e a versão atual do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","35","0","0","","","","0","","","","",""
+"!boasvindas","none","🤖 ADM | Granja Sustentável
+🐔🌱 Bem-vindo à comunidade Granja Sustentável! Digite menu ou ajuda para conhecer o jogo. Nunca compartilhe senhas nem códigos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","36","0","0","","","","0","","","","",""
+"!primeirospassos","none","🤖 ADM | Granja Sustentável
+🌱 Comece com 1 galinha comum, 3 ovos e 5 rações. Acompanhe sua produção, cuide da alimentação e use a Loja para compras.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","37","0","0","","","","0","","","","",""
+"!alimentacao","none","🤖 ADM | Granja Sustentável
+🌾 Consumo diário: Comum 0,8; Premium 2; Rara 3 unidades de ração. Sem ração, a produção para e há risco de morte após 12 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","38","0","0","","","","0","","","","",""
+"!lucro","none","🤖 ADM | Granja Sustentável
+📊 Os resultados dependem do número de galinhas, consumo de ração, preços e despesas. Ganhos não são garantidos. Faça as contas antes de comprar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","39","0","0","","","","0","","","","",""
+"!simulacao","none","🤖 ADM | Granja Sustentável
+🧮 Exemplo bruto: 1 comum produz 1 ovo/dia (R$ 0,40), consome 0,8 ração/dia (R$ 0,40). Não inclui compra da galinha, perdas e outras despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","40","0","0","","","","0","","","","",""
+"!simularpremium","none","🤖 ADM | Granja Sustentável
+🧮 Premium: 3 ovos/dia = R$ 1,20 em venda ao sistema; 2 rações/dia = R$ 1,00. Diferença operacional estimada R$ 0,20/dia, sem investimento inicial e outras despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","41","0","0","","","","0","","","","",""
+"!simularrara","none","🤖 ADM | Granja Sustentável
+🧮 Rara: 5 ovos/dia = R$ 2,00; 3 rações/dia = R$ 1,50. Diferença operacional estimada R$ 0,50/dia, sem investimento inicial e outras despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","42","0","0","","","","0","","","","",""
+"!semracao","none","🤖 ADM | Granja Sustentável
+⚠️ A galinha fica sem produzir quando falta ração. Se permanecer 12 horas sem alimentação, morre e sai da lista Minhas Galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","43","0","0","","","","0","","","","",""
+"!morte","none","🤖 ADM | Granja Sustentável
+🐔 A galinha pode morrer por falta de ração após 12 horas e desaparecer da lista. Confira seu estoque e o consumo diário.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","44","0","0","","","","0","","","","",""
+"!vida","none","🤖 ADM | Granja Sustentável
+📅 Vida prevista: Comum 183 dias; Premium 221 dias; Rara 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","45","0","0","","","","0","","","","",""
+"!ovo","none","🤖 ADM | Granja Sustentável
+🥚 A venda ao sistema paga R$ 0,40 por ovo. Para vender, abra a seção de ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","46","0","0","","","","0","","","","",""
+"!chocar","none","🤖 ADM | Granja Sustentável
+🐣 Para incubar, tenha ovos disponíveis e use a incubadora do jogo. O ciclo normal é de 15 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","47","0","0","","","","0","","","","",""
+"!tempo","none","🤖 ADM | Granja Sustentável
+⏰ Produção: ciclo de 24 horas. Incubação: 15 dias. Aceleração: R$ 5,00 via Pix.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","48","0","0","","","","0","","","","",""
+"!pagamento","none","🤖 ADM | Granja Sustentável
+💳 Compras no jogo são feitas pelos botões oficiais de Pix. Nunca pague por links ou chaves enviados por desconhecidos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","49","0","0","","","","0","","","","",""
+"!comprovante","none","🤖 ADM | Granja Sustentável
+🧾 Em caso de pagamento não reconhecido, guarde o comprovante e fale com a administração em privado. Não publique dados financeiros no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","50","0","0","","","","0","","","","",""
+"!pixpendente","none","🤖 ADM | Granja Sustentável
+⏳ Pagamento pendente? Confira o status no jogo. Se persistir, contate o suporte com data e identificação da transação, sem divulgar dados sensíveis no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","51","0","0","","","","0","","","","",""
+"!saquependente","none","🤖 ADM | Granja Sustentável
+💰 Os saques são processados imediatamente ou em até 48 horas. Se passar desse prazo, contate a administração com segurança.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","52","0","0","","","","0","","","","",""
+"!saqueminimo","none","🤖 ADM | Granja Sustentável
+💵 Saque mínimo: R$ 10,00 pela Carteira da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","53","0","0","","","","0","","","","",""
+"!retirada","none","🤖 ADM | Granja Sustentável
+💰 Para sacar: entre na Carteira, confira o saldo e solicite saque a partir de R$ 10,00. Prazo informado: imediato ou até 48 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","54","0","0","","","","0","","","","",""
+"!comprargalinha","none","🤖 ADM | Granja Sustentável
+🐔 Preços informados: Comum R$ 4,99; Premium R$ 64,99; Rara R$ 140,99. Compre pela Loja do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","55","0","0","","","","0","","","","",""
+"!comprarracao","none","🤖 ADM | Granja Sustentável
+🌾 Ração: R$ 0,50/unidade. Pacotes de 5, 10, 20, 50 ou 100 unidades. Pagamento pelo Pix do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","56","0","0","","","","0","","","","",""
+"!kit","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","57","0","0","","","","0","","","","",""
+"!trocas","none","🤖 ADM | Granja Sustentável
+🎁 Consulte a seção Trocas do jogo para saber se há acessórios disponíveis e as condições atuais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","58","0","0","","","","0","","","","",""
+"!galo","none","🤖 ADM | Granja Sustentável
+🐓 O galo e seus acessórios são elementos visuais da fazenda. Veja as opções na seção Meu Galo / VIP.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","59","0","0","","","","0","","","","",""
+"!quintal","none","🤖 ADM | Granja Sustentável
+🌳 Toque em Meu Quintal no jogo para ver o espaço da fazenda e os animais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","60","0","0","","","","0","","","","",""
+"!atualizar","none","🤖 ADM | Granja Sustentável
+🔄 Atualize a página do jogo e confira sua conexão. Se algo continuar errado, descreva o problema à administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","61","0","0","","","","0","","","","",""
+"!erro","none","🤖 ADM | Granja Sustentável
+🛠️ Se ocorrer erro, atualize a página, verifique a internet e anote a mensagem. Procure a administração sem compartilhar senhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","62","0","0","","","","0","","","","",""
+"!conta","none","🤖 ADM | Granja Sustentável
+👤 Para consultar seus dados, entre na conta da granja. O ADM não tem acesso a saldo ou estoque individual.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","63","0","0","","","","0","","","","",""
+"!email","none","🤖 ADM | Granja Sustentável
+📧 Confira caixa de entrada e spam para mensagens de confirmação. Nunca compartilhe links ou códigos privados.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","64","0","0","","","","0","","","","",""
+"!iphone","none","🤖 ADM | Granja Sustentável
+🍎 No iPhone, abra a granja pelo Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","65","0","0","","","","0","","","","",""
+"!android","none","🤖 ADM | Granja Sustentável
+🤖 No Android, abra pelo Chrome e use Instalar app ou Adicionar à tela inicial, conforme a opção disponível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","66","0","0","","","","0","","","","",""
+"!novidades","none","🤖 ADM | Granja Sustentável
+📢 As novidades oficiais são divulgadas pela administração do grupo. Confirme informações importantes dentro do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","67","0","0","","","","0","","","","",""
+"!admin","none","🤖 ADM | Granja Sustentável
+👨‍🌾 Para assuntos de conta, pagamento e saque, procure a administração do grupo. Não envie dados pessoais em público.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","68","0","0","","","","0","","","","",""
+"!golpe","none","🤖 ADM | Granja Sustentável
+🚨 Desconfie de promessas de lucro garantido, cobranças fora do jogo e pedidos de senha. Denuncie suspeitas à administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","69","0","0","","","","0","","","","",""
+"!spam","none","🤖 ADM | Granja Sustentável
+📜 Evite propaganda, links não autorizados, ofensas e mensagens repetitivas. Respeite os participantes.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","70","0","0","","","","0","","","","",""
+"!horario","none","🤖 ADM | Granja Sustentável
+⏱️ Cada ciclo de produção corresponde a 24 horas; acompanhe os horários no painel da fazenda.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","71","0","0","","","","0","","","","",""
+"!obrigado","none","🤖 ADM | Granja Sustentável
+🐔💚 Por nada! Se precisar, escreva menu ou ajuda.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","72","0","0","","","","0","","","","",""
+"!tchau","none","🤖 ADM | Granja Sustentável
+👋 Até mais! Cuide da sua granja e volte quando precisar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","73","0","0","","","","0","","","","",""
+"!faq","none","🤖 ADM | Granja Sustentável
+🤖 Pergunte normalmente: quanto custa a ração, como sacar, como incubar, quanto vale o ovo, como comprar galinhas ou digite menu.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","74","0","0","","","","0","","","","",""
+"!quem","none","🤖 ADM | Granja Sustentável
+🤖 Sou o ADM, assistente de informações da comunidade. Não acesso contas nem respondo automaticamente no WhatsApp sem integração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","75","0","0","","","","0","","","","",""
+"!contato","none","🤖 ADM | Granja Sustentável
+🛠️ Para suporte humano, procure os administradores identificados no grupo oficial.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","76","0","0","","","","0","","","","",""
+"!vipbeneficios","none","🤖 ADM | Granja Sustentável
+👑 VIP permanente R$ 49,99: 1 galinha Premium, 6 rações e 5 ovos, conforme a oferta informada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","77","0","0","","","","0","","","","",""
+"!quantosovos","none","🤖 ADM | Granja Sustentável
+🥚 Produção diária: Comum 1 ovo; Premium 3; Rara 5, com alimentação disponível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","78","0","0","","","","0","","","","",""
+"!producao","none","🤖 ADM | Granja Sustentável
+🐔 Produção a cada 24h: comum 1, premium 3 e rara 5 ovos. É necessário manter a ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","79","0","0","","","","0","","","","",""
+"!reembolso","none","🤖 ADM | Granja Sustentável
+🧾 Dúvidas sobre pagamento ou reembolso devem ser tratadas com a administração; não há promessa automática de devolução.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","80","0","0","","","","0","","","","",""
+"!seguro","none","🤖 ADM | Granja Sustentável
+🔒 Nunca compartilhe senha, OTP, CPF, chave Pix ou comprovante completo em mensagens públicas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","81","0","0","","","","0","","","","",""
+"!siteoficial","none","🤖 ADM | Granja Sustentável
+🌐 Use somente o endereço da granja divulgado pela administração e confira o domínio antes de entrar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","82","0","0","","","","0","","","","",""
+"!adm","none","🤖 ADM | Granja Sustentável
+🛡️ ADM ADM: respeite as regras da comunidade. Links, golpes, spam e ofensas são proibidos. A moderação pode aplicar advertências e outras medidas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","83","0","0","","","","0","","","","",""
+"!links","none","🤖 ADM | Granja Sustentável
+🚫 ADM ADM: links não são permitidos neste grupo sem autorização da administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","84","0","0","","","","0","","","","",""
+"!xingamento","none","🤖 ADM | Granja Sustentável
+⚠️ ADM ADM: ofensas, xingamentos e discriminação não são permitidos. Respeite os participantes.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","85","0","0","","","","0","","","","",""
+"!advertencia","none","🤖 ADM | Granja Sustentável
+⚠️ ADM ADM: sua mensagem pode violar as regras do grupo. Evite reincidência.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","86","0","0","","","","0","","","","",""
+"!golpes","none","🤖 ADM | Granja Sustentável
+🚨 ADM ADM: desconfie de promessas de lucro garantido, pedidos de senha, códigos ou pagamentos fora do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","87","0","0","","","","0","","","","",""
+"!denunciar","none","🤖 ADM | Granja Sustentável
+🛡️ Para denunciar uma mensagem, fale com os administradores do grupo e informe o ocorrido. Não publique dados pessoais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","88","0","0","","","","0","","","","",""
+"!privacidade","none","🤖 ADM | Granja Sustentável
+🔐 Não compartilhe senhas, códigos de acesso, dados bancários ou informações pessoais no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","89","0","0","","","","0","","","","",""
+"!respeito","none","🤖 ADM | Granja Sustentável
+🤝 Trate todos com respeito. Não são permitidos ataques pessoais, discriminação ou ameaças.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","90","0","0","","","","0","","","","",""
+"!regrasadm","none","🤖 ADM | Granja Sustentável
+📜 ADM ADM: proibidos links não autorizados, spam, golpes, ofensas, ameaças e exposição de dados pessoais. Em caso de dúvida, procure a administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","91","0","0","","","","0","","","","",""
+"Como começo a jogar?","none","🤖 ADM | Granja Sustentável
+Você começa com 1 galinha comum, 3 ovos e 5 rações. Acesse a Fazenda para acompanhar seu progresso.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","92","0","0","","","","0","","","","",""
+"O jogo é gratuito?","none","🤖 ADM | Granja Sustentável
+O cadastro pode ser feito sem comprar animais. Compras opcionais no jogo podem ter cobrança via Pix.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","93","0","0","","","","0","","","","",""
+"Qual é o kit inicial?","none","🤖 ADM | Granja Sustentável
+Cada jogador recebe 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","94","0","0","","","","0","","","","",""
+"Quanto custa uma galinha comum?","none","🤖 ADM | Granja Sustentável
+A galinha comum custa R$ 4,99 na Loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","95","0","0","","","","0","","","","",""
+"Quanto custa uma galinha premium?","none","🤖 ADM | Granja Sustentável
+A galinha Premium custa R$ 64,99 na Loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","96","0","0","","","","0","","","","",""
+"Quanto custa uma galinha rara?","none","🤖 ADM | Granja Sustentável
+A galinha Rara custa R$ 140,99 na Loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","97","0","0","","","","0","","","","",""
+"Quantos ovos a comum produz?","none","🤖 ADM | Granja Sustentável
+A comum produz 1 ovo por ciclo de 24 horas, se estiver alimentada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","98","0","0","","","","0","","","","",""
+"Quantos ovos a premium produz?","none","🤖 ADM | Granja Sustentável
+A Premium produz 3 ovos por ciclo de 24 horas, se estiver alimentada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","99","0","0","","","","0","","","","",""
+"Quantos ovos a rara produz?","none","🤖 ADM | Granja Sustentável
+A Rara produz 5 ovos por ciclo de 24 horas, se estiver alimentada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","100","0","0","","","","0","","","","",""
+"Quanto a comum come?","none","🤖 ADM | Granja Sustentável
+A comum consome 0,8 unidade de ração por dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","101","0","0","","","","0","","","","",""
+"Quanto a premium come?","none","🤖 ADM | Granja Sustentável
+A Premium consome 2 unidades de ração por dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","102","0","0","","","","0","","","","",""
+"Quanto a rara come?","none","🤖 ADM | Granja Sustentável
+A Rara consome 3 unidades de ração por dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","103","0","0","","","","0","","","","",""
+"Qual o preço da ração?","none","🤖 ADM | Granja Sustentável
+A ração custa R$ 0,50 por unidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","104","0","0","","","","0","","","","",""
+"Quanto custa 5 rações?","none","🤖 ADM | Granja Sustentável
+5 unidades de ração custam R$ 2,50.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","105","0","0","","","","0","","","","",""
+"Quanto custa 10 rações?","none","🤖 ADM | Granja Sustentável
+10 unidades de ração custam R$ 5,00.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","106","0","0","","","","0","","","","",""
+"Quanto custa 20 rações?","none","🤖 ADM | Granja Sustentável
+20 unidades de ração custam R$ 10,00.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","107","0","0","","","","0","","","","",""
+"Quanto custa 50 rações?","none","🤖 ADM | Granja Sustentável
+50 unidades de ração custam R$ 25,00.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","108","0","0","","","","0","","","","",""
+"Quanto custa 100 rações?","none","🤖 ADM | Granja Sustentável
+100 unidades de ração custam R$ 50,00.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","109","0","0","","","","0","","","","",""
+"Onde compro ração?","none","🤖 ADM | Granja Sustentável
+Abra a Loja da granja, escolha a quantidade e siga as instruções do Pix oficial.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","110","0","0","","","","0","","","","",""
+"O que acontece sem ração?","none","🤖 ADM | Granja Sustentável
+Sem ração a galinha para de produzir; se permanecer 12 horas sem alimentação, morre.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","111","0","0","","","","0","","","","",""
+"Minha galinha pode morrer?","none","🤖 ADM | Granja Sustentável
+Sim. Sem alimentação por 12 horas ela pode morrer e sair de Minhas Galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","112","0","0","","","","0","","","","",""
+"Qual a vida da galinha comum?","none","🤖 ADM | Granja Sustentável
+A vida prevista da comum é de 183 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","113","0","0","","","","0","","","","",""
+"Qual a vida da galinha premium?","none","🤖 ADM | Granja Sustentável
+A vida prevista da Premium é de 221 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","114","0","0","","","","0","","","","",""
+"Qual a vida da galinha rara?","none","🤖 ADM | Granja Sustentável
+A vida prevista da Rara é de 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","115","0","0","","","","0","","","","",""
+"Quanto vale um ovo?","none","🤖 ADM | Granja Sustentável
+A venda de cada ovo ao sistema vale R$ 0,40.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","116","0","0","","","","0","","","","",""
+"Onde vendo ovos?","none","🤖 ADM | Granja Sustentável
+Use a opção Vender ovos no jogo para vender diretamente ao sistema.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","117","0","0","","","","0","","","","",""
+"Posso vender ovos para outros jogadores?","none","🤖 ADM | Granja Sustentável
+A venda de ovos disponível é diretamente ao sistema.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","118","0","0","","","","0","","","","",""
+"Quanto ganho vendendo 10 ovos?","none","🤖 ADM | Granja Sustentável
+10 ovos vendidos ao sistema rendem R$ 4,00, antes de considerar despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","119","0","0","","","","0","","","","",""
+"Quanto ganho vendendo 100 ovos?","none","🤖 ADM | Granja Sustentável
+100 ovos vendidos ao sistema rendem R$ 40,00, antes de considerar despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","120","0","0","","","","0","","","","",""
+"De quanto em quanto tempo tem ciclo?","none","🤖 ADM | Granja Sustentável
+O ciclo de produção acontece a cada 24 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","121","0","0","","","","0","","","","",""
+"Como incubar um ovo?","none","🤖 ADM | Granja Sustentável
+Tenha um ovo disponível e use o botão de incubação no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","122","0","0","","","","0","","","","",""
+"Quanto tempo demora para chocar?","none","🤖 ADM | Granja Sustentável
+O ciclo normal de incubação dura 15 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","123","0","0","","","","0","","","","",""
+"Quanto custa acelerar a incubação?","none","🤖 ADM | Granja Sustentável
+Acelerar a incubação custa R$ 5,00 via Pix.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","124","0","0","","","","0","","","","",""
+"Posso acelerar um ovo?","none","🤖 ADM | Granja Sustentável
+Sim, a opção de acelerar a incubação custa R$ 5,00 via Pix.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","125","0","0","","","","0","","","","",""
+"Como faço um saque?","none","🤖 ADM | Granja Sustentável
+Abra Carteira e solicite o saque quando tiver saldo disponível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","126","0","0","","","","0","","","","",""
+"Qual o saque mínimo?","none","🤖 ADM | Granja Sustentável
+O saque mínimo é de R$ 10,00.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","127","0","0","","","","0","","","","",""
+"Quanto tempo demora o saque?","none","🤖 ADM | Granja Sustentável
+O prazo informado é imediatamente ou em até 48 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","128","0","0","","","","0","","","","",""
+"O saque é por Pix?","none","🤖 ADM | Granja Sustentável
+A opção de saque prevista no jogo é via Pix.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","129","0","0","","","","0","","","","",""
+"Posso colocar saldo via Pix?","none","🤖 ADM | Granja Sustentável
+Não há recarga manual da carteira via Pix; Pix é usado para compras previstas no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","130","0","0","","","","0","","","","",""
+"Como faço pagamento Pix?","none","🤖 ADM | Granja Sustentável
+Faça pagamentos apenas pelos botões oficiais da Loja ou da incubadora.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","131","0","0","","","","0","","","","",""
+"Meu Pix não caiu, e agora?","none","🤖 ADM | Granja Sustentável
+Confira o status no jogo e procure a administração se persistir. Não divulgue comprovantes completos no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","132","0","0","","","","0","","","","",""
+"O que é VIP?","none","🤖 ADM | Granja Sustentável
+O pacote VIP informado é permanente e inclui 1 Premium, 6 rações e 5 ovos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","133","0","0","","","","0","","","","",""
+"Quanto custa o VIP?","none","🤖 ADM | Granja Sustentável
+O pacote VIP custa R$ 49,99, conforme a oferta informada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","134","0","0","","","","0","","","","",""
+"O VIP é mensal?","none","🤖 ADM | Granja Sustentável
+O pacote VIP informado é permanente, não mensal.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","135","0","0","","","","0","","","","",""
+"Quais acessórios existem?","none","🤖 ADM | Granja Sustentável
+Há opções como colar, laço, coroa, óculos, chapéu e cachecol.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","136","0","0","","","","0","","","","",""
+"Quanto custa um acessório?","none","🤖 ADM | Granja Sustentável
+Cada acessório informado custa R$ 2,50.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","137","0","0","","","","0","","","","",""
+"Onde vejo meu galo?","none","🤖 ADM | Granja Sustentável
+Procure a seção Meu Galo / VIP no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","138","0","0","","","","0","","","","",""
+"Como abrir o quintal?","none","🤖 ADM | Granja Sustentável
+Use a opção Meu Quintal no jogo para visualizar a fazenda.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","139","0","0","","","","0","","","","",""
+"Tem animais na fazenda?","none","🤖 ADM | Granja Sustentável
+A fazenda tem elementos visuais de galinhas, galo e outros animais, conforme a versão publicada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","140","0","0","","","","0","","","","",""
+"Como criar uma conta?","none","🤖 ADM | Granja Sustentável
+Abra a página oficial da granja, escolha Cadastro e siga as instruções.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","141","0","0","","","","0","","","","",""
+"Como fazer login?","none","🤖 ADM | Granja Sustentável
+Entre na página oficial e informe seu e-mail e senha cadastrados.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","142","0","0","","","","0","","","","",""
+"Esqueci minha senha, o que faço?","none","🤖 ADM | Granja Sustentável
+Use a opção de recuperação de senha na tela de login.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","143","0","0","","","","0","","","","",""
+"Não recebi o e-mail de confirmação?","none","🤖 ADM | Granja Sustentável
+Verifique spam/lixo eletrônico e confirme o e-mail digitado. Procure suporte se persistir.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","144","0","0","","","","0","","","","",""
+"Posso jogar no Android?","none","🤖 ADM | Granja Sustentável
+Sim. Abra o site da granja no navegador Android.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","145","0","0","","","","0","","","","",""
+"Posso jogar no iPhone?","none","🤖 ADM | Granja Sustentável
+Você pode abrir o site da granja pelo Safari no iPhone.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","146","0","0","","","","0","","","","",""
+"Como instalar o aplicativo?","none","🤖 ADM | Granja Sustentável
+Abra o site no navegador e procure Instalar app ou Adicionar à tela inicial.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","147","0","0","","","","0","","","","",""
+"Precisa baixar pela Play Store?","none","🤖 ADM | Granja Sustentável
+O jogo pode ser acessado pelo site e instalado como aplicativo web quando o navegador oferecer essa opção.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","148","0","0","","","","0","","","","",""
+"O jogo funciona sem internet?","none","🤖 ADM | Granja Sustentável
+Para consultar conta, pagamentos e produção atualizados, é necessária conexão com a internet.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","149","0","0","","","","0","","","","",""
+"Como atualizar a fazenda?","none","🤖 ADM | Granja Sustentável
+Use o botão Atualizar fazenda e aguarde os dados serem carregados.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","150","0","0","","","","0","","","","",""
+"Minha produção não apareceu?","none","🤖 ADM | Granja Sustentável
+Verifique o horário do ciclo de 24 horas, a ração e a conexão. Se persistir, procure suporte.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","151","0","0","","","","0","","","","",""
+"Meus ovos sumiram?","none","🤖 ADM | Granja Sustentável
+Confira se houve venda ou incubação e veja o histórico da conta. Procure suporte se não reconhecer.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","152","0","0","","","","0","","","","",""
+"Minha galinha desapareceu?","none","🤖 ADM | Granja Sustentável
+Confira a alimentação e o histórico; a falta de ração por 12 horas pode causar a morte da galinha.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","153","0","0","","","","0","","","","",""
+"Meu saldo está errado?","none","🤖 ADM | Granja Sustentável
+Confira as movimentações da Carteira e procure a administração se houver divergência.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","154","0","0","","","","0","","","","",""
+"Como consultar meu saldo?","none","🤖 ADM | Granja Sustentável
+Entre na sua conta e abra Carteira. O ADM não acessa seu saldo individual.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","155","0","0","","","","0","","","","",""
+"Como consultar meu estoque?","none","🤖 ADM | Granja Sustentável
+Abra a Fazenda e confira ovos e ração. O ADM não acessa seu estoque individual.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","156","0","0","","","","0","","","","",""
+"Como falar com suporte?","none","🤖 ADM | Granja Sustentável
+Procure os administradores identificados no grupo oficial; nunca envie senhas ou códigos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","157","0","0","","","","0","","","","",""
+"Posso mandar link no grupo?","none","🤖 ADM | Granja Sustentável
+Não. Links não são permitidos no grupo, salvo autorização expressa dos administradores.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","158","0","0","","","","0","","","","",""
+"Por que meu link foi sinalizado?","none","🤖 ADM | Granja Sustentável
+O painel ADM sinaliza links conforme a regra de moderação. Ele não exclui mensagens do WhatsApp sem integração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","159","0","0","","","","0","","","","",""
+"Posso divulgar meu negócio?","none","🤖 ADM | Granja Sustentável
+Peça autorização à administração antes de fazer publicidade no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","160","0","0","","","","0","","","","",""
+"Posso xingar no grupo?","none","🤖 ADM | Granja Sustentável
+Não. Respeite os participantes. Ofensas e xingamentos são proibidos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","161","0","0","","","","0","","","","",""
+"O que é spam?","none","🤖 ADM | Granja Sustentável
+São mensagens repetitivas ou indesejadas que atrapalham a conversa do grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","162","0","0","","","","0","","","","",""
+"Como denunciar golpe?","none","🤖 ADM | Granja Sustentável
+Avise a administração e não compartilhe senha, códigos ou comprovantes completos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","163","0","0","","","","0","","","","",""
+"Posso mandar minha senha?","none","🤖 ADM | Granja Sustentável
+Não. Nunca compartilhe senhas ou códigos de confirmação.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","164","0","0","","","","0","","","","",""
+"O ADM é administrador?","none","🤖 ADM | Granja Sustentável
+O painel se chama ADM ADM, mas não tem poderes de administrador no WhatsApp sem conexão e permissões.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","165","0","0","","","","0","","","","",""
+"O bot apaga links automaticamente?","none","🤖 ADM | Granja Sustentável
+Ainda não. O painel detecta links no simulador; excluir mensagens no WhatsApp exige integração compatível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","166","0","0","","","","0","","","","",""
+"O bot responde no grupo?","none","🤖 ADM | Granja Sustentável
+Ainda não. O painel responde em testes locais; integração ao WhatsApp é uma etapa separada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","167","0","0","","","","0","","","","",""
+"Como cadastrar o número do bot?","none","🤖 ADM | Granja Sustentável
+Abra a seção Número do ADM ADM, digite o número com DDD e toque em Salvar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","168","0","0","","","","0","","","","",""
+"O número do bot é obrigatório?","none","🤖 ADM | Granja Sustentável
+Não. Você pode deixar o campo vazio e cadastrar o número depois.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","169","0","0","","","","0","","","","",""
+"O bot usa inteligência artificial?","none","🤖 ADM | Granja Sustentável
+Esta versão usa regras e respostas cadastradas, sem API de inteligência artificial.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","170","0","0","","","","0","","","","",""
+"Posso editar uma resposta?","none","🤖 ADM | Granja Sustentável
+Sim. Procure a regra na lista, toque em Editar e salve a alteração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","171","0","0","","","","0","","","","",""
+"Como adicionar uma pergunta?","none","🤖 ADM | Granja Sustentável
+No painel, use Criar ou editar regra para cadastrar uma pergunta e sua resposta.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","172","0","0","","","","0","","","","",""
+"Como fazer backup das regras?","none","🤖 ADM | Granja Sustentável
+No painel, toque em Backup JSON para guardar uma cópia das regras.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","173","0","0","","","","0","","","","",""
+"Como importar regras?","none","🤖 ADM | Granja Sustentável
+No painel, use Selecionar CSV ou JSON. Faça backup antes, pois a importação substitui as regras atuais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","174","0","0","","","","0","","","","",""
+"Como testar uma pergunta?","none","🤖 ADM | Granja Sustentável
+Digite a pergunta na seção Testar resposta e toque em Testar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","175","0","0","","","","0","","","","",""
+"Preciso digitar exclamação?","none","🤖 ADM | Granja Sustentável
+Não. O ADM também reconhece perguntas cadastradas em linguagem normal.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","176","0","0","","","","0","","","","",""
+"O bot entende qualquer pergunta?","none","🤖 ADM | Granja Sustentável
+Não. Ele reconhece perguntas e expressões cadastradas; para outras, é necessário criar novas regras.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","177","0","0","","","","0","","","","",""
+"Como encontrar as regras?","none","🤖 ADM | Granja Sustentável
+Use o campo Buscar comando ou resposta na lista de regras do aplicativo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","178","0","0","","","","0","","","","",""
+"Como restaurar as regras?","none","🤖 ADM | Granja Sustentável
+Use Restaurar padrões no painel. Faça backup antes para não perder alterações.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","179","0","0","","","","0","","","","",""
+"Posso usar o bot sem Netlify?","none","🤖 ADM | Granja Sustentável
+Depois de instalado, o painel pode abrir offline em algumas situações; atualizações e hospedagem continuam no Netlify.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","180","0","0","","","","0","","","","",""
+"Quanto custa o Netlify?","none","🤖 ADM | Granja Sustentável
+Os custos e limites dependem do plano e uso da sua conta Netlify. Consulte seu painel de cobrança.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","181","0","0","","","","0","","","","",""
+"Por que o aplicativo não responde no WhatsApp?","none","🤖 ADM | Granja Sustentável
+Porque o painel ainda não tem integração para receber mensagens do WhatsApp.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","182","0","0","","","","0","","","","",""
+"O que é a Granja Sustentável?","none","🤖 ADM | Granja Sustentável
+É um jogo de fazenda com criação de galinhas, produção de ovos, ração, incubação e carteira.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","183","0","0","","","","0","","","","",""
+"Tem mercado entre jogadores?","none","🤖 ADM | Granja Sustentável
+A venda de ovos atualmente é feita diretamente ao sistema.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","184","0","0","","","","0","","","","",""
+"Como comprar uma galinha?","none","🤖 ADM | Granja Sustentável
+Abra a Loja, escolha a raça e siga o fluxo de pagamento Pix do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","185","0","0","","","","0","","","","",""
+"Qual galinha produz mais?","none","🤖 ADM | Granja Sustentável
+A Rara produz 5 ovos/dia, a Premium 3 e a Comum 1, se alimentadas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","186","0","0","","","","0","","","","",""
+"Qual galinha come menos?","none","🤖 ADM | Granja Sustentável
+A Comum consome 0,8 unidade de ração por dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","187","0","0","","","","0","","","","",""
+"Qual galinha vive mais?","none","🤖 ADM | Granja Sustentável
+A Rara tem vida prevista de 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","188","0","0","","","","0","","","","",""
+"Posso ganhar dinheiro garantido?","none","🤖 ADM | Granja Sustentável
+Não há garantia de ganhos. Considere compra, alimentação, perdas e demais custos antes de gastar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","189","0","0","","","","0","","","","",""
+"A galinha comum dá lucro?","none","🤖 ADM | Granja Sustentável
+1 ovo rende R$ 0,40 e 0,8 ração custa R$ 0,40 por dia: diferença bruta zero, sem considerar compra e perdas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","190","0","0","","","","0","","","","",""
+"A galinha premium dá lucro?","none","🤖 ADM | Granja Sustentável
+3 ovos rendem R$ 1,20 e 2 rações custam R$ 1,00 por dia: diferença bruta R$ 0,20, sem compra e perdas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","191","0","0","","","","0","","","","",""
+"A galinha rara dá lucro?","none","🤖 ADM | Granja Sustentável
+5 ovos rendem R$ 2,00 e 3 rações custam R$ 1,50 por dia: diferença bruta R$ 0,50, sem compra e perdas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","192","0","0","","","","0","","","","",""
+"Quanto custa alimentar uma comum?","none","🤖 ADM | Granja Sustentável
+0,8 ração por dia custa R$ 0,40 por dia ao preço unitário informado.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","193","0","0","","","","0","","","","",""
+"Quanto custa alimentar uma premium?","none","🤖 ADM | Granja Sustentável
+2 rações por dia custam R$ 1,00 por dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","194","0","0","","","","0","","","","",""
+"Quanto custa alimentar uma rara?","none","🤖 ADM | Granja Sustentável
+3 rações por dia custam R$ 1,50 por dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","195","0","0","","","","0","","","","",""
+"O que é ciclo diário?","none","🤖 ADM | Granja Sustentável
+É o período de 24 horas usado para processar produção e consumo das galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","196","0","0","","","","0","","","","",""
+"Posso vender ovos todos os dias?","none","🤖 ADM | Granja Sustentável
+Você pode vender os ovos disponíveis em estoque usando a opção do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","197","0","0","","","","0","","","","",""
+"O que acontece ao incubar?","none","🤖 ADM | Granja Sustentável
+O ovo sai do estoque disponível e entra no processo de incubação conforme as regras do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","198","0","0","","","","0","","","","",""
+"A incubação é instantânea?","none","🤖 ADM | Granja Sustentável
+A incubação normal leva 15 dias; há opção paga de aceleração via Pix.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","199","0","0","","","","0","","","","",""
+"A ração é gratuita?","none","🤖 ADM | Granja Sustentável
+O kit inicial inclui 5 unidades. Rações adicionais podem ser compradas na Loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","200","0","0","","","","0","","","","",""
+"Onde vejo minhas galinhas?","none","🤖 ADM | Granja Sustentável
+Abra Minhas Galinhas na Fazenda para consultar os animais cadastrados.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","201","0","0","","","","0","","","","",""
+"Como evitar a morte das galinhas?","none","🤖 ADM | Granja Sustentável
+Mantenha ração suficiente e acompanhe o consumo diário.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","202","0","0","","","","0","","","","",""
+"Como ver o histórico de vendas?","none","🤖 ADM | Granja Sustentável
+Confira as movimentações ou transações exibidas no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","203","0","0","","","","0","","","","",""
+"Qual é a regra mais importante do grupo?","none","🤖 ADM | Granja Sustentável
+Respeite as pessoas, evite links não autorizados, golpes, xingamentos e spam.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","204","0","0","","","","0","","","","",""
+"Quem pode mudar as regras do grupo?","none","🤖 ADM | Granja Sustentável
+A administração do grupo define as regras e autorizações.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","205","0","0","","","","0","","","","",""
+"Posso compartilhar dados pessoais?","none","🤖 ADM | Granja Sustentável
+Evite publicar dados pessoais, comprovantes completos, senhas ou códigos no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","206","0","0","","","","0","","","","",""
+"O bot pode banir alguém?","none","🤖 ADM | Granja Sustentável
+Não nesta versão. O painel só simula avisos; remover pessoas exige integração e permissões.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","207","0","0","","","","0","","","","",""
+"O bot funciona 24 horas?","none","🤖 ADM | Granja Sustentável
+O painel funciona quando aberto; não há monitoramento automático 24h do WhatsApp.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","208","0","0","","","","0","","","","",""
+"Qual é o nome do bot?","none","🤖 ADM | Granja Sustentável
+ADM ADM, assistente de regras da comunidade Granja Sustentável.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","209","0","0","","","","0","","","","",""
+"Como dizer oi ao bot?","none","🤖 ADM | Granja Sustentável
+Escreva Oi, Olá ou digite menu no simulador para receber uma resposta.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","210","0","0","","","","0","","","","",""
+"Como agradecer ao bot?","none","🤖 ADM | Granja Sustentável
+Escreva Obrigado ou Valeu no simulador.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","211","0","0","","","","0","","","","",""
+"Onde encontro ajuda?","none","🤖 ADM | Granja Sustentável
+Escreva ajuda no simulador ou procure a administração para assuntos de conta.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","212","0","0","","","","0","","","","",""
+"quais comandos posso usar","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","213","0","0","","","","0","","","","",""
+"mostra as opções do bot","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","214","0","0","","","","0","","","","",""
+"o que posso perguntar","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","215","0","0","","","","0","","","","",""
+"tem um menu","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","216","0","0","","","","0","","","","",""
+"me mostra o menu","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","217","0","0","","","","0","","","","",""
+"como usar o bot","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","218","0","0","","","","0","","","","",""
+"o que o robô sabe responder","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","219","0","0","","","","0","","","","",""
+"quais assuntos você responde","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","220","0","0","","","","0","","","","",""
+"o que recebo quando começo","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","221","0","0","","","","0","","","","",""
+"qual é meu kit inicial","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","222","0","0","","","","0","","","","",""
+"o que ganha ao criar conta","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","223","0","0","","","","0","","","","",""
+"quantas rações iniciais","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","224","0","0","","","","0","","","","",""
+"quantos ovos no começo","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","225","0","0","","","","0","","","","",""
+"ganho galinha ao entrar","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","226","0","0","","","","0","","","","",""
+"quais itens iniciais","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","227","0","0","","","","0","","","","",""
+"qual o preço de uma ração","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","228","0","0","","","","0","","","","",""
+"como alimentar minhas galinhas","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","229","0","0","","","","0","","","","",""
+"onde compro comida para galinhas","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","230","0","0","","","","0","","","","",""
+"qual valor de 10 rações","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","231","0","0","","","","0","","","","",""
+"quanto custa 50 rações","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","232","0","0","","","","0","","","","",""
+"como comprar 100 rações","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","233","0","0","","","","0","","","","",""
+"qual é o consumo de ração","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","234","0","0","","","","0","","","","",""
+"quanto gasto com alimentação","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","235","0","0","","","","0","","","","",""
+"quanto o sistema paga por ovo","none","🤖 ADM | Granja Sustentável
+🥚 Cada ovo vendido diretamente ao sistema vale *R$ 0,40*. Confira seu estoque e use o botão Vender ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","236","0","0","","","","0","","","","",""
+"como vender meus ovos","none","🤖 ADM | Granja Sustentável
+🥚 Cada ovo vendido diretamente ao sistema vale *R$ 0,40*. Confira seu estoque e use o botão Vender ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","237","0","0","","","","0","","","","",""
+"valor da venda de ovos","none","🤖 ADM | Granja Sustentável
+🥚 Cada ovo vendido diretamente ao sistema vale *R$ 0,40*. Confira seu estoque e use o botão Vender ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","238","0","0","","","","0","","","","",""
+"posso vender ovo para jogador","none","🤖 ADM | Granja Sustentável
+🥚 Cada ovo vendido diretamente ao sistema vale *R$ 0,40*. Confira seu estoque e use o botão Vender ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","239","0","0","","","","0","","","","",""
+"quanto recebo por dez ovos","none","🤖 ADM | Granja Sustentável
+🥚 Cada ovo vendido diretamente ao sistema vale *R$ 0,40*. Confira seu estoque e use o botão Vender ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","240","0","0","","","","0","","","","",""
+"qual é o preço atual dos ovos","none","🤖 ADM | Granja Sustentável
+🥚 Cada ovo vendido diretamente ao sistema vale *R$ 0,40*. Confira seu estoque e use o botão Vender ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","241","0","0","","","","0","","","","",""
+"onde vendo meus ovos","none","🤖 ADM | Granja Sustentável
+🥚 Cada ovo vendido diretamente ao sistema vale *R$ 0,40*. Confira seu estoque e use o botão Vender ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","242","0","0","","","","0","","","","",""
+"meus ovos valem quanto","none","🤖 ADM | Granja Sustentável
+🥚 Cada ovo vendido diretamente ao sistema vale *R$ 0,40*. Confira seu estoque e use o botão Vender ovos no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","243","0","0","","","","0","","","","",""
+"como tirar dinheiro do jogo","none","🤖 ADM | Granja Sustentável
+💰 Saque mínimo: R$ 10,00. Os pedidos são processados imediatamente ou em até 48 horas, conforme a política da granja. Solicite pela carteira do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","244","0","0","","","","0","","","","",""
+"qual o saque mínimo","none","🤖 ADM | Granja Sustentável
+💰 Saque mínimo: R$ 10,00. Os pedidos são processados imediatamente ou em até 48 horas, conforme a política da granja. Solicite pela carteira do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","245","0","0","","","","0","","","","",""
+"qual prazo de retirada","none","🤖 ADM | Granja Sustentável
+💰 Saque mínimo: R$ 10,00. Os pedidos são processados imediatamente ou em até 48 horas, conforme a política da granja. Solicite pela carteira do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","246","0","0","","","","0","","","","",""
+"como sacar por pix","none","🤖 ADM | Granja Sustentável
+💰 Saque mínimo: R$ 10,00. Os pedidos são processados imediatamente ou em até 48 horas, conforme a política da granja. Solicite pela carteira do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","247","0","0","","","","0","","","","",""
+"quando cai meu saque","none","🤖 ADM | Granja Sustentável
+💰 Saque mínimo: R$ 10,00. Os pedidos são processados imediatamente ou em até 48 horas, conforme a política da granja. Solicite pela carteira do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","248","0","0","","","","0","","","","",""
+"o saque é imediato","none","🤖 ADM | Granja Sustentável
+💰 Saque mínimo: R$ 10,00. Os pedidos são processados imediatamente ou em até 48 horas, conforme a política da granja. Solicite pela carteira do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","249","0","0","","","","0","","","","",""
+"onde fica a carteira","none","🤖 ADM | Granja Sustentável
+💰 Saque mínimo: R$ 10,00. Os pedidos são processados imediatamente ou em até 48 horas, conforme a política da granja. Solicite pela carteira do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","250","0","0","","","","0","","","","",""
+"posso sacar cinco reais","none","🤖 ADM | Granja Sustentável
+💰 Saque mínimo: R$ 10,00. Os pedidos são processados imediatamente ou em até 48 horas, conforme a política da granja. Solicite pela carteira do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","251","0","0","","","","0","","","","",""
+"como coloco ovo na incubadora","none","🤖 ADM | Granja Sustentável
+🐣 A incubação normal leva 15 dias. Você pode acelerar a incubação por R$ 5,00 via Pix, quando a opção estiver disponível no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","252","0","0","","","","0","","","","",""
+"quantos dias para chocar","none","🤖 ADM | Granja Sustentável
+🐣 A incubação normal leva 15 dias. Você pode acelerar a incubação por R$ 5,00 via Pix, quando a opção estiver disponível no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","253","0","0","","","","0","","","","",""
+"como nascer um pintinho","none","🤖 ADM | Granja Sustentável
+🐣 A incubação normal leva 15 dias. Você pode acelerar a incubação por R$ 5,00 via Pix, quando a opção estiver disponível no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","254","0","0","","","","0","","","","",""
+"onde fica a incubadora","none","🤖 ADM | Granja Sustentável
+🐣 A incubação normal leva 15 dias. Você pode acelerar a incubação por R$ 5,00 via Pix, quando a opção estiver disponível no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","255","0","0","","","","0","","","","",""
+"como incubar um ovo","none","🤖 ADM | Granja Sustentável
+🐣 A incubação normal leva 15 dias. Você pode acelerar a incubação por R$ 5,00 via Pix, quando a opção estiver disponível no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","256","0","0","","","","0","","","","",""
+"posso acelerar o nascimento","none","🤖 ADM | Granja Sustentável
+🐣 A incubação normal leva 15 dias. Você pode acelerar a incubação por R$ 5,00 via Pix, quando a opção estiver disponível no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","257","0","0","","","","0","","","","",""
+"qual tempo de incubação","none","🤖 ADM | Granja Sustentável
+🐣 A incubação normal leva 15 dias. Você pode acelerar a incubação por R$ 5,00 via Pix, quando a opção estiver disponível no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","258","0","0","","","","0","","","","",""
+"o que acontece com ovo incubado","none","🤖 ADM | Granja Sustentável
+🐣 A incubação normal leva 15 dias. Você pode acelerar a incubação por R$ 5,00 via Pix, quando a opção estiver disponível no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","259","0","0","","","","0","","","","",""
+"como funcionam as galinhas","none","🤖 ADM | Granja Sustentável
+🐔 Produção por ciclo de 24 horas:
+Comum: 1 ovo e 0,8 ração/dia.
+Premium: 3 ovos e 2 rações/dia.
+Rara: 5 ovos e 3 rações/dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","260","0","0","","","","0","","","","",""
+"quantos ovos uma galinha produz","none","🤖 ADM | Granja Sustentável
+🐔 Produção por ciclo de 24 horas:
+Comum: 1 ovo e 0,8 ração/dia.
+Premium: 3 ovos e 2 rações/dia.
+Rara: 5 ovos e 3 rações/dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","261","0","0","","","","0","","","","",""
+"qual galinha produz mais","none","🤖 ADM | Granja Sustentável
+🐔 Produção por ciclo de 24 horas:
+Comum: 1 ovo e 0,8 ração/dia.
+Premium: 3 ovos e 2 rações/dia.
+Rara: 5 ovos e 3 rações/dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","262","0","0","","","","0","","","","",""
+"quais são as raças","none","🤖 ADM | Granja Sustentável
+🐔 Produção por ciclo de 24 horas:
+Comum: 1 ovo e 0,8 ração/dia.
+Premium: 3 ovos e 2 rações/dia.
+Rara: 5 ovos e 3 rações/dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","263","0","0","","","","0","","","","",""
+"minha galinha não botou","none","🤖 ADM | Granja Sustentável
+🐔 Produção por ciclo de 24 horas:
+Comum: 1 ovo e 0,8 ração/dia.
+Premium: 3 ovos e 2 rações/dia.
+Rara: 5 ovos e 3 rações/dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","264","0","0","","","","0","","","","",""
+"como cuidar das galinhas","none","🤖 ADM | Granja Sustentável
+🐔 Produção por ciclo de 24 horas:
+Comum: 1 ovo e 0,8 ração/dia.
+Premium: 3 ovos e 2 rações/dia.
+Rara: 5 ovos e 3 rações/dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","265","0","0","","","","0","","","","",""
+"qual a diferença das raças","none","🤖 ADM | Granja Sustentável
+🐔 Produção por ciclo de 24 horas:
+Comum: 1 ovo e 0,8 ração/dia.
+Premium: 3 ovos e 2 rações/dia.
+Rara: 5 ovos e 3 rações/dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","266","0","0","","","","0","","","","",""
+"como vejo minhas galinhas","none","🤖 ADM | Granja Sustentável
+🐔 Produção por ciclo de 24 horas:
+Comum: 1 ovo e 0,8 ração/dia.
+Premium: 3 ovos e 2 rações/dia.
+Rara: 5 ovos e 3 rações/dia.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","267","0","0","","","","0","","","","",""
+"quanto produz a comum","none","🤖 ADM | Granja Sustentável
+🐔 Galinha comum: 1 ovo por dia, consome 0,8 ração por dia. Vida prevista: 183 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","268","0","0","","","","0","","","","",""
+"quanto come galinha comum","none","🤖 ADM | Granja Sustentável
+🐔 Galinha comum: 1 ovo por dia, consome 0,8 ração por dia. Vida prevista: 183 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","269","0","0","","","","0","","","","",""
+"galinha comum dura quantos dias","none","🤖 ADM | Granja Sustentável
+🐔 Galinha comum: 1 ovo por dia, consome 0,8 ração por dia. Vida prevista: 183 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","270","0","0","","","","0","","","","",""
+"como funciona galinha comum","none","🤖 ADM | Granja Sustentável
+🐔 Galinha comum: 1 ovo por dia, consome 0,8 ração por dia. Vida prevista: 183 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","271","0","0","","","","0","","","","",""
+"quais dados da comum","none","🤖 ADM | Granja Sustentável
+🐔 Galinha comum: 1 ovo por dia, consome 0,8 ração por dia. Vida prevista: 183 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","272","0","0","","","","0","","","","",""
+"vale a pena a comum","none","🤖 ADM | Granja Sustentável
+🐔 Galinha comum: 1 ovo por dia, consome 0,8 ração por dia. Vida prevista: 183 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","273","0","0","","","","0","","","","",""
+"comum bota quantos ovos","none","🤖 ADM | Granja Sustentável
+🐔 Galinha comum: 1 ovo por dia, consome 0,8 ração por dia. Vida prevista: 183 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","274","0","0","","","","0","","","","",""
+"quanto produz a premium","none","🤖 ADM | Granja Sustentável
+✨ Galinha Premium: 3 ovos por dia, consome 2 rações por dia. Vida prevista: 221 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","275","0","0","","","","0","","","","",""
+"quanto come galinha premium","none","🤖 ADM | Granja Sustentável
+✨ Galinha Premium: 3 ovos por dia, consome 2 rações por dia. Vida prevista: 221 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","276","0","0","","","","0","","","","",""
+"premium dura quantos dias","none","🤖 ADM | Granja Sustentável
+✨ Galinha Premium: 3 ovos por dia, consome 2 rações por dia. Vida prevista: 221 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","277","0","0","","","","0","","","","",""
+"como funciona galinha premium","none","🤖 ADM | Granja Sustentável
+✨ Galinha Premium: 3 ovos por dia, consome 2 rações por dia. Vida prevista: 221 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","278","0","0","","","","0","","","","",""
+"quais dados da premium","none","🤖 ADM | Granja Sustentável
+✨ Galinha Premium: 3 ovos por dia, consome 2 rações por dia. Vida prevista: 221 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","279","0","0","","","","0","","","","",""
+"qual produção premium","none","🤖 ADM | Granja Sustentável
+✨ Galinha Premium: 3 ovos por dia, consome 2 rações por dia. Vida prevista: 221 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","280","0","0","","","","0","","","","",""
+"premium bota quantos ovos","none","🤖 ADM | Granja Sustentável
+✨ Galinha Premium: 3 ovos por dia, consome 2 rações por dia. Vida prevista: 221 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","281","0","0","","","","0","","","","",""
+"quanto produz a rara","none","🤖 ADM | Granja Sustentável
+💎 Galinha Rara: 5 ovos por dia, consome 3 rações por dia. Vida prevista: 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","282","0","0","","","","0","","","","",""
+"quanto come galinha rara","none","🤖 ADM | Granja Sustentável
+💎 Galinha Rara: 5 ovos por dia, consome 3 rações por dia. Vida prevista: 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","283","0","0","","","","0","","","","",""
+"rara dura quantos dias","none","🤖 ADM | Granja Sustentável
+💎 Galinha Rara: 5 ovos por dia, consome 3 rações por dia. Vida prevista: 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","284","0","0","","","","0","","","","",""
+"como funciona galinha rara","none","🤖 ADM | Granja Sustentável
+💎 Galinha Rara: 5 ovos por dia, consome 3 rações por dia. Vida prevista: 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","285","0","0","","","","0","","","","",""
+"quais dados da rara","none","🤖 ADM | Granja Sustentável
+💎 Galinha Rara: 5 ovos por dia, consome 3 rações por dia. Vida prevista: 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","286","0","0","","","","0","","","","",""
+"qual produção rara","none","🤖 ADM | Granja Sustentável
+💎 Galinha Rara: 5 ovos por dia, consome 3 rações por dia. Vida prevista: 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","287","0","0","","","","0","","","","",""
+"rara bota quantos ovos","none","🤖 ADM | Granja Sustentável
+💎 Galinha Rara: 5 ovos por dia, consome 3 rações por dia. Vida prevista: 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","288","0","0","","","","0","","","","",""
+"como pagar com pix","none","🤖 ADM | Granja Sustentável
+💳 Compras de ração e galinhas são feitas pela opção de pagamento Pix dentro do jogo. Não envie Pix para números compartilhados no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","289","0","0","","","","0","","","","",""
+"pix não caiu","none","🤖 ADM | Granja Sustentável
+💳 Compras de ração e galinhas são feitas pela opção de pagamento Pix dentro do jogo. Não envie Pix para números compartilhados no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","290","0","0","","","","0","","","","",""
+"quais compras aceitam pix","none","🤖 ADM | Granja Sustentável
+💳 Compras de ração e galinhas são feitas pela opção de pagamento Pix dentro do jogo. Não envie Pix para números compartilhados no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","291","0","0","","","","0","","","","",""
+"posso depositar dinheiro na carteira","none","🤖 ADM | Granja Sustentável
+💳 Compras de ração e galinhas são feitas pela opção de pagamento Pix dentro do jogo. Não envie Pix para números compartilhados no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","292","0","0","","","","0","","","","",""
+"como comprar com pix","none","🤖 ADM | Granja Sustentável
+💳 Compras de ração e galinhas são feitas pela opção de pagamento Pix dentro do jogo. Não envie Pix para números compartilhados no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","293","0","0","","","","0","","","","",""
+"pix é seguro","none","🤖 ADM | Granja Sustentável
+💳 Compras de ração e galinhas são feitas pela opção de pagamento Pix dentro do jogo. Não envie Pix para números compartilhados no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","294","0","0","","","","0","","","","",""
+"como pagar galinha","none","🤖 ADM | Granja Sustentável
+💳 Compras de ração e galinhas são feitas pela opção de pagamento Pix dentro do jogo. Não envie Pix para números compartilhados no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","295","0","0","","","","0","","","","",""
+"onde aparece pagamento pix","none","🤖 ADM | Granja Sustentável
+💳 Compras de ração e galinhas são feitas pela opção de pagamento Pix dentro do jogo. Não envie Pix para números compartilhados no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","296","0","0","","","","0","","","","",""
+"quanto custa o vip","none","🤖 ADM | Granja Sustentável
+👑 Pacote VIP permanente: R$ 49,99. Inclui 1 galinha Premium, 6 unidades de ração e 5 ovos. Consulte a loja para disponibilidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","297","0","0","","","","0","","","","",""
+"vip é permanente","none","🤖 ADM | Granja Sustentável
+👑 Pacote VIP permanente: R$ 49,99. Inclui 1 galinha Premium, 6 unidades de ração e 5 ovos. Consulte a loja para disponibilidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","298","0","0","","","","0","","","","",""
+"o que vem no pacote vip","none","🤖 ADM | Granja Sustentável
+👑 Pacote VIP permanente: R$ 49,99. Inclui 1 galinha Premium, 6 unidades de ração e 5 ovos. Consulte a loja para disponibilidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","299","0","0","","","","0","","","","",""
+"como comprar vip","none","🤖 ADM | Granja Sustentável
+👑 Pacote VIP permanente: R$ 49,99. Inclui 1 galinha Premium, 6 unidades de ração e 5 ovos. Consulte a loja para disponibilidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","300","0","0","","","","0","","","","",""
+"quais benefícios vip","none","🤖 ADM | Granja Sustentável
+👑 Pacote VIP permanente: R$ 49,99. Inclui 1 galinha Premium, 6 unidades de ração e 5 ovos. Consulte a loja para disponibilidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","301","0","0","","","","0","","","","",""
+"vip inclui galinha","none","🤖 ADM | Granja Sustentável
+👑 Pacote VIP permanente: R$ 49,99. Inclui 1 galinha Premium, 6 unidades de ração e 5 ovos. Consulte a loja para disponibilidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","302","0","0","","","","0","","","","",""
+"o vip vence","none","🤖 ADM | Granja Sustentável
+👑 Pacote VIP permanente: R$ 49,99. Inclui 1 galinha Premium, 6 unidades de ração e 5 ovos. Consulte a loja para disponibilidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","303","0","0","","","","0","","","","",""
+"qual preço do pacote vip","none","🤖 ADM | Granja Sustentável
+👑 Pacote VIP permanente: R$ 49,99. Inclui 1 galinha Premium, 6 unidades de ração e 5 ovos. Consulte a loja para disponibilidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","304","0","0","","","","0","","","","",""
+"como comprar acessórios","none","🤖 ADM | Granja Sustentável
+🎩 Acessórios do galo: coroa, colar, laço, óculos, chapéu e cachecol. Preço informado: R$ 2,50 cada, sujeito à disponibilidade na loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","305","0","0","","","","0","","","","",""
+"quanto custa a coroa","none","🤖 ADM | Granja Sustentável
+🎩 Acessórios do galo: coroa, colar, laço, óculos, chapéu e cachecol. Preço informado: R$ 2,50 cada, sujeito à disponibilidade na loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","306","0","0","","","","0","","","","",""
+"tem chapéu para o galo","none","🤖 ADM | Granja Sustentável
+🎩 Acessórios do galo: coroa, colar, laço, óculos, chapéu e cachecol. Preço informado: R$ 2,50 cada, sujeito à disponibilidade na loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","307","0","0","","","","0","","","","",""
+"quais acessórios existem","none","🤖 ADM | Granja Sustentável
+🎩 Acessórios do galo: coroa, colar, laço, óculos, chapéu e cachecol. Preço informado: R$ 2,50 cada, sujeito à disponibilidade na loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","308","0","0","","","","0","","","","",""
+"onde coloco os acessórios","none","🤖 ADM | Granja Sustentável
+🎩 Acessórios do galo: coroa, colar, laço, óculos, chapéu e cachecol. Preço informado: R$ 2,50 cada, sujeito à disponibilidade na loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","309","0","0","","","","0","","","","",""
+"tem óculos para galo","none","🤖 ADM | Granja Sustentável
+🎩 Acessórios do galo: coroa, colar, laço, óculos, chapéu e cachecol. Preço informado: R$ 2,50 cada, sujeito à disponibilidade na loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","310","0","0","","","","0","","","","",""
+"qual valor dos acessórios","none","🤖 ADM | Granja Sustentável
+🎩 Acessórios do galo: coroa, colar, laço, óculos, chapéu e cachecol. Preço informado: R$ 2,50 cada, sujeito à disponibilidade na loja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","311","0","0","","","","0","","","","",""
+"como instalar o aplicativo","none","🤖 ADM | Granja Sustentável
+📲 No Android, abra o site da granja no Chrome e procure Instalar app ou Adicionar à tela inicial. No iPhone, abra no Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","312","0","0","","","","0","","","","",""
+"tem app para android","none","🤖 ADM | Granja Sustentável
+📲 No Android, abra o site da granja no Chrome e procure Instalar app ou Adicionar à tela inicial. No iPhone, abra no Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","313","0","0","","","","0","","","","",""
+"tem aplicativo para iphone","none","🤖 ADM | Granja Sustentável
+📲 No Android, abra o site da granja no Chrome e procure Instalar app ou Adicionar à tela inicial. No iPhone, abra no Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","314","0","0","","","","0","","","","",""
+"como criar atalho na tela","none","🤖 ADM | Granja Sustentável
+📲 No Android, abra o site da granja no Chrome e procure Instalar app ou Adicionar à tela inicial. No iPhone, abra no Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","315","0","0","","","","0","","","","",""
+"como usar pelo celular","none","🤖 ADM | Granja Sustentável
+📲 No Android, abra o site da granja no Chrome e procure Instalar app ou Adicionar à tela inicial. No iPhone, abra no Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","316","0","0","","","","0","","","","",""
+"posso instalar a granja","none","🤖 ADM | Granja Sustentável
+📲 No Android, abra o site da granja no Chrome e procure Instalar app ou Adicionar à tela inicial. No iPhone, abra no Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","317","0","0","","","","0","","","","",""
+"onde baixo o aplicativo","none","🤖 ADM | Granja Sustentável
+📲 No Android, abra o site da granja no Chrome e procure Instalar app ou Adicionar à tela inicial. No iPhone, abra no Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","318","0","0","","","","0","","","","",""
+"não consigo entrar na conta","none","🤖 ADM | Granja Sustentável
+🔐 Para entrar, abra o site oficial e use o e-mail e a senha cadastrados. Nunca compartilhe sua senha nem códigos de verificação no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","319","0","0","","","","0","","","","",""
+"como fazer login","none","🤖 ADM | Granja Sustentável
+🔐 Para entrar, abra o site oficial e use o e-mail e a senha cadastrados. Nunca compartilhe sua senha nem códigos de verificação no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","320","0","0","","","","0","","","","",""
+"onde faço login","none","🤖 ADM | Granja Sustentável
+🔐 Para entrar, abra o site oficial e use o e-mail e a senha cadastrados. Nunca compartilhe sua senha nem códigos de verificação no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","321","0","0","","","","0","","","","",""
+"erro no acesso","none","🤖 ADM | Granja Sustentável
+🔐 Para entrar, abra o site oficial e use o e-mail e a senha cadastrados. Nunca compartilhe sua senha nem códigos de verificação no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","322","0","0","","","","0","","","","",""
+"como acessar minha fazenda","none","🤖 ADM | Granja Sustentável
+🔐 Para entrar, abra o site oficial e use o e-mail e a senha cadastrados. Nunca compartilhe sua senha nem códigos de verificação no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","323","0","0","","","","0","","","","",""
+"esqueci o email da conta","none","🤖 ADM | Granja Sustentável
+🔐 Para entrar, abra o site oficial e use o e-mail e a senha cadastrados. Nunca compartilhe sua senha nem códigos de verificação no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","324","0","0","","","","0","","","","",""
+"não abre meu login","none","🤖 ADM | Granja Sustentável
+🔐 Para entrar, abra o site oficial e use o e-mail e a senha cadastrados. Nunca compartilhe sua senha nem códigos de verificação no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","325","0","0","","","","0","","","","",""
+"esqueci minha senha","none","🤖 ADM | Granja Sustentável
+🔑 Esqueceu a senha? Use a opção de recuperação de senha na tela de login da granja. Não envie senhas no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","326","0","0","","","","0","","","","",""
+"como redefinir senha","none","🤖 ADM | Granja Sustentável
+🔑 Esqueceu a senha? Use a opção de recuperação de senha na tela de login da granja. Não envie senhas no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","327","0","0","","","","0","","","","",""
+"como trocar a senha","none","🤖 ADM | Granja Sustentável
+🔑 Esqueceu a senha? Use a opção de recuperação de senha na tela de login da granja. Não envie senhas no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","328","0","0","","","","0","","","","",""
+"não lembro a senha","none","🤖 ADM | Granja Sustentável
+🔑 Esqueceu a senha? Use a opção de recuperação de senha na tela de login da granja. Não envie senhas no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","329","0","0","","","","0","","","","",""
+"como recuperar acesso","none","🤖 ADM | Granja Sustentável
+🔑 Esqueceu a senha? Use a opção de recuperação de senha na tela de login da granja. Não envie senhas no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","330","0","0","","","","0","","","","",""
+"o email de recuperação não chegou","none","🤖 ADM | Granja Sustentável
+🔑 Esqueceu a senha? Use a opção de recuperação de senha na tela de login da granja. Não envie senhas no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","331","0","0","","","","0","","","","",""
+"como mudar senha da conta","none","🤖 ADM | Granja Sustentável
+🔑 Esqueceu a senha? Use a opção de recuperação de senha na tela de login da granja. Não envie senhas no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","332","0","0","","","","0","","","","",""
+"como criar conta","none","🤖 ADM | Granja Sustentável
+📝 Abra o site oficial, escolha Criar conta e siga as instruções. Verifique seu e-mail se a confirmação for solicitada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","333","0","0","","","","0","","","","",""
+"como se cadastrar","none","🤖 ADM | Granja Sustentável
+📝 Abra o site oficial, escolha Criar conta e siga as instruções. Verifique seu e-mail se a confirmação for solicitada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","334","0","0","","","","0","","","","",""
+"não recebi email de confirmação","none","🤖 ADM | Granja Sustentável
+📝 Abra o site oficial, escolha Criar conta e siga as instruções. Verifique seu e-mail se a confirmação for solicitada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","335","0","0","","","","0","","","","",""
+"como confirmar cadastro","none","🤖 ADM | Granja Sustentável
+📝 Abra o site oficial, escolha Criar conta e siga as instruções. Verifique seu e-mail se a confirmação for solicitada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","336","0","0","","","","0","","","","",""
+"onde faço registro","none","🤖 ADM | Granja Sustentável
+📝 Abra o site oficial, escolha Criar conta e siga as instruções. Verifique seu e-mail se a confirmação for solicitada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","337","0","0","","","","0","","","","",""
+"quero abrir conta","none","🤖 ADM | Granja Sustentável
+📝 Abra o site oficial, escolha Criar conta e siga as instruções. Verifique seu e-mail se a confirmação for solicitada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","338","0","0","","","","0","","","","",""
+"cadastro não funciona","none","🤖 ADM | Granja Sustentável
+📝 Abra o site oficial, escolha Criar conta e siga as instruções. Verifique seu e-mail se a confirmação for solicitada.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","339","0","0","","","","0","","","","",""
+"quero falar com administrador","none","🤖 ADM | Granja Sustentável
+🛠️ Precisa de ajuda? Descreva o problema para a administração do grupo, sem divulgar senhas, dados bancários ou códigos de acesso.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","340","0","0","","","","0","","","","",""
+"preciso de ajuda humana","none","🤖 ADM | Granja Sustentável
+🛠️ Precisa de ajuda? Descreva o problema para a administração do grupo, sem divulgar senhas, dados bancários ou códigos de acesso.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","341","0","0","","","","0","","","","",""
+"onde reporto um erro","none","🤖 ADM | Granja Sustentável
+🛠️ Precisa de ajuda? Descreva o problema para a administração do grupo, sem divulgar senhas, dados bancários ou códigos de acesso.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","342","0","0","","","","0","","","","",""
+"meu pagamento sumiu","none","🤖 ADM | Granja Sustentável
+🛠️ Precisa de ajuda? Descreva o problema para a administração do grupo, sem divulgar senhas, dados bancários ou códigos de acesso.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","343","0","0","","","","0","","","","",""
+"quem resolve problema da conta","none","🤖 ADM | Granja Sustentável
+🛠️ Precisa de ajuda? Descreva o problema para a administração do grupo, sem divulgar senhas, dados bancários ou códigos de acesso.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","344","0","0","","","","0","","","","",""
+"como chamar suporte","none","🤖 ADM | Granja Sustentável
+🛠️ Precisa de ajuda? Descreva o problema para a administração do grupo, sem divulgar senhas, dados bancários ou códigos de acesso.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","345","0","0","","","","0","","","","",""
+"quero atendimento","none","🤖 ADM | Granja Sustentável
+🛠️ Precisa de ajuda? Descreva o problema para a administração do grupo, sem divulgar senhas, dados bancários ou códigos de acesso.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","346","0","0","","","","0","","","","",""
+"quais são as regras do grupo","none","🤖 ADM | Granja Sustentável
+📜 Regras da comunidade: respeito entre participantes, nada de spam, golpes ou links suspeitos. Não compartilhe senhas, códigos nem dados bancários. Para ajuda, use !suporte.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","347","0","0","","","","0","","","","",""
+"posso mandar links","none","🤖 ADM | Granja Sustentável
+📜 Regras da comunidade: respeito entre participantes, nada de spam, golpes ou links suspeitos. Não compartilhe senhas, códigos nem dados bancários. Para ajuda, use !suporte.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","348","0","0","","","","0","","","","",""
+"é permitido xingar","none","🤖 ADM | Granja Sustentável
+📜 Regras da comunidade: respeito entre participantes, nada de spam, golpes ou links suspeitos. Não compartilhe senhas, códigos nem dados bancários. Para ajuda, use !suporte.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","349","0","0","","","","0","","","","",""
+"pode divulgar propaganda","none","🤖 ADM | Granja Sustentável
+📜 Regras da comunidade: respeito entre participantes, nada de spam, golpes ou links suspeitos. Não compartilhe senhas, códigos nem dados bancários. Para ajuda, use !suporte.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","350","0","0","","","","0","","","","",""
+"como evitar punição","none","🤖 ADM | Granja Sustentável
+📜 Regras da comunidade: respeito entre participantes, nada de spam, golpes ou links suspeitos. Não compartilhe senhas, códigos nem dados bancários. Para ajuda, use !suporte.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","351","0","0","","","","0","","","","",""
+"o que não pode no grupo","none","🤖 ADM | Granja Sustentável
+📜 Regras da comunidade: respeito entre participantes, nada de spam, golpes ou links suspeitos. Não compartilhe senhas, códigos nem dados bancários. Para ajuda, use !suporte.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","352","0","0","","","","0","","","","",""
+"regras da comunidade","none","🤖 ADM | Granja Sustentável
+📜 Regras da comunidade: respeito entre participantes, nada de spam, golpes ou links suspeitos. Não compartilhe senhas, códigos nem dados bancários. Para ajuda, use !suporte.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","353","0","0","","","","0","","","","",""
+"como evitar golpes","none","🤖 ADM | Granja Sustentável
+🔒 Atenção: não envie senha, código de confirmação ou dados bancários no grupo. Faça pagamentos apenas pelo fluxo oficial do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","354","0","0","","","","0","","","","",""
+"alguém pediu minha senha","none","🤖 ADM | Granja Sustentável
+🔒 Atenção: não envie senha, código de confirmação ou dados bancários no grupo. Faça pagamentos apenas pelo fluxo oficial do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","355","0","0","","","","0","","","","",""
+"posso mandar código de confirmação","none","🤖 ADM | Granja Sustentável
+🔒 Atenção: não envie senha, código de confirmação ou dados bancários no grupo. Faça pagamentos apenas pelo fluxo oficial do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","356","0","0","","","","0","","","","",""
+"como proteger minha conta","none","🤖 ADM | Granja Sustentável
+🔒 Atenção: não envie senha, código de confirmação ou dados bancários no grupo. Faça pagamentos apenas pelo fluxo oficial do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","357","0","0","","","","0","","","","",""
+"é seguro compartilhar pix","none","🤖 ADM | Granja Sustentável
+🔒 Atenção: não envie senha, código de confirmação ou dados bancários no grupo. Faça pagamentos apenas pelo fluxo oficial do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","358","0","0","","","","0","","","","",""
+"o que fazer com mensagem suspeita","none","🤖 ADM | Granja Sustentável
+🔒 Atenção: não envie senha, código de confirmação ou dados bancários no grupo. Faça pagamentos apenas pelo fluxo oficial do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","359","0","0","","","","0","","","","",""
+"como denunciar fraude","none","🤖 ADM | Granja Sustentável
+🔒 Atenção: não envie senha, código de confirmação ou dados bancários no grupo. Faça pagamentos apenas pelo fluxo oficial do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","360","0","0","","","","0","","","","",""
+"de quanto em quanto tempo produz","none","🤖 ADM | Granja Sustentável
+⏰ Cada ciclo de produção da granja corresponde a 24 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","361","0","0","","","","0","","","","",""
+"o ciclo é de 24 horas","none","🤖 ADM | Granja Sustentável
+⏰ Cada ciclo de produção da granja corresponde a 24 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","362","0","0","","","","0","","","","",""
+"quando minhas galinhas botam","none","🤖 ADM | Granja Sustentável
+⏰ Cada ciclo de produção da granja corresponde a 24 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","363","0","0","","","","0","","","","",""
+"qual horário da produção","none","🤖 ADM | Granja Sustentável
+⏰ Cada ciclo de produção da granja corresponde a 24 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","364","0","0","","","","0","","","","",""
+"quantos ciclos por dia","none","🤖 ADM | Granja Sustentável
+⏰ Cada ciclo de produção da granja corresponde a 24 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","365","0","0","","","","0","","","","",""
+"produção demora quanto","none","🤖 ADM | Granja Sustentável
+⏰ Cada ciclo de produção da granja corresponde a 24 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","366","0","0","","","","0","","","","",""
+"quando atualiza os ovos","none","🤖 ADM | Granja Sustentável
+⏰ Cada ciclo de produção da granja corresponde a 24 horas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","367","0","0","","","","0","","","","",""
+"o que acontece sem ração","none","🤖 ADM | Granja Sustentável
+⚠️ Se faltar ração, a galinha para de produzir. Após 12 horas sem alimentação, pode morrer e desaparecer da lista de galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","368","0","0","","","","0","","","","",""
+"minha galinha ficou sem comida","none","🤖 ADM | Granja Sustentável
+⚠️ Se faltar ração, a galinha para de produzir. Após 12 horas sem alimentação, pode morrer e desaparecer da lista de galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","369","0","0","","","","0","","","","",""
+"quanto tempo sem ração até morrer","none","🤖 ADM | Granja Sustentável
+⚠️ Se faltar ração, a galinha para de produzir. Após 12 horas sem alimentação, pode morrer e desaparecer da lista de galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","370","0","0","","","","0","","","","",""
+"galinha morre sem alimento","none","🤖 ADM | Granja Sustentável
+⚠️ Se faltar ração, a galinha para de produzir. Após 12 horas sem alimentação, pode morrer e desaparecer da lista de galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","371","0","0","","","","0","","","","",""
+"por que minha galinha desapareceu","none","🤖 ADM | Granja Sustentável
+⚠️ Se faltar ração, a galinha para de produzir. Após 12 horas sem alimentação, pode morrer e desaparecer da lista de galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","372","0","0","","","","0","","","","",""
+"ração acabou o que faço","none","🤖 ADM | Granja Sustentável
+⚠️ Se faltar ração, a galinha para de produzir. Após 12 horas sem alimentação, pode morrer e desaparecer da lista de galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","373","0","0","","","","0","","","","",""
+"galinha não está produzindo","none","🤖 ADM | Granja Sustentável
+⚠️ Se faltar ração, a galinha para de produzir. Após 12 horas sem alimentação, pode morrer e desaparecer da lista de galinhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","374","0","0","","","","0","","","","",""
+"onde vejo meu saldo","none","🤖 ADM | Granja Sustentável
+💰 A carteira mostra o saldo gerado no jogo. Para solicitar retirada, abra a seção Carteira. Digite !saque para conhecer as condições.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","375","0","0","","","","0","","","","",""
+"como funciona a carteira","none","🤖 ADM | Granja Sustentável
+💰 A carteira mostra o saldo gerado no jogo. Para solicitar retirada, abra a seção Carteira. Digite !saque para conhecer as condições.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","376","0","0","","","","0","","","","",""
+"quanto tenho na carteira","none","🤖 ADM | Granja Sustentável
+💰 A carteira mostra o saldo gerado no jogo. Para solicitar retirada, abra a seção Carteira. Digite !saque para conhecer as condições.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","377","0","0","","","","0","","","","",""
+"como consultar dinheiro","none","🤖 ADM | Granja Sustentável
+💰 A carteira mostra o saldo gerado no jogo. Para solicitar retirada, abra a seção Carteira. Digite !saque para conhecer as condições.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","378","0","0","","","","0","","","","",""
+"meu saldo não aparece","none","🤖 ADM | Granja Sustentável
+💰 A carteira mostra o saldo gerado no jogo. Para solicitar retirada, abra a seção Carteira. Digite !saque para conhecer as condições.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","379","0","0","","","","0","","","","",""
+"onde fica o dinheiro da venda","none","🤖 ADM | Granja Sustentável
+💰 A carteira mostra o saldo gerado no jogo. Para solicitar retirada, abra a seção Carteira. Digite !saque para conhecer as condições.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","380","0","0","","","","0","","","","",""
+"saldo está errado","none","🤖 ADM | Granja Sustentável
+💰 A carteira mostra o saldo gerado no jogo. Para solicitar retirada, abra a seção Carteira. Digite !saque para conhecer as condições.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","381","0","0","","","","0","","","","",""
+"quanto custa acelerar incubação","none","🤖 ADM | Granja Sustentável
+⚡ Aceleração de incubação: R$ 5,00 via Pix. Utilize apenas o botão da incubadora no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","382","0","0","","","","0","","","","",""
+"como acelerar o ovo","none","🤖 ADM | Granja Sustentável
+⚡ Aceleração de incubação: R$ 5,00 via Pix. Utilize apenas o botão da incubadora no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","383","0","0","","","","0","","","","",""
+"posso chocar imediatamente","none","🤖 ADM | Granja Sustentável
+⚡ Aceleração de incubação: R$ 5,00 via Pix. Utilize apenas o botão da incubadora no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","384","0","0","","","","0","","","","",""
+"pagar cinco reais para acelerar","none","🤖 ADM | Granja Sustentável
+⚡ Aceleração de incubação: R$ 5,00 via Pix. Utilize apenas o botão da incubadora no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","385","0","0","","","","0","","","","",""
+"acelerar incubadora por pix","none","🤖 ADM | Granja Sustentável
+⚡ Aceleração de incubação: R$ 5,00 via Pix. Utilize apenas o botão da incubadora no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","386","0","0","","","","0","","","","",""
+"como antecipar o pintinho","none","🤖 ADM | Granja Sustentável
+⚡ Aceleração de incubação: R$ 5,00 via Pix. Utilize apenas o botão da incubadora no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","387","0","0","","","","0","","","","",""
+"qual preço da aceleração","none","🤖 ADM | Granja Sustentável
+⚡ Aceleração de incubação: R$ 5,00 via Pix. Utilize apenas o botão da incubadora no jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","388","0","0","","","","0","","","","",""
+"preço das galinhas","none","🤖 ADM | Granja Sustentável
+🛒 Galinhas na loja:
+Comum: R$ 4,99
+Premium: R$ 64,99
+Rara: R$ 140,99
+Ração: R$ 0,50/unidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","389","0","0","","","","0","","","","",""
+"quanto custa galinha comum","none","🤖 ADM | Granja Sustentável
+🛒 Galinhas na loja:
+Comum: R$ 4,99
+Premium: R$ 64,99
+Rara: R$ 140,99
+Ração: R$ 0,50/unidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","390","0","0","","","","0","","","","",""
+"qual valor da premium","none","🤖 ADM | Granja Sustentável
+🛒 Galinhas na loja:
+Comum: R$ 4,99
+Premium: R$ 64,99
+Rara: R$ 140,99
+Ração: R$ 0,50/unidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","391","0","0","","","","0","","","","",""
+"quanto custa a rara","none","🤖 ADM | Granja Sustentável
+🛒 Galinhas na loja:
+Comum: R$ 4,99
+Premium: R$ 64,99
+Rara: R$ 140,99
+Ração: R$ 0,50/unidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","392","0","0","","","","0","","","","",""
+"quero saber tabela de preços","none","🤖 ADM | Granja Sustentável
+🛒 Galinhas na loja:
+Comum: R$ 4,99
+Premium: R$ 64,99
+Rara: R$ 140,99
+Ração: R$ 0,50/unidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","393","0","0","","","","0","","","","",""
+"valores da loja","none","🤖 ADM | Granja Sustentável
+🛒 Galinhas na loja:
+Comum: R$ 4,99
+Premium: R$ 64,99
+Rara: R$ 140,99
+Ração: R$ 0,50/unidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","394","0","0","","","","0","","","","",""
+"quais são os preços","none","🤖 ADM | Granja Sustentável
+🛒 Galinhas na loja:
+Comum: R$ 4,99
+Premium: R$ 64,99
+Rara: R$ 140,99
+Ração: R$ 0,50/unidade.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","395","0","0","","","","0","","","","",""
+"ajuda por favor","none","🤖 ADM | Granja Sustentável
+🤖 Sou o ADM! Digite !menu para ver os comandos. Se o problema for com conta, pagamento ou saque, fale com a administração do grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","396","0","0","","","","0","","","","",""
+"pode me ajudar","none","🤖 ADM | Granja Sustentável
+🤖 Sou o ADM! Digite !menu para ver os comandos. Se o problema for com conta, pagamento ou saque, fale com a administração do grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","397","0","0","","","","0","","","","",""
+"estou perdido","none","🤖 ADM | Granja Sustentável
+🤖 Sou o ADM! Digite !menu para ver os comandos. Se o problema for com conta, pagamento ou saque, fale com a administração do grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","398","0","0","","","","0","","","","",""
+"não sei o que fazer","none","🤖 ADM | Granja Sustentável
+🤖 Sou o ADM! Digite !menu para ver os comandos. Se o problema for com conta, pagamento ou saque, fale com a administração do grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","399","0","0","","","","0","","","","",""
+"preciso de orientação","none","🤖 ADM | Granja Sustentável
+🤖 Sou o ADM! Digite !menu para ver os comandos. Se o problema for com conta, pagamento ou saque, fale com a administração do grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","400","0","0","","","","0","","","","",""
+"quero tirar dúvida","none","🤖 ADM | Granja Sustentável
+🤖 Sou o ADM! Digite !menu para ver os comandos. Se o problema for com conta, pagamento ou saque, fale com a administração do grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","401","0","0","","","","0","","","","",""
+"não entendi o jogo","none","🤖 ADM | Granja Sustentável
+🤖 Sou o ADM! Digite !menu para ver os comandos. Se o problema for com conta, pagamento ou saque, fale com a administração do grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","402","0","0","","","","0","","","","",""
+"qual nome do grupo","none","🤖 ADM | Granja Sustentável
+🐔🌱 Este é o grupo da comunidade Granja Sustentável. Digite !menu para consultar os comandos do ADM.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","403","0","0","","","","0","","","","",""
+"esse é o grupo oficial","none","🤖 ADM | Granja Sustentável
+🐔🌱 Este é o grupo da comunidade Granja Sustentável. Digite !menu para consultar os comandos do ADM.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","404","0","0","","","","0","","","","",""
+"como entrar na comunidade","none","🤖 ADM | Granja Sustentável
+🐔🌱 Este é o grupo da comunidade Granja Sustentável. Digite !menu para consultar os comandos do ADM.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","405","0","0","","","","0","","","","",""
+"qual o grupo da granja","none","🤖 ADM | Granja Sustentável
+🐔🌱 Este é o grupo da comunidade Granja Sustentável. Digite !menu para consultar os comandos do ADM.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","406","0","0","","","","0","","","","",""
+"onde encontro a comunidade","none","🤖 ADM | Granja Sustentável
+🐔🌱 Este é o grupo da comunidade Granja Sustentável. Digite !menu para consultar os comandos do ADM.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","407","0","0","","","","0","","","","",""
+"grupo oficial granja sustentável","none","🤖 ADM | Granja Sustentável
+🐔🌱 Este é o grupo da comunidade Granja Sustentável. Digite !menu para consultar os comandos do ADM.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","408","0","0","","","","0","","","","",""
+"tem grupo de jogadores","none","🤖 ADM | Granja Sustentável
+🐔🌱 Este é o grupo da comunidade Granja Sustentável. Digite !menu para consultar os comandos do ADM.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","409","0","0","","","","0","","","","",""
+"o que mudou no jogo","none","🤖 ADM | Granja Sustentável
+📢 Para saber das novidades da Granja Sustentável, acompanhe os avisos da administração e a versão atual do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","410","0","0","","","","0","","","","",""
+"teve atualização","none","🤖 ADM | Granja Sustentável
+📢 Para saber das novidades da Granja Sustentável, acompanhe os avisos da administração e a versão atual do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","411","0","0","","","","0","","","","",""
+"quais novidades","none","🤖 ADM | Granja Sustentável
+📢 Para saber das novidades da Granja Sustentável, acompanhe os avisos da administração e a versão atual do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","412","0","0","","","","0","","","","",""
+"qual versão atual","none","🤖 ADM | Granja Sustentável
+📢 Para saber das novidades da Granja Sustentável, acompanhe os avisos da administração e a versão atual do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","413","0","0","","","","0","","","","",""
+"o aplicativo atualizou","none","🤖 ADM | Granja Sustentável
+📢 Para saber das novidades da Granja Sustentável, acompanhe os avisos da administração e a versão atual do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","414","0","0","","","","0","","","","",""
+"novas funções da granja","none","🤖 ADM | Granja Sustentável
+📢 Para saber das novidades da Granja Sustentável, acompanhe os avisos da administração e a versão atual do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","415","0","0","","","","0","","","","",""
+"mudanças recentes","none","🤖 ADM | Granja Sustentável
+📢 Para saber das novidades da Granja Sustentável, acompanhe os avisos da administração e a versão atual do jogo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","416","0","0","","","","0","","","","",""
+"como vender ovo","none","🤖 ADM | Granja Sustentável
+🥚 Para vender ovos, abra a granja e toque em Vender ovos. O valor atual informado é R$ 0,40 por ovo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","417","0","0","","","","0","","","","",""
+"como vender meus produtos","none","🤖 ADM | Granja Sustentável
+🥚 Para vender ovos, abra a granja e toque em Vender ovos. O valor atual informado é R$ 0,40 por ovo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","418","0","0","","","","0","","","","",""
+"onde fica o botão vender","none","🤖 ADM | Granja Sustentável
+🥚 Para vender ovos, abra a granja e toque em Vender ovos. O valor atual informado é R$ 0,40 por ovo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","419","0","0","","","","0","","","","",""
+"como receber por ovos","none","🤖 ADM | Granja Sustentável
+🥚 Para vender ovos, abra a granja e toque em Vender ovos. O valor atual informado é R$ 0,40 por ovo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","420","0","0","","","","0","","","","",""
+"posso vender galinhas","none","🤖 ADM | Granja Sustentável
+🥚 Para vender ovos, abra a granja e toque em Vender ovos. O valor atual informado é R$ 0,40 por ovo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","421","0","0","","","","0","","","","",""
+"como funciona a venda","none","🤖 ADM | Granja Sustentável
+🥚 Para vender ovos, abra a granja e toque em Vender ovos. O valor atual informado é R$ 0,40 por ovo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","422","0","0","","","","0","","","","",""
+"como faço venda ao sistema","none","🤖 ADM | Granja Sustentável
+🥚 Para vender ovos, abra a granja e toque em Vender ovos. O valor atual informado é R$ 0,40 por ovo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","423","0","0","","","","0","","","","",""
+"onde comprar galinhas","none","🤖 ADM | Granja Sustentável
+🛒 Abra a Loja dentro do jogo para comprar galinhas ou ração e conferir os valores antes do pagamento.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","424","0","0","","","","0","","","","",""
+"como comprar ração","none","🤖 ADM | Granja Sustentável
+🛒 Abra a Loja dentro do jogo para comprar galinhas ou ração e conferir os valores antes do pagamento.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","425","0","0","","","","0","","","","",""
+"onde fica a loja","none","🤖 ADM | Granja Sustentável
+🛒 Abra a Loja dentro do jogo para comprar galinhas ou ração e conferir os valores antes do pagamento.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","426","0","0","","","","0","","","","",""
+"como comprar itens","none","🤖 ADM | Granja Sustentável
+🛒 Abra a Loja dentro do jogo para comprar galinhas ou ração e conferir os valores antes do pagamento.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","427","0","0","","","","0","","","","",""
+"compras na granja","none","🤖 ADM | Granja Sustentável
+🛒 Abra a Loja dentro do jogo para comprar galinhas ou ração e conferir os valores antes do pagamento.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","428","0","0","","","","0","","","","",""
+"onde compro uma galinha","none","🤖 ADM | Granja Sustentável
+🛒 Abra a Loja dentro do jogo para comprar galinhas ou ração e conferir os valores antes do pagamento.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","429","0","0","","","","0","","","","",""
+"quero fazer uma compra","none","🤖 ADM | Granja Sustentável
+🛒 Abra a Loja dentro do jogo para comprar galinhas ou ração e conferir os valores antes do pagamento.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","430","0","0","","","","0","","","","",""
+"seja bem vindo","none","🤖 ADM | Granja Sustentável
+🐔🌱 Bem-vindo à comunidade Granja Sustentável! Digite menu ou ajuda para conhecer o jogo. Nunca compartilhe senhas nem códigos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","431","0","0","","","","0","","","","",""
+"mensagem de boas vindas","none","🤖 ADM | Granja Sustentável
+🐔🌱 Bem-vindo à comunidade Granja Sustentável! Digite menu ou ajuda para conhecer o jogo. Nunca compartilhe senhas nem códigos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","432","0","0","","","","0","","","","",""
+"dar boas vindas aos novos","none","🤖 ADM | Granja Sustentável
+🐔🌱 Bem-vindo à comunidade Granja Sustentável! Digite menu ou ajuda para conhecer o jogo. Nunca compartilhe senhas nem códigos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","433","0","0","","","","0","","","","",""
+"bem vindo ao grupo","none","🤖 ADM | Granja Sustentável
+🐔🌱 Bem-vindo à comunidade Granja Sustentável! Digite menu ou ajuda para conhecer o jogo. Nunca compartilhe senhas nem códigos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","434","0","0","","","","0","","","","",""
+"apresentação da comunidade","none","🤖 ADM | Granja Sustentável
+🐔🌱 Bem-vindo à comunidade Granja Sustentável! Digite menu ou ajuda para conhecer o jogo. Nunca compartilhe senhas nem códigos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","435","0","0","","","","0","","","","",""
+"receber novos participantes","none","🤖 ADM | Granja Sustentável
+🐔🌱 Bem-vindo à comunidade Granja Sustentável! Digite menu ou ajuda para conhecer o jogo. Nunca compartilhe senhas nem códigos.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","436","0","0","","","","0","","","","",""
+"obrigado pela ajuda","none","🤖 ADM | Granja Sustentável
+🐔💚 Por nada! Se precisar, escreva menu ou ajuda.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","437","0","0","","","","0","","","","",""
+"muito obrigado","none","🤖 ADM | Granja Sustentável
+🐔💚 Por nada! Se precisar, escreva menu ou ajuda.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","438","0","0","","","","0","","","","",""
+"valeu bot","none","🤖 ADM | Granja Sustentável
+🐔💚 Por nada! Se precisar, escreva menu ou ajuda.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","439","0","0","","","","0","","","","",""
+"agradeço a resposta","none","🤖 ADM | Granja Sustentável
+🐔💚 Por nada! Se precisar, escreva menu ou ajuda.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","440","0","0","","","","0","","","","",""
+"obrigada pelo suporte","none","🤖 ADM | Granja Sustentável
+🐔💚 Por nada! Se precisar, escreva menu ou ajuda.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","441","0","0","","","","0","","","","",""
+"show valeu","none","🤖 ADM | Granja Sustentável
+🐔💚 Por nada! Se precisar, escreva menu ou ajuda.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","442","0","0","","","","0","","","","",""
+"tem alguém aplicando golpe","none","🤖 ADM | Granja Sustentável
+🚨 Desconfie de promessas de lucro garantido, cobranças fora do jogo e pedidos de senha. Denuncie suspeitas à administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","443","0","0","","","","0","","","","",""
+"como identificar golpe","none","🤖 ADM | Granja Sustentável
+🚨 Desconfie de promessas de lucro garantido, cobranças fora do jogo e pedidos de senha. Denuncie suspeitas à administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","444","0","0","","","","0","","","","",""
+"promessa de lucro garantido","none","🤖 ADM | Granja Sustentável
+🚨 Desconfie de promessas de lucro garantido, cobranças fora do jogo e pedidos de senha. Denuncie suspeitas à administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","445","0","0","","","","0","","","","",""
+"pessoa pedindo dinheiro","none","🤖 ADM | Granja Sustentável
+🚨 Desconfie de promessas de lucro garantido, cobranças fora do jogo e pedidos de senha. Denuncie suspeitas à administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","446","0","0","","","","0","","","","",""
+"link suspeito no grupo","none","🤖 ADM | Granja Sustentável
+🚨 Desconfie de promessas de lucro garantido, cobranças fora do jogo e pedidos de senha. Denuncie suspeitas à administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","447","0","0","","","","0","","","","",""
+"denunciar golpista","none","🤖 ADM | Granja Sustentável
+🚨 Desconfie de promessas de lucro garantido, cobranças fora do jogo e pedidos de senha. Denuncie suspeitas à administração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","448","0","0","","","","0","","","","",""
+"quem é o administrador","none","🤖 ADM | Granja Sustentável
+👨‍🌾 Para assuntos de conta, pagamento e saque, procure a administração do grupo. Não envie dados pessoais em público.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","449","0","0","","","","0","","","","",""
+"como chamar adm","none","🤖 ADM | Granja Sustentável
+👨‍🌾 Para assuntos de conta, pagamento e saque, procure a administração do grupo. Não envie dados pessoais em público.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","450","0","0","","","","0","","","","",""
+"quero falar com adm","none","🤖 ADM | Granja Sustentável
+👨‍🌾 Para assuntos de conta, pagamento e saque, procure a administração do grupo. Não envie dados pessoais em público.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","451","0","0","","","","0","","","","",""
+"onde encontro moderador","none","🤖 ADM | Granja Sustentável
+👨‍🌾 Para assuntos de conta, pagamento e saque, procure a administração do grupo. Não envie dados pessoais em público.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","452","0","0","","","","0","","","","",""
+"preciso do dono do grupo","none","🤖 ADM | Granja Sustentável
+👨‍🌾 Para assuntos de conta, pagamento e saque, procure a administração do grupo. Não envie dados pessoais em público.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","453","0","0","","","","0","","","","",""
+"quem administra o grupo","none","🤖 ADM | Granja Sustentável
+👨‍🌾 Para assuntos de conta, pagamento e saque, procure a administração do grupo. Não envie dados pessoais em público.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","454","0","0","","","","0","","","","",""
+"como abrir o quintal","none","🤖 ADM | Granja Sustentável
+🌳 Toque em Meu Quintal no jogo para ver o espaço da fazenda e os animais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","455","0","0","","","","0","","","","",""
+"onde vejo os animais andando","none","🤖 ADM | Granja Sustentável
+🌳 Toque em Meu Quintal no jogo para ver o espaço da fazenda e os animais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","456","0","0","","","","0","","","","",""
+"como ampliar a fazenda","none","🤖 ADM | Granja Sustentável
+🌳 Toque em Meu Quintal no jogo para ver o espaço da fazenda e os animais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","457","0","0","","","","0","","","","",""
+"onde fica meu quintal","none","🤖 ADM | Granja Sustentável
+🌳 Toque em Meu Quintal no jogo para ver o espaço da fazenda e os animais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","458","0","0","","","","0","","","","",""
+"quero ver meu quintal","none","🤖 ADM | Granja Sustentável
+🌳 Toque em Meu Quintal no jogo para ver o espaço da fazenda e os animais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","459","0","0","","","","0","","","","",""
+"como ver o cenário","none","🤖 ADM | Granja Sustentável
+🌳 Toque em Meu Quintal no jogo para ver o espaço da fazenda e os animais.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","460","0","0","","","","0","","","","",""
+"quanto posso ganhar","none","🤖 ADM | Granja Sustentável
+📊 Os resultados dependem do número de galinhas, consumo de ração, preços e despesas. Ganhos não são garantidos. Faça as contas antes de comprar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","461","0","0","","","","0","","","","",""
+"dá lucro ter galinhas","none","🤖 ADM | Granja Sustentável
+📊 Os resultados dependem do número de galinhas, consumo de ração, preços e despesas. Ganhos não são garantidos. Faça as contas antes de comprar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","462","0","0","","","","0","","","","",""
+"qual lucro por dia","none","🤖 ADM | Granja Sustentável
+📊 Os resultados dependem do número de galinhas, consumo de ração, preços e despesas. Ganhos não são garantidos. Faça as contas antes de comprar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","463","0","0","","","","0","","","","",""
+"quanto rende uma galinha","none","🤖 ADM | Granja Sustentável
+📊 Os resultados dependem do número de galinhas, consumo de ração, preços e despesas. Ganhos não são garantidos. Faça as contas antes de comprar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","464","0","0","","","","0","","","","",""
+"lucro é garantido","none","🤖 ADM | Granja Sustentável
+📊 Os resultados dependem do número de galinhas, consumo de ração, preços e despesas. Ganhos não são garantidos. Faça as contas antes de comprar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","465","0","0","","","","0","","","","",""
+"como calcular os ganhos","none","🤖 ADM | Granja Sustentável
+📊 Os resultados dependem do número de galinhas, consumo de ração, preços e despesas. Ganhos não são garantidos. Faça as contas antes de comprar.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","466","0","0","","","","0","","","","",""
+"simula minha granja","none","🤖 ADM | Granja Sustentável
+🧮 Exemplo bruto: 1 comum produz 1 ovo/dia (R$ 0,40), consome 0,8 ração/dia (R$ 0,40). Não inclui compra da galinha, perdas e outras despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","467","0","0","","","","0","","","","",""
+"faz uma simulação de ganhos","none","🤖 ADM | Granja Sustentável
+🧮 Exemplo bruto: 1 comum produz 1 ovo/dia (R$ 0,40), consome 0,8 ração/dia (R$ 0,40). Não inclui compra da galinha, perdas e outras despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","468","0","0","","","","0","","","","",""
+"calcular receita de ovos","none","🤖 ADM | Granja Sustentável
+🧮 Exemplo bruto: 1 comum produz 1 ovo/dia (R$ 0,40), consome 0,8 ração/dia (R$ 0,40). Não inclui compra da galinha, perdas e outras despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","469","0","0","","","","0","","","","",""
+"simular consumo de ração","none","🤖 ADM | Granja Sustentável
+🧮 Exemplo bruto: 1 comum produz 1 ovo/dia (R$ 0,40), consome 0,8 ração/dia (R$ 0,40). Não inclui compra da galinha, perdas e outras despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","470","0","0","","","","0","","","","",""
+"simulação com cem galinhas","none","🤖 ADM | Granja Sustentável
+🧮 Exemplo bruto: 1 comum produz 1 ovo/dia (R$ 0,40), consome 0,8 ração/dia (R$ 0,40). Não inclui compra da galinha, perdas e outras despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","471","0","0","","","","0","","","","",""
+"quanto sobra depois da ração","none","🤖 ADM | Granja Sustentável
+🧮 Exemplo bruto: 1 comum produz 1 ovo/dia (R$ 0,40), consome 0,8 ração/dia (R$ 0,40). Não inclui compra da galinha, perdas e outras despesas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","472","0","0","","","","0","","","","",""
+"quantos dias vive uma galinha","none","🤖 ADM | Granja Sustentável
+📅 Vida prevista: Comum 183 dias; Premium 221 dias; Rara 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","473","0","0","","","","0","","","","",""
+"qual vida útil da rara","none","🤖 ADM | Granja Sustentável
+📅 Vida prevista: Comum 183 dias; Premium 221 dias; Rara 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","474","0","0","","","","0","","","","",""
+"tempo de vida da premium","none","🤖 ADM | Granja Sustentável
+📅 Vida prevista: Comum 183 dias; Premium 221 dias; Rara 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","475","0","0","","","","0","","","","",""
+"galinha comum vive quanto","none","🤖 ADM | Granja Sustentável
+📅 Vida prevista: Comum 183 dias; Premium 221 dias; Rara 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","476","0","0","","","","0","","","","",""
+"quando galinha envelhece","none","🤖 ADM | Granja Sustentável
+📅 Vida prevista: Comum 183 dias; Premium 221 dias; Rara 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","477","0","0","","","","0","","","","",""
+"duração das galinhas","none","🤖 ADM | Granja Sustentável
+📅 Vida prevista: Comum 183 dias; Premium 221 dias; Rara 269 dias.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","478","0","0","","","","0","","","","",""
+"como ver minha conta","none","🤖 ADM | Granja Sustentável
+👤 Para consultar seus dados, entre na conta da granja. O ADM não tem acesso a saldo ou estoque individual.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","479","0","0","","","","0","","","","",""
+"o bot sabe meu saldo","none","🤖 ADM | Granja Sustentável
+👤 Para consultar seus dados, entre na conta da granja. O ADM não tem acesso a saldo ou estoque individual.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","480","0","0","","","","0","","","","",""
+"bot consegue ver meus ovos","none","🤖 ADM | Granja Sustentável
+👤 Para consultar seus dados, entre na conta da granja. O ADM não tem acesso a saldo ou estoque individual.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","481","0","0","","","","0","","","","",""
+"consulta meu estoque","none","🤖 ADM | Granja Sustentável
+👤 Para consultar seus dados, entre na conta da granja. O ADM não tem acesso a saldo ou estoque individual.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","482","0","0","","","","0","","","","",""
+"onde encontro meus dados","none","🤖 ADM | Granja Sustentável
+👤 Para consultar seus dados, entre na conta da granja. O ADM não tem acesso a saldo ou estoque individual.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","483","0","0","","","","0","","","","",""
+"bot pode acessar minha conta","none","🤖 ADM | Granja Sustentável
+👤 Para consultar seus dados, entre na conta da granja. O ADM não tem acesso a saldo ou estoque individual.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","484","0","0","","","","0","","","","",""
+"apareceu erro no jogo","none","🤖 ADM | Granja Sustentável
+🛠️ Se ocorrer erro, atualize a página, verifique a internet e anote a mensagem. Procure a administração sem compartilhar senhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","485","0","0","","","","0","","","","",""
+"tela travada","none","🤖 ADM | Granja Sustentável
+🛠️ Se ocorrer erro, atualize a página, verifique a internet e anote a mensagem. Procure a administração sem compartilhar senhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","486","0","0","","","","0","","","","",""
+"site não abre","none","🤖 ADM | Granja Sustentável
+🛠️ Se ocorrer erro, atualize a página, verifique a internet e anote a mensagem. Procure a administração sem compartilhar senhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","487","0","0","","","","0","","","","",""
+"botão não funciona","none","🤖 ADM | Granja Sustentável
+🛠️ Se ocorrer erro, atualize a página, verifique a internet e anote a mensagem. Procure a administração sem compartilhar senhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","488","0","0","","","","0","","","","",""
+"jogo está bugado","none","🤖 ADM | Granja Sustentável
+🛠️ Se ocorrer erro, atualize a página, verifique a internet e anote a mensagem. Procure a administração sem compartilhar senhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","489","0","0","","","","0","","","","",""
+"não consigo carregar a fazenda","none","🤖 ADM | Granja Sustentável
+🛠️ Se ocorrer erro, atualize a página, verifique a internet e anote a mensagem. Procure a administração sem compartilhar senhas.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","490","0","0","","","","0","","","","",""
+"meu saque não caiu","none","🤖 ADM | Granja Sustentável
+💰 Os saques são processados imediatamente ou em até 48 horas. Se passar desse prazo, contate a administração com segurança.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","491","0","0","","","","0","","","","",""
+"saque está atrasado","none","🤖 ADM | Granja Sustentável
+💰 Os saques são processados imediatamente ou em até 48 horas. Se passar desse prazo, contate a administração com segurança.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","492","0","0","","","","0","","","","",""
+"quanto tempo para cair saque","none","🤖 ADM | Granja Sustentável
+💰 Os saques são processados imediatamente ou em até 48 horas. Se passar desse prazo, contate a administração com segurança.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","493","0","0","","","","0","","","","",""
+"saque em análise","none","🤖 ADM | Granja Sustentável
+💰 Os saques são processados imediatamente ou em até 48 horas. Se passar desse prazo, contate a administração com segurança.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","494","0","0","","","","0","","","","",""
+"saque demorando","none","🤖 ADM | Granja Sustentável
+💰 Os saques são processados imediatamente ou em até 48 horas. Se passar desse prazo, contate a administração com segurança.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","495","0","0","","","","0","","","","",""
+"saque não foi processado","none","🤖 ADM | Granja Sustentável
+💰 Os saques são processados imediatamente ou em até 48 horas. Se passar desse prazo, contate a administração com segurança.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","496","0","0","","","","0","","","","",""
+"pix aprovado mas não recebi","none","🤖 ADM | Granja Sustentável
+⏳ Pagamento pendente? Confira o status no jogo. Se persistir, contate o suporte com data e identificação da transação, sem divulgar dados sensíveis no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","497","0","0","","","","0","","","","",""
+"pagamento pendente","none","🤖 ADM | Granja Sustentável
+⏳ Pagamento pendente? Confira o status no jogo. Se persistir, contate o suporte com data e identificação da transação, sem divulgar dados sensíveis no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","498","0","0","","","","0","","","","",""
+"compra não apareceu","none","🤖 ADM | Granja Sustentável
+⏳ Pagamento pendente? Confira o status no jogo. Se persistir, contate o suporte com data e identificação da transação, sem divulgar dados sensíveis no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","499","0","0","","","","0","","","","",""
+"paguei e não entrou","none","🤖 ADM | Granja Sustentável
+⏳ Pagamento pendente? Confira o status no jogo. Se persistir, contate o suporte com data e identificação da transação, sem divulgar dados sensíveis no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","500","0","0","","","","0","","","","",""
+"pix ficou em processamento","none","🤖 ADM | Granja Sustentável
+⏳ Pagamento pendente? Confira o status no jogo. Se persistir, contate o suporte com data e identificação da transação, sem divulgar dados sensíveis no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","501","0","0","","","","0","","","","",""
+"pagamento não reconhecido","none","🤖 ADM | Granja Sustentável
+⏳ Pagamento pendente? Confira o status no jogo. Se persistir, contate o suporte com data e identificação da transação, sem divulgar dados sensíveis no grupo.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","502","0","0","","","","0","","","","",""
+"pode mandar várias mensagens","none","🤖 ADM | Granja Sustentável
+📜 Evite propaganda, links não autorizados, ofensas e mensagens repetitivas. Respeite os participantes.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","503","0","0","","","","0","","","","",""
+"o que é spam","none","🤖 ADM | Granja Sustentável
+📜 Evite propaganda, links não autorizados, ofensas e mensagens repetitivas. Respeite os participantes.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","504","0","0","","","","0","","","","",""
+"mensagens repetidas são proibidas","none","🤖 ADM | Granja Sustentável
+📜 Evite propaganda, links não autorizados, ofensas e mensagens repetitivas. Respeite os participantes.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","505","0","0","","","","0","","","","",""
+"posso divulgar links","none","🤖 ADM | Granja Sustentável
+📜 Evite propaganda, links não autorizados, ofensas e mensagens repetitivas. Respeite os participantes.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","506","0","0","","","","0","","","","",""
+"propaganda é permitida","none","🤖 ADM | Granja Sustentável
+📜 Evite propaganda, links não autorizados, ofensas e mensagens repetitivas. Respeite os participantes.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","507","0","0","","","","0","","","","",""
+"regras contra spam","none","🤖 ADM | Granja Sustentável
+📜 Evite propaganda, links não autorizados, ofensas e mensagens repetitivas. Respeite os participantes.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","508","0","0","","","","0","","","","",""
+"como instalar no ios","none","🤖 ADM | Granja Sustentável
+🍎 No iPhone, abra a granja pelo Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","509","0","0","","","","0","","","","",""
+"como usar no iphone","none","🤖 ADM | Granja Sustentável
+🍎 No iPhone, abra a granja pelo Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","510","0","0","","","","0","","","","",""
+"app no safari","none","🤖 ADM | Granja Sustentável
+🍎 No iPhone, abra a granja pelo Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","511","0","0","","","","0","","","","",""
+"adicionar à tela inicial iphone","none","🤖 ADM | Granja Sustentável
+🍎 No iPhone, abra a granja pelo Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","512","0","0","","","","0","","","","",""
+"funciona no celular apple","none","🤖 ADM | Granja Sustentável
+🍎 No iPhone, abra a granja pelo Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","513","0","0","","","","0","","","","",""
+"instalar granja no iphone","none","🤖 ADM | Granja Sustentável
+🍎 No iPhone, abra a granja pelo Safari e use Compartilhar → Adicionar à Tela de Início.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","514","0","0","","","","0","","","","",""
+"como instalar no android","none","🤖 ADM | Granja Sustentável
+🤖 No Android, abra pelo Chrome e use Instalar app ou Adicionar à tela inicial, conforme a opção disponível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","515","0","0","","","","0","","","","",""
+"instalar pelo chrome","none","🤖 ADM | Granja Sustentável
+🤖 No Android, abra pelo Chrome e use Instalar app ou Adicionar à tela inicial, conforme a opção disponível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","516","0","0","","","","0","","","","",""
+"como adicionar à tela inicial","none","🤖 ADM | Granja Sustentável
+🤖 No Android, abra pelo Chrome e use Instalar app ou Adicionar à tela inicial, conforme a opção disponível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","517","0","0","","","","0","","","","",""
+"tem app android","none","🤖 ADM | Granja Sustentável
+🤖 No Android, abra pelo Chrome e use Instalar app ou Adicionar à tela inicial, conforme a opção disponível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","518","0","0","","","","0","","","","",""
+"abrir granja pelo celular android","none","🤖 ADM | Granja Sustentável
+🤖 No Android, abra pelo Chrome e use Instalar app ou Adicionar à tela inicial, conforme a opção disponível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","519","0","0","","","","0","","","","",""
+"instalar pwa","none","🤖 ADM | Granja Sustentável
+🤖 No Android, abra pelo Chrome e use Instalar app ou Adicionar à tela inicial, conforme a opção disponível.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","520","0","0","","","","0","","","","",""
+"perguntas frequentes","none","🤖 ADM | Granja Sustentável
+🤖 Pergunte normalmente: quanto custa a ração, como sacar, como incubar, quanto vale o ovo, como comprar galinhas ou digite menu.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","521","0","0","","","","0","","","","",""
+"o que perguntar ao bot","none","🤖 ADM | Granja Sustentável
+🤖 Pergunte normalmente: quanto custa a ração, como sacar, como incubar, quanto vale o ovo, como comprar galinhas ou digite menu.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","522","0","0","","","","0","","","","",""
+"lista de dúvidas","none","🤖 ADM | Granja Sustentável
+🤖 Pergunte normalmente: quanto custa a ração, como sacar, como incubar, quanto vale o ovo, como comprar galinhas ou digite menu.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","523","0","0","","","","0","","","","",""
+"quais dúvidas você responde","none","🤖 ADM | Granja Sustentável
+🤖 Pergunte normalmente: quanto custa a ração, como sacar, como incubar, quanto vale o ovo, como comprar galinhas ou digite menu.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","524","0","0","","","","0","","","","",""
+"ajuda com perguntas","none","🤖 ADM | Granja Sustentável
+🤖 Pergunte normalmente: quanto custa a ração, como sacar, como incubar, quanto vale o ovo, como comprar galinhas ou digite menu.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","525","0","0","","","","0","","","","",""
+"como funciona atendimento","none","🤖 ADM | Granja Sustentável
+🤖 Pergunte normalmente: quanto custa a ração, como sacar, como incubar, quanto vale o ovo, como comprar galinhas ou digite menu.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","526","0","0","","","","0","","","","",""
+"me explica: quais comandos posso usar","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","527","0","0","","","","0","","","","",""
+"por favor, quais comandos posso usar","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","528","0","0","","","","0","","","","",""
+"me explica: mostra as opções do bot","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","529","0","0","","","","0","","","","",""
+"por favor, mostra as opções do bot","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","530","0","0","","","","0","","","","",""
+"me explica: o que posso perguntar","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","531","0","0","","","","0","","","","",""
+"por favor, o que posso perguntar","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","532","0","0","","","","0","","","","",""
+"me explica: tem um menu","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","533","0","0","","","","0","","","","",""
+"por favor, tem um menu","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","534","0","0","","","","0","","","","",""
+"me explica: me mostra o menu","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","535","0","0","","","","0","","","","",""
+"por favor, me mostra o menu","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","536","0","0","","","","0","","","","",""
+"me explica: como usar o bot","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","537","0","0","","","","0","","","","",""
+"por favor, como usar o bot","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","538","0","0","","","","0","","","","",""
+"me explica: o que o robô sabe responder","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","539","0","0","","","","0","","","","",""
+"por favor, o que o robô sabe responder","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","540","0","0","","","","0","","","","",""
+"me explica: quais assuntos você responde","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","541","0","0","","","","0","","","","",""
+"por favor, quais assuntos você responde","none","🤖 ADM | Granja Sustentável
+🐔🤖 *ADM — MENU*
+!começar — Primeiros passos
+!site — Acessar a granja
+!galinhas — Produção
+!ovos — Venda de ovos
+!racao — Consumo e preços
+!incubadora — Chocar ovos
+!pix — Compras
+!saque — Retiradas
+!vip — Benefícios
+!regras — Comunidade
+!ajuda — Atendimento","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","542","0","0","","","","0","","","","",""
+"me explica: o que recebo quando começo","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","543","0","0","","","","0","","","","",""
+"por favor, o que recebo quando começo","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","544","0","0","","","","0","","","","",""
+"me explica: qual é meu kit inicial","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","545","0","0","","","","0","","","","",""
+"por favor, qual é meu kit inicial","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","546","0","0","","","","0","","","","",""
+"me explica: o que ganha ao criar conta","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","547","0","0","","","","0","","","","",""
+"por favor, o que ganha ao criar conta","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","548","0","0","","","","0","","","","",""
+"me explica: quantas rações iniciais","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","549","0","0","","","","0","","","","",""
+"por favor, quantas rações iniciais","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","550","0","0","","","","0","","","","",""
+"me explica: quantos ovos no começo","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","551","0","0","","","","0","","","","",""
+"por favor, quantos ovos no começo","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","552","0","0","","","","0","","","","",""
+"me explica: ganho galinha ao entrar","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","553","0","0","","","","0","","","","",""
+"por favor, ganho galinha ao entrar","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","554","0","0","","","","0","","","","",""
+"me explica: quais itens iniciais","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","555","0","0","","","","0","","","","",""
+"por favor, quais itens iniciais","none","🤖 ADM | Granja Sustentável
+🎁 Kit inicial: 1 galinha comum, 3 ovos e 5 unidades de ração.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","556","0","0","","","","0","","","","",""
+"me explica: qual o preço de uma ração","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","557","0","0","","","","0","","","","",""
+"por favor, qual o preço de uma ração","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","558","0","0","","","","0","","","","",""
+"me explica: como alimentar minhas galinhas","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","559","0","0","","","","0","","","","",""
+"por favor, como alimentar minhas galinhas","none","🤖 ADM | Granja Sustentável
+🌾 Cada unidade de ração custa R$ 0,50.
+5 = R$ 2,50
+10 = R$ 5,00
+20 = R$ 10,00
+50 = R$ 25,00
+100 = R$ 50,00
+Compre pela loja da granja.","single","","","g","","","","","0","","","","","","","","seconds","0","0","","","","","","","","","","","","","560","0","0","","","","0","","","","",""
