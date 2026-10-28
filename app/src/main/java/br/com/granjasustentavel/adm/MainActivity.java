@@ -14,28 +14,35 @@ public class MainActivity extends Activity {
   super.onCreate(b);prefs=getSharedPreferences("adm",MODE_PRIVATE);
   LinearLayout root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);root.setPadding(22,28,22,28);root.setBackgroundColor(0xFF090F0B);
   ScrollView scroll=new ScrollView(this);scroll.addView(root);setContentView(scroll);
-  TextView themeLabel=new TextView(this);themeLabel.setText("🎨 Escolha o tema do painel");themeLabel.setTextSize(21);root.addView(themeLabel);
+  Button openThemes=new Button(this);openThemes.setText("🎨 PERSONALIZAR TEMA");root.addView(openThemes);styleButton(openThemes,0xFF4ADE80);
+  int savedTheme=prefs.getInt("panel_theme",0);
+  openThemes.setOnClickListener(v->{
+   LinearLayout options=new LinearLayout(this);options.setOrientation(LinearLayout.VERTICAL);options.setPadding(20,12,20,8);
+   ScrollView optionScroll=new ScrollView(this);optionScroll.addView(options);
   Spinner themePicker=new Spinner(this);
   String[] themeNames={"Preto e verde","Claro moderno (tema 3)","Escuro azul","Roxo premium","Preto e dourado","Personalizado"};
   android.widget.ArrayAdapter<String> themeAdapter=new android.widget.ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,themeNames);
-  themeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);themePicker.setAdapter(themeAdapter);root.addView(themePicker);
-  int savedTheme=prefs.getInt("panel_theme",0);themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
-  TextView customLabel=new TextView(this);customLabel.setText("Cores personalizadas (hexadecimal, ex.: #090F0B)");root.addView(customLabel);
-  EditText customBg=new EditText(this);customBg.setSingleLine(true);customBg.setHint("Fundo #090F0B");customBg.setText(prefs.getString("theme_bg","#090F0B"));root.addView(customBg);
-  EditText customAccent=new EditText(this);customAccent.setSingleLine(true);customAccent.setHint("Destaque #4ADE80");customAccent.setText(prefs.getString("theme_accent","#4ADE80"));root.addView(customAccent);
-  EditText customText=new EditText(this);customText.setHint("Cor das letras #FFFFFF");customText.setText(prefs.getString("theme_text","#FFFFFF"));root.addView(customText);
-  EditText customPanel=new EditText(this);customPanel.setHint("Cor dos campos #17271C");customPanel.setText(prefs.getString("theme_panel","#17271C"));root.addView(customPanel);
-  TextView textColorLabel=new TextView(this);textColorLabel.setText("🔤 Cor de TODAS as letras");root.addView(textColorLabel);
+  themeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);themePicker.setAdapter(themeAdapter);options.addView(themePicker);
+themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
+  TextView customLabel=new TextView(this);customLabel.setText("Cores personalizadas (hexadecimal, ex.: #090F0B)");options.addView(customLabel);
+  EditText customBg=new EditText(this);customBg.setSingleLine(true);customBg.setHint("Fundo #090F0B");customBg.setText(prefs.getString("theme_bg","#090F0B"));options.addView(customBg);
+  EditText customAccent=new EditText(this);customAccent.setSingleLine(true);customAccent.setHint("Destaque #4ADE80");customAccent.setText(prefs.getString("theme_accent","#4ADE80"));options.addView(customAccent);
+  EditText customText=new EditText(this);customText.setHint("Cor das letras #FFFFFF");customText.setText(prefs.getString("theme_text","#FFFFFF"));options.addView(customText);
+  EditText customPanel=new EditText(this);customPanel.setHint("Cor dos campos #17271C");customPanel.setText(prefs.getString("theme_panel","#17271C"));options.addView(customPanel);
+  TextView textColorLabel=new TextView(this);textColorLabel.setText("🔤 Cor de TODAS as letras");options.addView(textColorLabel);
   Spinner textColorPicker=new Spinner(this);String[] colorNames={"Automática (mais legível)","Preta","Amarela","Azul","Vermelha"};
   android.widget.ArrayAdapter<String> colorAdapter=new android.widget.ArrayAdapter<>(this,android.R.layout.simple_spinner_item,colorNames);
-  colorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);textColorPicker.setAdapter(colorAdapter);root.addView(textColorPicker);
+  colorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);textColorPicker.setAdapter(colorAdapter);options.addView(textColorPicker);
   textColorPicker.setSelection(Math.max(0,Math.min(4,prefs.getInt("text_color_choice",0))));
-  Button applyTheme=new Button(this);applyTheme.setText("Aplicar e salvar meu tema");root.addView(applyTheme);
-  applyTheme.setOnClickListener(v->{
+  android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle("🎨 Escolher tema e cores").setView(optionScroll).setNegativeButton("Fechar",(d,w)->{}).create();
+  Button applyTheme=new Button(this);applyTheme.setText("💾 Aplicar e salvar tema");options.addView(applyTheme);
+  applyTheme.setOnClickListener(btn->{
    int theme=themePicker.getSelectedItemPosition();
    if(theme==5){try{Color.parseColor(customBg.getText().toString().trim());Color.parseColor(customAccent.getText().toString().trim());Color.parseColor(customText.getText().toString().trim());Color.parseColor(customPanel.getText().toString().trim());}catch(Exception e){Toast.makeText(this,"Use cores como #090F0B",Toast.LENGTH_LONG).show();return;}}
    prefs.edit().putInt("panel_theme",theme).putInt("text_color_choice",textColorPicker.getSelectedItemPosition()).putString("theme_bg",customBg.getText().toString().trim()).putString("theme_accent",customAccent.getText().toString().trim()).putString("theme_text",customText.getText().toString().trim()).putString("theme_panel",customPanel.getText().toString().trim()).apply();
-   applyPanelTheme(root,theme);Toast.makeText(this,"Tema salvo!",Toast.LENGTH_SHORT).show();
+   applyPanelTheme(root,theme);dialog.dismiss();Toast.makeText(this,"Tema salvo!",Toast.LENGTH_SHORT).show();
+  });
+  dialog.show();
   });
   TextView title=new TextView(this);title.setText("🐔🤖 GranjaBot ADM");title.setTextSize(26);title.setTextColor(0xFF4ADE80);root.addView(title);
   TextView desc=new TextView(this);desc.setText("WhatsApp Business • Respostas por notificações • CSV separado");desc.setTextColor(0xFFE2E8F0);root.addView(desc);
