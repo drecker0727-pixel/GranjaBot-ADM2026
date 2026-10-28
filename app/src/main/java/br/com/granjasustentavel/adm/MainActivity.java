@@ -202,7 +202,7 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
    if(android.os.Build.VERSION.SDK_INT>=33&&checkSelfPermission("android.permission.POST_NOTIFICATIONS")!=android.content.pm.PackageManager.PERMISSION_GRANTED)
     requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"},2026);
    try{if(android.os.Build.VERSION.SDK_INT>=26)startForegroundService(intent);else startService(intent);}
-   catch(RuntimeException e){Toast.makeText(this,"Permita notificações e execução em segundo plano para mostrar o ícone.",Toast.LENGTH_LONG).show();}
+   catch(RuntimeException e){prefs.edit().putBoolean("foreground_running",false).putString("foreground_error",e.getClass().getSimpleName()).apply();Toast.makeText(this,"Não foi possível iniciar o serviço permanente.",Toast.LENGTH_LONG).show();}
   }else stopService(intent);
  }
  @Override protected void onResume(){super.onResume();if(prefs!=null&&prefs.getBoolean("enabled",false))syncStatusService();}
@@ -213,7 +213,9 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
     +"\nRegras disponíveis: "+RuleStore.count(this)
     +"\nRespostas enviadas: "+prefs.getInt("replies",0)
     +"\nAlertas detectados: "+prefs.getInt("alerts",0)
-    +"\nHorário: "+(prefs.getBoolean("schedule_enabled",false)?"Programado":"Sempre ativo"));
+    +"\nHorário: "+(prefs.getBoolean("schedule_enabled",false)?"Programado":"Sempre ativo")
+    +"\nServiço permanente: "+(prefs.getBoolean("foreground_running",false)?"🟢 ATIVO":"🔴 PARADO")
+    +(prefs.getString("foreground_error","").isEmpty()?"":"\nFalha do serviço: "+prefs.getString("foreground_error","")));
   }catch(Exception e){status.setText("Erro ao ler regras: "+e.getMessage());}
  }
  @Override protected void onActivityResult(int req,int result,Intent data){
