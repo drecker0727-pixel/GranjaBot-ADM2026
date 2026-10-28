@@ -9,6 +9,8 @@ import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 import java.util.*;
 public class AdmNotificationService extends NotificationListenerService {
+ private static final java.util.concurrent.ExecutorService aiQueue=java.util.concurrent.Executors.newSingleThreadExecutor();
+ private static final Map<String,Long> sessions=new LinkedHashMap<>();
  private static final Map<String,Long> recent=new LinkedHashMap<>();
  private static final Map<String,Long> spamHistory=new LinkedHashMap<>();
  private static final Map<String,java.util.ArrayDeque<Long>> frequency=new LinkedHashMap<>();
@@ -70,9 +72,37 @@ public class AdmNotificationService extends NotificationListenerService {
    if(answer==null)answer=RuleStore.match(this,msg);
    if(answer==null){int i=msg.indexOf(": ");if(i>0)answer=RuleStore.match(this,msg.substring(i+2));}
   }catch(Exception e){return;}
+  if(answer==null && p.getBoolean("ai_enabled",false)){
+   String normalized=msg.toLowerCase(new Locale("pt","BR"));
+   boolean called=normalized.matches("(?s).*(^|\\W)adm(\\W|$).*")||normalized.contains("granjabot");
+   boolean active;
+   long current=System.currentTimeMillis();
+   synchronized(sessions){
+    sessions.entrySet().removeIf(e->current-e.getValue()>20*60*1000L);
+    active=sessions.containsKey(sender);
+   }
+   boolean question=msg.contains("?")||normalized.matches("(?s).*(como|quanto|quando|qual|porque|por que|onde|ração|galinha|ovo|incub|saque|pix|granja).*");
+   if(active && normalized.matches("(?is)^\\s*(entendi|compreendi|resolvido|obrigad[oa]|sim,? obrigado|ok,? entendi)[!. ]*\\s*$")){
+    synchronized(sessions){sessions.remove(sender);}
+    AiClient.clear(this,sender);
+    answer="🐓 ADM: Perfeito! Atendimento encerrado. Se precisar, chame ADM novamente.";
+   }else if(called||active||question){
+    synchronized(sessions){sessions.put(sender,current);}
+    final String participant=sender, query=msg, notificationKey=sbn.getKey();
+    final Notification notification=n;
+    aiQueue.execute(()->{
+     String generated=AiClient.ask(this,participant,query);
+     if(generated!=null)sendReply(notification,notificationKey+"|"+query,generated,p);
+    });
+    return;
+   }
+  }
   if(answer==null)return;
+  sendReply(n,sbn.getKey()+"|"+msg,answer,p);
+ }
+ private void sendReply(Notification n,String id,String answer,SharedPreferences p){
   long now=System.currentTimeMillis();
-  String key=sbn.getKey()+"|"+msg+"|"+answer;
+  String key=id+"|"+answer;
   synchronized(recent){recent.entrySet().removeIf(e->now-e.getValue()>120000L);if(recent.containsKey(key))return;}
   if(now-p.getLong("last_reply_time",0)<2500L||n.actions==null)return;
   for(Notification.Action a:n.actions){
