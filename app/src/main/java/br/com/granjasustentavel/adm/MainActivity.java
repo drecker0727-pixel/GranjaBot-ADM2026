@@ -14,6 +14,22 @@ public class MainActivity extends Activity {
   super.onCreate(b);prefs=getSharedPreferences("adm",MODE_PRIVATE);
   LinearLayout root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);root.setPadding(22,28,22,28);root.setBackgroundColor(0xFF090F0B);
   ScrollView scroll=new ScrollView(this);scroll.addView(root);setContentView(scroll);
+  TextView themeLabel=new TextView(this);themeLabel.setText("🎨 Escolha o tema do painel");themeLabel.setTextSize(21);root.addView(themeLabel);
+  Spinner themePicker=new Spinner(this);
+  String[] themeNames={"Preto e verde","Claro moderno (tema 3)","Escuro azul","Roxo premium","Preto e dourado","Personalizado"};
+  android.widget.ArrayAdapter<String> themeAdapter=new android.widget.ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,themeNames);
+  themePicker.setAdapter(themeAdapter);root.addView(themePicker);
+  int savedTheme=prefs.getInt("panel_theme",0);themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
+  TextView customLabel=new TextView(this);customLabel.setText("Cores personalizadas (hexadecimal, ex.: #090F0B)");root.addView(customLabel);
+  EditText customBg=new EditText(this);customBg.setSingleLine(true);customBg.setHint("Fundo #090F0B");customBg.setText(prefs.getString("theme_bg","#090F0B"));root.addView(customBg);
+  EditText customAccent=new EditText(this);customAccent.setSingleLine(true);customAccent.setHint("Destaque #4ADE80");customAccent.setText(prefs.getString("theme_accent","#4ADE80"));root.addView(customAccent);
+  Button applyTheme=new Button(this);applyTheme.setText("Aplicar e salvar meu tema");root.addView(applyTheme);
+  applyTheme.setOnClickListener(v->{
+   int theme=themePicker.getSelectedItemPosition();
+   if(theme==5){try{Color.parseColor(customBg.getText().toString().trim());Color.parseColor(customAccent.getText().toString().trim());}catch(Exception e){Toast.makeText(this,"Use cores como #090F0B",Toast.LENGTH_LONG).show();return;}}
+   prefs.edit().putInt("panel_theme",theme).putString("theme_bg",customBg.getText().toString().trim()).putString("theme_accent",customAccent.getText().toString().trim()).apply();
+   applyPanelTheme(root,theme);Toast.makeText(this,"Tema salvo!",Toast.LENGTH_SHORT).show();
+  });
   TextView title=new TextView(this);title.setText("🐔🤖 GranjaBot ADM");title.setTextSize(26);title.setTextColor(0xFF4ADE80);root.addView(title);
   TextView desc=new TextView(this);desc.setText("WhatsApp Business • Respostas por notificações • CSV separado");desc.setTextColor(0xFFE2E8F0);root.addView(desc);
   EditText group=new EditText(this);group.setTextColor(0xFFF3FFF5);group.setHintTextColor(Color.LTGRAY);group.setHint("Nome exato do grupo");group.setText(prefs.getString("group","🐔🌱 Granja Sustentável | Comunidade Oficial 🐣"));root.addView(group);styleInput(group);
@@ -82,7 +98,38 @@ public class MainActivity extends Activity {
   TextView note=new TextView(this);note.setText("Requer acesso às notificações. Respostas dependem do botão Responder oferecido pelo WhatsApp Business. Não é integração oficial.");note.setTextColor(0xFFC5E4CD);root.addView(note);
   status.setBackgroundColor(0xFF17271C);status.setPadding(18,20,18,20);status.setTextSize(17);updateStatus();
  }
- private void sectionHeader(TextView v){v.setTextColor(0xFF4ADE80);v.setBackgroundColor(0xFF17271C);v.setPadding(16,22,16,22);android.widget.LinearLayout.LayoutParams p=new android.widget.LinearLayout.LayoutParams(-1,-2);p.setMargins(0,22,0,12);v.setLayoutParams(p);}
+ private void applyPanelTheme(LinearLayout root,int choice){
+  int bg=0xFF090F0B,panel=0xFF17271C,fg=0xFFF3FFF5,accent=0xFF4ADE80,muted=0xFFC5E4CD,btnText=0xFF07170A;
+  if(choice==1){bg=0xFFF1F5F9;panel=0xFFFFFFFF;fg=0xFF0F172A;accent=0xFF2563EB;muted=0xFF475569;btnText=0xFFFFFFFF;}
+  else if(choice==2){bg=0xFF0B1220;panel=0xFF1E293B;fg=0xFFF8FAFC;accent=0xFF38BDF8;muted=0xFFCBD5E1;btnText=0xFF08121F;}
+  else if(choice==3){bg=0xFF130D24;panel=0xFF2B2045;fg=0xFFFAF5FF;accent=0xFFC4B5FD;muted=0xFFD8CDEC;btnText=0xFF201336;}
+  else if(choice==4){bg=0xFF101010;panel=0xFF242424;fg=0xFFFFF9E8;accent=0xFFFBBF24;muted=0xFFDDD1B3;btnText=0xFF1C1500;}
+  else if(choice==5){
+   try{bg=Color.parseColor(prefs.getString("theme_bg","#090F0B"));accent=Color.parseColor(prefs.getString("theme_accent","#4ADE80"));}catch(Exception ignored){}
+   boolean light=androidxColorLight(bg);panel=light?0xFFFFFFFF:0xFF17271C;fg=light?0xFF101820:0xFFFFFFFF;muted=light?0xFF334155:0xFFE2E8F0;btnText=androidxColorLight(accent)?0xFF07170A:0xFFFFFFFF;
+  }
+  root.setBackgroundColor(bg);
+  recolorChildren(root,fg,muted,panel,accent,btnText);
+ }
+ private static boolean androidxColorLight(int c){return (Color.red(c)*299+Color.green(c)*587+Color.blue(c)*114)>150000;}
+ private void recolorChildren(android.view.ViewGroup parent,int fg,int muted,int panel,int accent,int btnText){
+  for(int i=0;i<parent.getChildCount();i++){
+   android.view.View v=parent.getChildAt(i);
+   if(v instanceof EditText){
+    EditText e=(EditText)v;e.setTextColor(fg);e.setHintTextColor(muted);
+    android.graphics.drawable.GradientDrawable d=new android.graphics.drawable.GradientDrawable();d.setColor(panel);d.setCornerRadius(14);d.setStroke(2,accent);e.setBackground(d);
+   }else if(v instanceof Button){
+    Button b=(Button)v;b.setTextColor(btnText);b.setBackgroundTintList(android.content.res.ColorStateList.valueOf(accent));
+   }else if(v instanceof TextView){
+    TextView t=(TextView)v;t.setTextColor("section_header".equals(t.getTag())?accent:fg);
+    if("section_header".equals(t.getTag()))t.setBackgroundColor(panel);
+   }else if(v instanceof Spinner){
+    Spinner spinner=(Spinner)v;spinner.setBackgroundTintList(android.content.res.ColorStateList.valueOf(accent));
+   }
+   if(v instanceof android.view.ViewGroup)recolorChildren((android.view.ViewGroup)v,fg,muted,panel,accent,btnText);
+  }
+ }
+ private void sectionHeader(TextView v){v.setTag("section_header");v.setTextColor(0xFF4ADE80);v.setBackgroundColor(0xFF17271C);v.setPadding(16,22,16,22);android.widget.LinearLayout.LayoutParams p=new android.widget.LinearLayout.LayoutParams(-1,-2);p.setMargins(0,22,0,12);v.setLayoutParams(p);}
  private static String timeText(int n){return String.format(java.util.Locale.ROOT,"%02d:%02d",n/60,n%60);}
  private static int parseTime(String s){try{if(!s.matches("\\d{2}:\\d{2}"))return -1;int h=Integer.parseInt(s.substring(0,2)),m=Integer.parseInt(s.substring(3,5));return h<24&&m<60?h*60+m:-1;}catch(Exception e){return -1;}}
  private void styleInput(EditText e){e.setSingleLine(true);e.setTextSize(18);e.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFF4ADE80));android.graphics.drawable.GradientDrawable inputBg=new android.graphics.drawable.GradientDrawable();inputBg.setColor(0xFF17271C);inputBg.setCornerRadius(14);inputBg.setStroke(2,0xFF397B4D);e.setBackground(inputBg);e.setTextColor(0xFFFFFFFF);e.setHintTextColor(0xFFB9D6C2);e.setSelectAllOnFocus(false);e.setPadding(18,22,18,22);android.widget.LinearLayout.LayoutParams p=new android.widget.LinearLayout.LayoutParams(-1,-2);p.setMargins(0,8,0,14);e.setLayoutParams(p);}
