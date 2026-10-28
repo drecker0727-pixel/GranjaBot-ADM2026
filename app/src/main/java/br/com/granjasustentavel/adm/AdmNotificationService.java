@@ -12,6 +12,8 @@ public class AdmNotificationService extends NotificationListenerService {
  private static final java.util.concurrent.ExecutorService aiQueue=java.util.concurrent.Executors.newSingleThreadExecutor();
  private static final Map<String,Long> sessions=new LinkedHashMap<>();
  private static final Map<String,Long> recent=new LinkedHashMap<>();
+ private static final Map<String,Long> incoming=new LinkedHashMap<>();
+ private static final Map<String,Long> senderReplies=new LinkedHashMap<>();
  private static final Map<String,Long> spamHistory=new LinkedHashMap<>();
  private static final Map<String,java.util.ArrayDeque<Long>> frequency=new LinkedHashMap<>();
  @Override public void onNotificationPosted(StatusBarNotification sbn){
@@ -37,6 +39,16 @@ public class AdmNotificationService extends NotificationListenerService {
   if(content==null)return;
   String msg=content.toString().trim();
   if(msg.isEmpty()||msg.startsWith("Você: ")||msg.startsWith("You: "))return;
+  String sender=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
+  if(sender.equals(group))sender="Participante não identificado";
+  long receivedAt=System.currentTimeMillis();
+  String incomingKey=group+"|"+sender+"|"+msg;
+  synchronized(incoming){
+   incoming.entrySet().removeIf(e->receivedAt-e.getValue()>120000L);
+   if(incoming.containsKey(incomingKey))return;
+   incoming.put(incomingKey,receivedAt);
+   if(incoming.size()>500)incoming.clear();
+  }
   String answer=null;
   String lower=msg.toLowerCase(new Locale("pt","BR"));
   if(p.getBoolean("welcome_enabled",true)&&lower.matches("(?s).*(entrou (no|neste) grupo|entrou usando (o|um) link|foi adicionado(a)?|joined (using|via|the)|added you).*"))
@@ -44,8 +56,6 @@ public class AdmNotificationService extends NotificationListenerService {
   else if(p.getBoolean("farewell_enabled",true)&&lower.matches("(?s).*(saiu do grupo|deixou o grupo|left the group|removed from the group|foi removido(a)?).*"))
    answer="🐓🌱 Agradecemos por ter participado da nossa comunidade. Até uma próxima!";
   boolean link=p.getBoolean("detect_links",false)&&msg.matches("(?is).*?(https?://|www\\.|chat\\.whatsapp\\.com/|wa\\.me/).*");
-  String sender=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
-  if(sender.equals(group))sender="Participante não identificado";
   boolean spam=false;
   boolean flood=false;
   if(p.getBoolean("detect_spam",false)){
@@ -76,7 +86,7 @@ public class AdmNotificationService extends NotificationListenerService {
   boolean aiCalled=lower.matches("(?s).*(^|\\W)adm(\\W|$).*")||lower.contains("granjabot");
   try{
    if(answer==null&&!aiCalled)answer=RuleStore.match(this,msg);
-   if(answer==null){int i=msg.indexOf(": ");if(i>0)answer=RuleStore.match(this,msg.substring(i+2));}
+   if(answer==null&&!aiCalled){int i=msg.indexOf(": ");if(i>0)answer=RuleStore.match(this,msg.substring(i+2));}
   }catch(Exception e){return;}
   if(answer==null && p.getBoolean("ai_enabled",false)){
    String normalized=msg.toLowerCase(new Locale("pt","BR"));
@@ -101,18 +111,22 @@ public class AdmNotificationService extends NotificationListenerService {
      if(generated==null){
       try{generated=RuleStore.match(this,query);}catch(Exception ignored){}
      }
-     if(generated!=null)sendReply(notification,notificationKey+"|"+query,generated,p);
+     if(generated!=null)sendReply(notification,notificationKey+"|"+query,generated,p,participant);
     });
     return;
    }
   }
   if(answer==null)return;
-  sendReply(n,sbn.getKey()+"|"+msg,answer,p);
+  sendReply(n,sbn.getKey()+"|"+msg,answer,p,sender);
  }
- private void sendReply(Notification n,String id,String answer,SharedPreferences p){
+ private void sendReply(Notification n,String id,String answer,SharedPreferences p,String sender){
   long now=System.currentTimeMillis();
   String key=id+"|"+answer;
   synchronized(recent){recent.entrySet().removeIf(e->now-e.getValue()>120000L);if(recent.containsKey(key))return;}
+  synchronized(senderReplies){
+   Long last=senderReplies.get(sender);
+   if(last!=null&&now-last<12000L)return;
+  }
   if(n.actions==null)return;
   for(Notification.Action a:n.actions){
    RemoteInput[] inputs=a.getRemoteInputs();
@@ -125,6 +139,7 @@ public class AdmNotificationService extends NotificationListenerService {
     Intent intent=new Intent();RemoteInput.addResultsToIntent(inputs,intent,values);
     a.actionIntent.send(this,0,intent);
     synchronized(recent){recent.put(key,now);}
+    synchronized(senderReplies){senderReplies.put(sender,now);if(senderReplies.size()>300)senderReplies.clear();}
     p.edit().putLong("last_reply_time",now).putInt("replies",p.getInt("replies",0)+1).apply();
     return;
    }catch(PendingIntent.CanceledException|RuntimeException e){return;}
