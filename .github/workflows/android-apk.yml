@@ -42,6 +42,12 @@ jobs:
           test -f app/src/main/AndroidManifest.xml
           find app/src/main -type f | sort
 
+      - name: Preparar ícone do galo ADM
+        run: |
+          mkdir -p app/src/main/res/drawable-nodpi
+          base64 -d app/icon_rooster.png.base64 > app/src/main/res/drawable-nodpi/granjabot_rooster.png
+          file app/src/main/res/drawable-nodpi/granjabot_rooster.png
+
       - name: Compilar APK e mostrar erros
         run: gradle --no-daemon --stacktrace --console=plain :app:assembleDebug
 
