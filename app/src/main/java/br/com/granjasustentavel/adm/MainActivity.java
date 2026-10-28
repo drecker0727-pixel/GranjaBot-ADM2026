@@ -70,6 +70,8 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   Button aiDisable=new Button(this);aiDisable.setText("⏹ DESLIGAR IA AGORA");root.addView(aiDisable);styleButton(aiDisable,0xFFDC2626);
   aiDisable.setOnClickListener(v->{aiToggle.setChecked(false);prefs.edit().putBoolean("ai_enabled",false).apply();aiStatus.setText("⚪ IA desligada");Toast.makeText(this,"Atendimento IA desativado",Toast.LENGTH_SHORT).show();});
   TextView aiHelp=new TextView(this);aiHelp.setText("PASSOS DA IA: 1. Informe a URL HTTPS do Supabase. 2. Informe o segredo compartilhado (não é a chave OpenAI). 3. Marque ATIVAR IA. 4. Toque em SALVAR. A IA fica desligada até você ativar.");aiHelp.setTextSize(16);root.addView(aiHelp);
+  Button aiDiagnostic=new Button(this);aiDiagnostic.setText("🔎 VERIFICAR ERRO DA IA");root.addView(aiDiagnostic);
+  aiDiagnostic.setOnClickListener(v->{String error=prefs.getString("ai_last_error","Nenhum erro de conexão registrado. Faça uma pergunta no grupo e verifique novamente.");new android.app.AlertDialog.Builder(this).setTitle("Diagnóstico da IA").setMessage(error).setPositiveButton("OK",null).show();});
   TextView moderationTitle=new TextView(this);moderationTitle.setText("🛡️ Moderação do grupo");moderationTitle.setTextSize(23);moderationTitle.setTextColor(0xFFF3FFF5);root.addView(moderationTitle);sectionHeader(moderationTitle);
   CheckBox detectLinks=new CheckBox(this);detectLinks.setText("Detectar links nas mensagens");detectLinks.setTextColor(0xFFF3FFF5);detectLinks.setChecked(prefs.getBoolean("detect_links",false));root.addView(detectLinks);
   detectLinks.setOnCheckedChangeListener((v,checked)->prefs.edit().putBoolean("detect_links",checked).apply());
