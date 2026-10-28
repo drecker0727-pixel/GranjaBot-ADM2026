@@ -41,7 +41,7 @@ public class AdmNotificationService extends NotificationListenerService {
   if(msg.isEmpty()||msg.startsWith("Você: ")||msg.startsWith("You: ")||msg.startsWith("Eu: ")||msg.startsWith("Me: "))return;
   String lastBotText=p.getString("last_bot_text","");
   if(!lastBotText.isEmpty()&&(msg.equals(lastBotText)||msg.endsWith(": "+lastBotText)))return;
-  if(System.currentTimeMillis()-p.getLong("last_bot_at",0L)<30000L)return;
+
   String sender=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
   if(sender.equals(group))sender="Participante não identificado";
   long receivedAt=System.currentTimeMillis();
@@ -54,10 +54,17 @@ public class AdmNotificationService extends NotificationListenerService {
   }
   String answer=null;
   String lower=msg.toLowerCase(new Locale("pt","BR"));
-  if(p.getBoolean("welcome_enabled",true)&&lower.matches("(?s).*(entrou (no|neste) grupo|entrou usando (o|um) link|foi adicionado(a)?|joined (using|via|the)|added you).*"))
-   answer="🐣🌱 Seja muito bem-vindo(a) à Granja Sustentável! Fique à vontade, respeite as regras e aproveite nossa comunidade!";
-  else if(p.getBoolean("farewell_enabled",true)&&lower.matches("(?s).*(saiu do grupo|deixou o grupo|left the group|removed from the group|foi removido(a)?).*"))
-   answer="🐓🌱 Agradecemos por ter participado da nossa comunidade. Até uma próxima!";
+  // Membership changes are only detectable if WhatsApp exposes them in a notification.
+  boolean join=lower.matches("(?s)^(?!.*[?]).*(entrou (no|neste) grupo|entrou usando (o|um) link|foi adicionado(a)? (ao|a este) grupo|joined (using|via|the)|was added to the group).*$");
+  boolean leave=lower.matches("(?s)^(?!.*[?]).*(saiu do grupo|deixou o grupo|left the group|was removed from the group|foi removido(a)? do grupo).*$");
+  if(join||leave){
+   p.edit().putString("last_member_event",msg).putLong("last_member_event_at",receivedAt).apply();
+   if(join&&p.getBoolean("welcome_enabled",true))answer="🐣🌱 Seja muito bem-vindo(a) à Granja Sustentável! Respeite as regras e aproveite nossa comunidade!";
+   if(leave&&p.getBoolean("farewell_enabled",true))answer="🐓🌱 Obrigado por participar da nossa comunidade. Até uma próxima!";
+   if(answer!=null)sendReply(n,sbn.getKey()+"|"+msg,answer,p,sender);
+   return;
+  }
+  if(receivedAt-p.getLong("last_bot_at",0L)<30000L)return;
   boolean link=p.getBoolean("detect_links",false)&&msg.matches("(?is).*?(https?://|www\\.|chat\\.whatsapp\\.com/|wa\\.me/).*");
   boolean spam=false;
   boolean flood=false;
