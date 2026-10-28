@@ -10,6 +10,7 @@ import android.service.notification.StatusBarNotification;
 import java.util.*;
 public class AdmNotificationService extends NotificationListenerService {
  private static final Map<String,Long> recent=new LinkedHashMap<>();
+ private static final Map<String,Long> spamHistory=new LinkedHashMap<>();
  @Override public void onNotificationPosted(StatusBarNotification sbn){
   if(!"com.whatsapp.w4b".equals(sbn.getPackageName()))return;
   SharedPreferences p=getSharedPreferences("adm",MODE_PRIVATE);
@@ -26,9 +27,23 @@ public class AdmNotificationService extends NotificationListenerService {
   if(content==null)return;
   String msg=content.toString().trim();
   if(msg.isEmpty()||msg.startsWith("Você: ")||msg.startsWith("You: "))return;
-  String answer;
+  String answer=null;
+  boolean link=p.getBoolean("detect_links",false)&&msg.matches("(?is).*?(https?://|www\\.|chat\\.whatsapp\\.com/|wa\\.me/).*");
+  boolean spam=false;
+  if(p.getBoolean("detect_spam",false)){
+   String sender=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
+   String spamKey=sender+"|"+msg.toLowerCase(Locale.ROOT);
+   long now=System.currentTimeMillis();
+   synchronized(spamHistory){
+    spamHistory.entrySet().removeIf(e->now-e.getValue()>60000L);
+    spam=spamHistory.containsKey(spamKey);
+    spamHistory.put(spamKey,now);
+   }
+  }
+  if(link)answer="🛡️ ADM: Evite enviar links sem autorização da administração.";
+  else if(spam)answer="🛡️ ADM: Evite repetir mensagens no grupo.";
   try{
-   answer=RuleStore.match(this,msg);
+   if(answer==null)answer=RuleStore.match(this,msg);
    if(answer==null){int i=msg.indexOf(": ");if(i>0)answer=RuleStore.match(this,msg.substring(i+2));}
   }catch(Exception e){return;}
   if(answer==null)return;
