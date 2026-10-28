@@ -24,6 +24,28 @@ final class MassReplies {
    add.accept(a+" "+b+end,ANSWERS[c]);
   }
  }
+ private static final String[][] DIRECT={
+  {"oi","oii","oiii","olá","ola","olaa","opa","alô","alo","eai","e aí","fala aí","salve","bom dia","boa tarde","boa noite"},
+  {"tem alguém aí","tem alguem ai","alguém aí","alguem ai","alguém online","alguem online","tem alguém aqui","tem alguem aqui","cadê todo mundo","cade todo mundo","onde tá todo mundo","onde ta todo mundo","sumiu todo mundo","grupo tá parado","grupo ta parado"},
+  {"cheguei","acabei de chegar","voltei","tô de volta","to de volta","cheguei agora","olha quem chegou","entrei no grupo","sou novo aqui","sou nova aqui","boa cheguei"},
+  {"vou sair do grupo","to saindo do grupo","tô saindo do grupo","vou deixar o grupo","vou sair daqui","estou saindo do grupo","adeus pessoal","vou embora do grupo","vou me retirar do grupo","saindo do grupo"},
+  {"até mais pessoal","fui galera","até amanhã galera","tchau pessoal","boa noite tropa","até logo família","ate logo familia","falou galera"}
+ };
+ private static final String[] DIRECT_ANSWERS={
+  "🐓🤖 ADM: Opa! Seja bem-vindo à comunidade da Granja Sustentável! 🌱 Digite !menu para ver as opções.",
+  "🐣 ADM: Tô por aqui! 😄 A galera pode estar cuidando das galinhas. Precisa de ajuda? Digite !menu.",
+  "🐔 ADM: Bem-vindo de volta! 💚 Chega mais, a granja é nossa!",
+  "🌱 ADM: Sentiremos sua falta! Obrigado por participar. Se quiser voltar um dia, será bem-vindo! 💚",
+  "🌙 ADM: Até a próxima! Boa sorte e cuide bem da sua granja! 🐔"
+ };
+ private static String simple(String s){
+  return java.text.Normalizer.normalize(s.toLowerCase(new Locale("pt","BR")),java.text.Normalizer.Form.NFD).replaceAll("\\p{M}+","").trim().replaceAll("[!?.,;:]+$","").replaceAll("\\s+"," ");
+ }
+ static String direct(String message){
+  String m=simple(message);
+  for(int i=0;i<DIRECT.length;i++)for(String trigger:DIRECT[i])if(m.equals(simple(trigger)))return DIRECT_ANSWERS[i];
+  return null;
+ }
  static String answer(String message){
   String m=message.toLowerCase(new Locale("pt","BR")).trim().replaceAll("[!?.,;:]+$","");
   for(int c=0;c<STARTS.length;c++)for(String a:STARTS[c])for(String b:OBJECTS[c]){
