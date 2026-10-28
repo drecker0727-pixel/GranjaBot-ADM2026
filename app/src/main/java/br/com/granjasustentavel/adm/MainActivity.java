@@ -72,6 +72,20 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   TextView aiHelp=new TextView(this);aiHelp.setText("PASSOS DA IA: 1. Informe a URL HTTPS do Supabase. 2. Informe o segredo compartilhado (não é a chave OpenAI). 3. Marque ATIVAR IA. 4. Toque em SALVAR. A IA fica desligada até você ativar.");aiHelp.setTextSize(16);root.addView(aiHelp);
   Button aiDiagnostic=new Button(this);aiDiagnostic.setText("🔎 VERIFICAR ERRO DA IA");root.addView(aiDiagnostic);
   aiDiagnostic.setOnClickListener(v->{String error=prefs.getString("ai_last_error","Nenhum erro de conexão registrado. Faça uma pergunta no grupo e verifique novamente.");new android.app.AlertDialog.Builder(this).setTitle("Diagnóstico da IA").setMessage(error).setPositiveButton("OK",null).show();});
+  Button testAi=new Button(this);testAi.setText("🧪 TESTAR CONEXÃO REAL DA IA");root.addView(testAi);styleButton(testAi,0xFF0F766E);
+  testAi.setOnClickListener(v->{
+   testAi.setEnabled(false);testAi.setText("⏳ Testando Supabase...");
+   new Thread(()->{
+    String reply=AiClient.ask(getApplicationContext(),"teste_painel","Responda apenas: GranjaBot IA funcionando.");
+    String error=prefs.getString("ai_last_error","");
+    runOnUiThread(()->{
+     testAi.setEnabled(true);testAi.setText("🧪 TESTAR CONEXÃO REAL DA IA");
+     new android.app.AlertDialog.Builder(this).setTitle(reply!=null?"✅ IA respondeu":"❌ Falha na IA")
+      .setMessage(reply!=null?reply:(error.isEmpty()?"Sem resposta do servidor.":error))
+      .setPositiveButton("OK",null).show();
+    });
+   }).start();
+  });
   TextView sendTitle=new TextView(this);sendTitle.setText("📨 Mensagem para o grupo");sendTitle.setTextSize(23);sendTitle.setTextColor(0xFFF3FFF5);root.addView(sendTitle);sectionHeader(sendTitle);
   EditText groupMessage=new EditText(this);groupMessage.setHint("Digite a mensagem que deseja enviar ao grupo");groupMessage.setMinLines(2);groupMessage.setTextColor(0xFFFFFFFF);groupMessage.setHintTextColor(Color.LTGRAY);root.addView(groupMessage);styleInput(groupMessage);
   Button sendGroup=new Button(this);sendGroup.setText("📨 ABRIR WHATSAPP BUSINESS PARA ENVIAR");root.addView(sendGroup);styleButton(sendGroup,0xFF16A34A);
