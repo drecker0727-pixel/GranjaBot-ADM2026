@@ -19,7 +19,12 @@ serve(async req => {
    headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json"},
    body:JSON.stringify({model:Deno.env.get("OPENAI_MODEL")||"gpt-4.1-mini",instructions:knowledge,input:[...history,{role:"user",content:message}],max_output_tokens:350})
   });
-  if(!response.ok)return new Response("Falha na IA",{status:502});
+  if(!response.ok){
+   let code="unknown";
+   try{const error=await response.json();code=String(error?.error?.code||error?.error?.type||"unknown").slice(0,80);}catch{}
+   console.error("OpenAI request failed",response.status,code);
+   return Response.json({error:"OpenAI HTTP "+response.status,code},{status:502});
+  }
   const data=await response.json();
   const answer=(data.output||[]).flatMap((x:any)=>x.content||[]).filter((x:any)=>x.type==="output_text").map((x:any)=>x.text).join("\n").trim().slice(0,1800);
   return Response.json({answer:answer||"Não consegui responder agora. Um administrador poderá ajudar."});
