@@ -31,13 +31,18 @@ public class AdmNotificationService extends NotificationListenerService {
   if(n==null||n.extras==null||(n.flags&Notification.FLAG_GROUP_SUMMARY)!=0)return;
   String conversation=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_CONVERSATION_TITLE,""));
   String title=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
-  if(!conversation.isEmpty()? !group.equals(conversation):!group.equals(title))return;
+  if(!conversation.isEmpty()? !group.equals(conversation.trim()):!group.equals(title.trim()))return;
   if(n.category!=null&&!Notification.CATEGORY_MESSAGE.equals(n.category))return;
   CharSequence content=n.extras.getCharSequence(Notification.EXTRA_TEXT);
   if(content==null)return;
   String msg=content.toString().trim();
   if(msg.isEmpty()||msg.startsWith("Você: ")||msg.startsWith("You: "))return;
   String answer=null;
+  String lower=msg.toLowerCase(new Locale("pt","BR"));
+  if(p.getBoolean("welcome_enabled",true)&&lower.matches("(?s).*(entrou (no|neste) grupo|entrou usando (o|um) link|foi adicionado(a)?|joined (using|via|the)|added you).*"))
+   answer="🐣🌱 Seja muito bem-vindo(a) à Granja Sustentável! Fique à vontade, respeite as regras e aproveite nossa comunidade!";
+  else if(p.getBoolean("farewell_enabled",true)&&lower.matches("(?s).*(saiu do grupo|deixou o grupo|left the group|removed from the group|foi removido(a)?).*"))
+   answer="🐓🌱 Agradecemos por ter participado da nossa comunidade. Até uma próxima!";
   boolean link=p.getBoolean("detect_links",false)&&msg.matches("(?is).*?(https?://|www\\.|chat\\.whatsapp\\.com/|wa\\.me/).*");
   String sender=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
   if(sender.equals(group))sender="Participante não identificado";
@@ -64,7 +69,7 @@ public class AdmNotificationService extends NotificationListenerService {
   }
   boolean emojiFlood=p.getBoolean("detect_spam",false)&&msg.codePointCount(0,msg.length())>100&&msg.replaceAll("[\\p{L}\\p{N}\\s]","").length()>60;
   String violation=link?"Link":spam?"Mensagem repetida":flood?"Mensagens em excesso":emojiFlood?"Excesso de símbolos":null;
-  if(violation!=null){
+  if(violation!=null && answer==null){
    ModerationLog.record(this,sender,violation);
    answer="🛡️ ADM: Atenção às regras do grupo. Evite links e mensagens repetidas.";
   }
@@ -104,7 +109,7 @@ public class AdmNotificationService extends NotificationListenerService {
   long now=System.currentTimeMillis();
   String key=id+"|"+answer;
   synchronized(recent){recent.entrySet().removeIf(e->now-e.getValue()>120000L);if(recent.containsKey(key))return;}
-  if(now-p.getLong("last_reply_time",0)<2500L||n.actions==null)return;
+  if(n.actions==null)return;
   for(Notification.Action a:n.actions){
    RemoteInput[] inputs=a.getRemoteInputs();
    if(inputs==null||inputs.length==0||a.actionIntent==null)continue;
