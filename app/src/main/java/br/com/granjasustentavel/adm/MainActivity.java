@@ -106,6 +106,17 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
    }
    prefs.edit().putBoolean("enabled",checked).apply();syncStatusService();updateStatus();
   });
+  Button batterySettings=new Button(this);batterySettings.setText("🔋 PERMITIR FUNCIONAMENTO COM TELA BLOQUEADA");root.addView(batterySettings);styleButton(batterySettings,0xFF2563EB);
+  batterySettings.setOnClickListener(v->{
+   try{
+    Intent intent=new Intent(android.provider.Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+    intent.setData(android.net.Uri.parse("package:"+getPackageName()));
+    startActivity(intent);
+   }catch(Exception e){
+    try{startActivity(new Intent(android.provider.Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS));}
+    catch(Exception ignored){Toast.makeText(this,"Abra Configurações > Apps > GranjaBot ADM > Bateria e permita segundo plano.",Toast.LENGTH_LONG).show();}
+   }
+  });
   Button permissions=new Button(this);permissions.setText("Autorizar acesso às notificações");root.addView(permissions);styleButton(permissions,0xFF7C3AED);
   permissions.setOnClickListener(v->startActivity(new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)));
   Button importButton=new Button(this);importButton.setText("📂 Importar regras CSV");root.addView(importButton);styleButton(importButton,0xFFF59E0B);
