@@ -51,8 +51,36 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   EditText group=new EditText(this);group.setTextColor(0xFFF3FFF5);group.setHintTextColor(Color.LTGRAY);group.setHint("Nome exato do grupo");group.setText(prefs.getString("group","🐔🌱 Granja Sustentável | Comunidade Oficial 🐣"));root.addView(group);styleInput(group);
   TextView botLabel=new TextView(this);botLabel.setText("📱 Número do Robô (WhatsApp Business)");botLabel.setTextColor(0xFFF3FFF5);root.addView(botLabel);
   EditText botNumber=new EditText(this);botNumber.setTextColor(0xFFF3FFF5);botNumber.setHintTextColor(Color.LTGRAY);botNumber.setHint("Ex.: +55 62 99999-9999");botNumber.setInputType(android.text.InputType.TYPE_CLASS_PHONE);botNumber.setText(prefs.getString("bot_number",""));root.addView(botNumber);styleInput(botNumber);
-  Button saveNumber=new Button(this);saveNumber.setText("Salvar número do robô");root.addView(saveNumber);styleButton(saveNumber,0xFF93C5FD);
-  saveNumber.setOnClickListener(v->{prefs.edit().putString("bot_number",botNumber.getText().toString().trim()).apply();Toast.makeText(this,"Número salvo. Ative esse número no WhatsApp Business.",Toast.LENGTH_LONG).show();});
+  TextView numberStatus=new TextView(this);numberStatus.setTextSize(16);numberStatus.setPadding(12,10,12,10);root.addView(numberStatus);
+  Button saveNumber=new Button(this);saveNumber.setText("💾 SALVAR NÚMERO");root.addView(saveNumber);styleButton(saveNumber,0xFF93C5FD);
+  Button editNumber=new Button(this);editNumber.setText("✏️ EDITAR NÚMERO");root.addView(editNumber);styleButton(editNumber,0xFFFBBF24);
+  Runnable showNumberState=()->{
+   String saved=prefs.getString("bot_number","");
+   boolean locked=!saved.isEmpty();
+   botNumber.setEnabled(!locked);
+   botNumber.setFocusable( !locked );
+   botNumber.setFocusableInTouchMode(!locked);
+   botNumber.setTextColor(locked?0xFF9CA3AF:0xFFF3FFF5);
+   numberStatus.setText(locked?"✅ Número salvo: "+saved+" — toque em EDITAR para alterar.":"Informe o número do WhatsApp Business e toque em SALVAR.");
+   saveNumber.setVisibility(locked?android.view.View.GONE:android.view.View.VISIBLE);
+   editNumber.setVisibility(locked?android.view.View.VISIBLE:android.view.View.GONE);
+  };
+  saveNumber.setOnClickListener(v->{
+   String value=botNumber.getText().toString().trim();
+   String digits=value.replaceAll("[^0-9]","");
+   if(digits.length()<10||digits.length()>15){Toast.makeText(this,"Informe um número válido com DDD (10 a 15 dígitos).",Toast.LENGTH_LONG).show();return;}
+   prefs.edit().putString("bot_number",value).apply();
+   showNumberState.run();
+   Toast.makeText(this,"✅ Número salvo!",Toast.LENGTH_LONG).show();
+  });
+  editNumber.setOnClickListener(v->{
+   botNumber.setEnabled(true);botNumber.setFocusableInTouchMode(true);botNumber.setTextColor(0xFFF3FFF5);
+   saveNumber.setVisibility(android.view.View.VISIBLE);editNumber.setVisibility(android.view.View.GONE);
+   numberStatus.setText("✏️ Editando número — toque em SALVAR para confirmar.");
+   botNumber.requestFocus();
+  });
+  showNumberState.run();
+  TextView numberNote=new TextView(this);numberNote.setText("Este número é apenas uma identificação salva no painel. O WhatsApp Business instalado e o acesso às notificações determinam as respostas. Ser administrador do grupo não permite ao GranjaBot apagar mensagens automaticamente.");numberNote.setTextColor(0xFFC5E4CD);root.addView(numberNote);
   TextView aiTitle=new TextView(this);aiTitle.setText("🤖 Atendimento com inteligência artificial");aiTitle.setTextSize(23);aiTitle.setTextColor(0xFFF3FFF5);root.addView(aiTitle);sectionHeader(aiTitle);
   TextView aiNote=new TextView(this);aiNote.setText("Requer backend Supabase configurado. Nunca coloque a chave da OpenAI no aplicativo. Mensagens podem ser enviadas ao provedor de IA quando ativado.");aiNote.setTextColor(0xFFC5E4CD);root.addView(aiNote);
   EditText aiUrl=new EditText(this);aiUrl.setHint("URL HTTPS da função granjabot-ia");aiUrl.setTextColor(0xFFF3FFF5);aiUrl.setHintTextColor(Color.LTGRAY);aiUrl.setText(prefs.getString("ai_endpoint",""));root.addView(aiUrl);styleInput(aiUrl);
