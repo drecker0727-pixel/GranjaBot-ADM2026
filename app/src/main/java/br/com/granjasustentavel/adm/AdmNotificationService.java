@@ -154,7 +154,7 @@ public class AdmNotificationService extends NotificationListenerService {
    RemoteInput[] inputs=a.getRemoteInputs();
    if(inputs==null||inputs.length==0||a.actionIntent==null)continue;
    String label=a.title==null?"":a.title.toString().toLowerCase(Locale.ROOT);
-   if(!label.contains("responder")&&!label.contains("reply")&&!label.contains("respond"))continue;
+   // A presença de RemoteInput identifica uma ação de resposta mesmo quando o rótulo varia por versão/idioma.
    try{
     Bundle values=new Bundle();
     for(RemoteInput input:inputs)values.putCharSequence(input.getResultKey(),answer);
@@ -166,5 +166,6 @@ public class AdmNotificationService extends NotificationListenerService {
     return;
    }catch(PendingIntent.CanceledException|RuntimeException e){p.edit().putString("last_reply_error","Falha no envio: "+e.getClass().getSimpleName()).apply();return;}
   }
+  p.edit().putString("last_reply_error","Nenhuma ação de resposta RemoteInput disponível nesta notificação").apply();
  }
 }
