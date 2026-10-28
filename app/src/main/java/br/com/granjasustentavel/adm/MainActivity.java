@@ -114,7 +114,7 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   EditText test=new EditText(this);test.setTextColor(0xFFF3FFF5);test.setHintTextColor(Color.LTGRAY);test.setHint("Digite comando para testar: !menu");root.addView(test);styleInput(test);
   Button testButton=new Button(this);testButton.setText("Testar regra");root.addView(testButton);styleButton(testButton,0xFF059669);
   TextView result=new TextView(this);result.setTextColor(0xFFF3FFF5);result.setTextIsSelectable(true);root.addView(result);
-  testButton.setOnClickListener(v->{try{String reply=RuleStore.match(this,test.getText().toString());result.setText(reply==null?"Nenhuma regra exata encontrada":reply);}catch(Exception e){result.setText("Erro: "+e.getMessage());}});
+  testButton.setOnClickListener(v->{String message;try{String reply=RuleStore.match(this,test.getText().toString());message=reply==null?"Nenhuma regra exata encontrada. Experimente !menu":reply;}catch(Exception e){message="Erro no teste: "+e.getMessage();}result.setText(message);result.setTextSize(18);result.setPadding(14,18,14,18);result.setBackgroundColor(0xFF20392A);result.setTextColor(Color.WHITE);Toast.makeText(this,message.length()>110?message.substring(0,110):message,Toast.LENGTH_LONG).show();});
   status=new TextView(this);status.setTextColor(0xFFF3FFF5);status.setPadding(0,24,0,0);root.addView(status);
   TextView note=new TextView(this);note.setText("Requer acesso às notificações. Respostas dependem do botão Responder oferecido pelo WhatsApp Business. Não é integração oficial.");note.setTextColor(0xFFC5E4CD);root.addView(note);
   status.setBackgroundColor(0xFF17271C);status.setPadding(18,20,18,20);status.setTextSize(17);updateStatus();applyPanelTheme(root,savedTheme);
