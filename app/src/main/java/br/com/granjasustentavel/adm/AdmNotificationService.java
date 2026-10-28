@@ -73,13 +73,14 @@ public class AdmNotificationService extends NotificationListenerService {
    ModerationLog.record(this,sender,violation);
    answer="🛡️ ADM: Atenção às regras do grupo. Evite links e mensagens repetidas.";
   }
+  boolean aiCalled=lower.matches("(?s).*(^|\\W)adm(\\W|$).*")||lower.contains("granjabot");
   try{
-   if(answer==null)answer=RuleStore.match(this,msg);
+   if(answer==null&&!aiCalled)answer=RuleStore.match(this,msg);
    if(answer==null){int i=msg.indexOf(": ");if(i>0)answer=RuleStore.match(this,msg.substring(i+2));}
   }catch(Exception e){return;}
   if(answer==null && p.getBoolean("ai_enabled",false)){
    String normalized=msg.toLowerCase(new Locale("pt","BR"));
-   boolean called=normalized.matches("(?s).*(^|\\W)adm(\\W|$).*")||normalized.contains("granjabot");
+   boolean called=aiCalled;
    boolean active;
    long current=System.currentTimeMillis();
    synchronized(sessions){
@@ -97,6 +98,9 @@ public class AdmNotificationService extends NotificationListenerService {
     final Notification notification=n;
     aiQueue.execute(()->{
      String generated=AiClient.ask(this,participant,query);
+     if(generated==null){
+      try{generated=RuleStore.match(this,query);}catch(Exception ignored){}
+     }
      if(generated!=null)sendReply(notification,notificationKey+"|"+query,generated,p);
     });
     return;
