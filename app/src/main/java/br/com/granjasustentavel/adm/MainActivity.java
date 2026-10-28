@@ -173,8 +173,8 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
    if(checked){
     String enabled=Settings.Secure.getString(getContentResolver(),"enabled_notification_listeners");
     if(enabled==null||!enabled.contains(getPackageName())){toggle.setChecked(false);Toast.makeText(this,"Autorize acesso às notificações",Toast.LENGTH_LONG).show();return;}
-    try{if(RuleStore.count(this)==0){toggle.setChecked(false);Toast.makeText(this,"Importe regras antes de ativar",Toast.LENGTH_LONG).show();return;}}
-    catch(Exception e){toggle.setChecked(false);return;}
+    try{if(RuleStore.count(this)==0&&!prefs.getBoolean("ai_enabled",false)&&!prefs.getBoolean("detect_links",false)&&!prefs.getBoolean("detect_spam",false)){toggle.setChecked(false);Toast.makeText(this,"Ative IA, moderação ou importe regras antes de ligar",Toast.LENGTH_LONG).show();return;}}
+    catch(Exception e){if(!prefs.getBoolean("ai_enabled",false)&&!prefs.getBoolean("detect_links",false)&&!prefs.getBoolean("detect_spam",false)){toggle.setChecked(false);Toast.makeText(this,"Falha nas regras; ative IA ou moderação",Toast.LENGTH_LONG).show();return;}}
    }
    prefs.edit().putBoolean("enabled",checked).apply();syncStatusService();updateStatus();
   });
