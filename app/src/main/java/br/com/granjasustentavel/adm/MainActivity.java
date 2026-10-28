@@ -104,7 +104,7 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
     try{if(RuleStore.count(this)==0){toggle.setChecked(false);Toast.makeText(this,"Importe regras antes de ativar",Toast.LENGTH_LONG).show();return;}}
     catch(Exception e){toggle.setChecked(false);return;}
    }
-   prefs.edit().putBoolean("enabled",checked).apply();updateStatus();
+   prefs.edit().putBoolean("enabled",checked).apply();syncStatusService();updateStatus();
   });
   Button permissions=new Button(this);permissions.setText("Autorizar acesso às notificações");root.addView(permissions);styleButton(permissions,0xFF7C3AED);
   permissions.setOnClickListener(v->startActivity(new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)));
@@ -196,6 +196,16 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
  private static int parseTime(String s){try{if(!s.matches("\\d{2}:\\d{2}"))return -1;int h=Integer.parseInt(s.substring(0,2)),m=Integer.parseInt(s.substring(3,5));return h<24&&m<60?h*60+m:-1;}catch(Exception e){return -1;}}
  private void styleInput(EditText e){e.setSingleLine(true);e.setTextSize(18);e.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFF4ADE80));android.graphics.drawable.GradientDrawable inputBg=new android.graphics.drawable.GradientDrawable();inputBg.setColor(0xFF17271C);inputBg.setCornerRadius(14);inputBg.setStroke(2,0xFF397B4D);e.setBackground(inputBg);e.setTextColor(0xFFFFFFFF);e.setHintTextColor(0xFFB9D6C2);e.setSelectAllOnFocus(false);e.setPadding(18,22,18,22);android.widget.LinearLayout.LayoutParams p=new android.widget.LinearLayout.LayoutParams(-1,-2);p.setMargins(0,8,0,14);e.setLayoutParams(p);}
  private void styleButton(Button b,int color){b.setTextColor(0xFF07170A);b.setTextSize(16);b.setAllCaps(false);b.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFF4ADE80));b.setPadding(14,18,14,18);android.widget.LinearLayout.LayoutParams p=new android.widget.LinearLayout.LayoutParams(-1,-2);p.setMargins(0,8,0,14);b.setLayoutParams(p);}
+ private void syncStatusService(){
+  Intent intent=new Intent(this,AdmKeepAliveService.class);
+  if(prefs.getBoolean("enabled",false)){
+   if(android.os.Build.VERSION.SDK_INT>=33&&checkSelfPermission("android.permission.POST_NOTIFICATIONS")!=android.content.pm.PackageManager.PERMISSION_GRANTED)
+    requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"},2026);
+   try{if(android.os.Build.VERSION.SDK_INT>=26)startForegroundService(intent);else startService(intent);}
+   catch(RuntimeException e){Toast.makeText(this,"Permita notificações e execução em segundo plano para mostrar o ícone.",Toast.LENGTH_LONG).show();}
+  }else stopService(intent);
+ }
+ @Override protected void onResume(){super.onResume();if(prefs!=null&&prefs.getBoolean("enabled",false))syncStatusService();}
  private void updateStatus(){
   if(status==null)return;
   try{
