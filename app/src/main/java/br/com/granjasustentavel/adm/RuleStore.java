@@ -34,8 +34,8 @@ public final class RuleStore {
   synchronized(RuleStore.class){
    if(cache!=null)return cache;
    File f=new File(c.getFilesDir(),FILE);
-   if(!f.exists()){try(InputStream in=c.getAssets().open("regras.csv")){cache=Collections.unmodifiableList(parse(in));return cache;}catch(java.io.FileNotFoundException e){return Collections.emptyList();}}
-   try(InputStream in=new FileInputStream(f)){cache=Collections.unmodifiableList(parse(in));return cache;}
+   if(!f.exists()){try(InputStream in=c.getAssets().open("regras.csv")){cache=Collections.unmodifiableList(withExtra(c,parse(in)));return cache;}catch(java.io.FileNotFoundException e){return Collections.unmodifiableList(withExtra(c,new ArrayList<Rule>()));}}
+   try(InputStream in=new FileInputStream(f)){cache=Collections.unmodifiableList(withExtra(c,parse(in)));return cache;}
   }
  }
  public static synchronized int importCsv(Context c,InputStream in)throws IOException{
@@ -46,7 +46,16 @@ public final class RuleStore {
   if(bak.exists()&&!bak.delete())throw new IOException("Falha ao remover backup antigo");
   if(dest.exists()&&!dest.renameTo(bak))throw new IOException("Falha ao preservar regras");
   if(!temp.renameTo(dest)){if(bak.exists())bak.renameTo(dest);throw new IOException("Falha ao salvar CSV");}
-  cache=Collections.unmodifiableList(rules);if(bak.exists())bak.delete();return rules.size();
+  cache=Collections.unmodifiableList(withExtra(c,rules));if(bak.exists())bak.delete();return rules.size();
+ }
+ private static List<Rule> withExtra(Context c,List<Rule> base)throws IOException{
+  List<Rule> all=new ArrayList<>(base);
+  Set<String> seen=new HashSet<>();
+  for(Rule r:all)seen.add(r.trigger);
+  try(InputStream in=c.getAssets().open("saudacoes_extra.csv")){
+   for(Rule r:parse(in))if(seen.add(r.trigger))all.add(r);
+  }catch(java.io.FileNotFoundException ignored){}
+  return all;
  }
  private static byte[] read(InputStream in)throws IOException{
   ByteArrayOutputStream out=new ByteArrayOutputStream();byte[] b=new byte[8192];int n;
