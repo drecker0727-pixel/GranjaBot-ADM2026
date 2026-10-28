@@ -38,7 +38,10 @@ public class AdmNotificationService extends NotificationListenerService {
   CharSequence content=n.extras.getCharSequence(Notification.EXTRA_TEXT);
   if(content==null)return;
   String msg=content.toString().trim();
-  if(msg.isEmpty()||msg.startsWith("Você: ")||msg.startsWith("You: "))return;
+  if(msg.isEmpty()||msg.startsWith("Você: ")||msg.startsWith("You: ")||msg.startsWith("Eu: ")||msg.startsWith("Me: "))return;
+  String lastBotText=p.getString("last_bot_text","");
+  if(!lastBotText.isEmpty()&&(msg.equals(lastBotText)||msg.endsWith(": "+lastBotText)))return;
+  if(System.currentTimeMillis()-p.getLong("last_bot_at",0L)<30000L)return;
   String sender=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
   if(sender.equals(group))sender="Participante não identificado";
   long receivedAt=System.currentTimeMillis();
@@ -140,7 +143,7 @@ public class AdmNotificationService extends NotificationListenerService {
     a.actionIntent.send(this,0,intent);
     synchronized(recent){recent.put(key,now);}
     synchronized(senderReplies){senderReplies.put(sender,now);if(senderReplies.size()>300)senderReplies.clear();}
-    p.edit().putLong("last_reply_time",now).putInt("replies",p.getInt("replies",0)+1).apply();
+    p.edit().putLong("last_reply_time",now).putLong("last_bot_at",now).putString("last_bot_text",answer).putInt("replies",p.getInt("replies",0)+1).apply();
     return;
    }catch(PendingIntent.CanceledException|RuntimeException e){return;}
   }
