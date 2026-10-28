@@ -16,6 +16,8 @@ public final class RuleStore {
  public static int count(Context c)throws IOException{return load(c).size();}
  public static String match(Context c,String message)throws IOException{
   String m=norm(message);if(m.isEmpty())return null;
+  String direct=MassReplies.direct(message);
+  if(direct!=null)return direct;
   List<Rule> rules=load(c);
   for(Rule r:rules)if(r.trigger.equals(m))return r.reply;
   String basic=plain(m);
