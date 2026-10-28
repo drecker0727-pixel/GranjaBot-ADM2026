@@ -60,6 +60,25 @@ public class AdmNotificationService extends NotificationListenerService {
   }
   String answer=null;
   String lower=msg.toLowerCase(new Locale("pt","BR"));
+  // Aviso de áudio apenas durante atendimento já iniciado com este participante.
+  // A notificação não disponibiliza o conteúdo do áudio para transcrição.
+  boolean audio=lower.matches("(?is)^(?:\\s*[🎤🔊🎵]\\s*)?(?:mensagem de voz|mensagem de áudio|mensagem de audio|áudio|audio|voice message|voice note|nota de voz)(?:\\s*\\(.*\\))?\\s*$");
+  if(audio){
+   boolean active;
+   synchronized(sessions){
+    Long last=sessions.get(sender);
+    active=last!=null&&receivedAt-last<20*60*1000L;
+   }
+   if(active){
+    String noticeKey="audio_notice_"+Integer.toHexString((group+"|"+sender).hashCode());
+    long previous=p.getLong(noticeKey,0L);
+    if(receivedAt-previous>20*60*1000L){
+     String reply="🎤 ADM: Ainda não consigo ouvir ou responder mensagens de áudio. Por favor, envie sua pergunta por texto para continuarmos o atendimento.";
+     if(sendReply(n,sbn.getKey()+"|audio|"+sender,reply,p,sender))p.edit().putLong(noticeKey,receivedAt).apply();
+    }
+   }
+   return;
+  }
   // Membership changes are only detectable if WhatsApp exposes them in a notification.
   boolean join=lower.matches("(?s)^(?!.*[?]).*(entrou (no|neste) grupo|entrou usando (o|um) link|foi adicionado(a)? (ao|a este) grupo|joined (using|via|the)|was added to the group).*$");
   boolean leave=lower.matches("(?s)^(?!.*[?]).*(saiu do grupo|deixou o grupo|left the group|was removed from the group|foi removido(a)? do grupo).*$");
@@ -134,7 +153,7 @@ public class AdmNotificationService extends NotificationListenerService {
   if(answer==null)return;
   sendReply(n,sbn.getKey()+"|"+msg,answer,p,sender);
  }
- private void sendReply(Notification n,String id,String answer,SharedPreferences p,String sender){
+ private boolean sendReply(Notification n,String id,String answer,SharedPreferences p,String sender){
   long now=System.currentTimeMillis();
   if(!answer.startsWith("🐣🌱")&&!answer.startsWith("🐓🌱")&&!sender.isEmpty()&&!sender.equals("Participante não identificado")){
    String displayName=sender.trim();
@@ -144,12 +163,12 @@ public class AdmNotificationService extends NotificationListenerService {
    if(!displayName.isEmpty())answer="🐓 ADM para "+displayName+":\n"+answer;
   }
   String key=id+"|"+answer;
-  synchronized(recent){recent.entrySet().removeIf(e->now-e.getValue()>120000L);if(recent.containsKey(key))return;}
+  synchronized(recent){recent.entrySet().removeIf(e->now-e.getValue()>120000L);if(recent.containsKey(key))return false;}
   synchronized(senderReplies){
    Long last=senderReplies.get(sender);
-   if(last!=null&&now-last<3000L)return;
+   if(last!=null&&now-last<3000L)return false;
   }
-  if(n.actions==null){p.edit().putString("last_reply_error","Notificação sem ação de resposta").apply();return;}
+  if(n.actions==null){p.edit().putString("last_reply_error","Notificação sem ação de resposta").apply();return false;}
   for(Notification.Action a:n.actions){
    RemoteInput[] inputs=a.getRemoteInputs();
    if(inputs==null||inputs.length==0||a.actionIntent==null)continue;
@@ -163,9 +182,10 @@ public class AdmNotificationService extends NotificationListenerService {
     synchronized(recent){recent.put(key,now);}
     synchronized(senderReplies){senderReplies.put(sender,now);if(senderReplies.size()>300)senderReplies.clear();}
     p.edit().remove("last_reply_error").putLong("last_reply_time",now).putLong("last_bot_at",now).putString("last_bot_text",answer).putInt("replies",p.getInt("replies",0)+1).apply();
-    return;
-   }catch(PendingIntent.CanceledException|RuntimeException e){p.edit().putString("last_reply_error","Falha no envio: "+e.getClass().getSimpleName()).apply();return;}
+    return true;
+   }catch(PendingIntent.CanceledException|RuntimeException e){p.edit().putString("last_reply_error","Falha no envio: "+e.getClass().getSimpleName()).apply();return false;}
   }
   p.edit().putString("last_reply_error","Nenhuma ação de resposta RemoteInput disponível nesta notificação").apply();
+  return false;
  }
 }
