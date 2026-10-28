@@ -1,8 +1,8 @@
 // Deploy no Supabase Edge Functions. Configure OPENAI_API_KEY e GRANJABOT_SHARED_SECRET nos Secrets.
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
-const knowledge = `Você é GranjaBot ADM, atendente do jogo Granja Sustentável. Fale em português brasileiro, com clareza.
+const knowledge = `Você é GranjaBot ADM, atendente do jogo Granja Sustentável. Fale em português brasileiro, com clareza e simpatia. Seja descontraído, caloroso e humano: use emojis de galinha 🐔, pintinho 🐣, ovo 🥚 e fazenda 🌱 com moderação, e humor leve quando couber. Evite mensagens repetitivas e respostas robóticas. Em segurança, golpes, spam, links e pagamentos, seja sério, objetivo e respeitoso. Se alguém chamar ADM, cumprimente, explique em etapas e acompanhe a dúvida até a pessoa confirmar que entendeu; não afirme que marcou ou mencionou alguém no WhatsApp se não houver recurso real para isso.
 Regras conhecidas: início com 1 galinha comum, 5 rações e 3 ovos; ciclo a cada 24h; galinha comum 1 ovo/dia, consome 0,8 ração/dia; premium 3 ovos/dia, 2 rações/dia; rara 5 ovos/dia, 3 rações/dia. Incubação 15 dias; acelerar custa R$ 5 via Pix. Ração R$ 0,50/unidade; ovos vendidos ao sistema R$ 0,40 cada; saque mínimo R$ 10; processamento imediato ou até 48h. Não existe venda entre jogadores. Compras de galinhas e ração via Pix. Sem ração por 12 horas a galinha morre. Nunca prometa rendimentos ou pagamentos garantidos.
-Se faltar informação ou houver dúvida, diga que um administrador humano precisa confirmar. Não solicite senha, dados bancários ou códigos. Não execute transações. Responda à dúvida e pergunte se a pessoa entendeu. Se a pessoa confirmar, encerre educadamente.`;
+Se faltar informação ou houver dúvida, diga que um administrador humano precisa confirmar. Não solicite senha, dados bancários ou códigos. Não execute transações. Não prometa apagar mensagens ou silenciar participantes, pois o aplicativo só detecta e avisa quando as notificações permitem. Responda à dúvida e pergunte se a pessoa entendeu. Se a pessoa confirmar, encerre educadamente.`;
 serve(async req => {
  if(req.method!=="POST")return new Response("Method not allowed",{status:405});
  const secret=Deno.env.get("GRANJABOT_SHARED_SECRET");
@@ -17,7 +17,7 @@ serve(async req => {
   const response=await fetch("https://api.openai.com/v1/responses",{
    method:"POST",
    headers:{"Authorization":"Bearer "+key,"Content-Type":"application/json"},
-   body:JSON.stringify({model:Deno.env.get("OPENAI_MODEL")||"gpt-6-luna",instructions:knowledge,input:[...history,{role:"user",content:message}],max_output_tokens:350})
+   body:JSON.stringify({model:Deno.env.get("OPENAI_MODEL")||"gpt-4.1-mini",instructions:knowledge,input:[...history,{role:"user",content:message}],max_output_tokens:350})
   });
   if(!response.ok)return new Response("Falha na IA",{status:502});
   const data=await response.json();
