@@ -16,10 +16,10 @@ public final class RuleStore {
  public static int count(Context c)throws IOException{return load(c).size();}
  public static String match(Context c,String message)throws IOException{
   String m=norm(message);if(m.isEmpty())return null;
-  String direct=MassReplies.direct(message);
-  if(direct!=null)return direct;
   List<Rule> rules=load(c);
   for(Rule r:rules)if(r.trigger.equals(m))return r.reply;
+  String direct=MassReplies.direct(message);
+  if(direct!=null)return direct;
   String basic=plain(m);
   for(Rule r:rules)if(plain(r.trigger).equals(basic))return r.reply;
   // Comandos com prefixo são intencionais; não tentar aproximação em texto livre.
@@ -62,10 +62,6 @@ public final class RuleStore {
     for(Rule r:parse(in))if(seen.add(r.trigger))all.add(r);
    }catch(java.io.FileNotFoundException ignored){}
   }
-  MassReplies.populate((trigger,reply)->{
-   String key=norm(trigger);
-   if(seen.add(key))all.add(new Rule(key,reply));
-  });
   return all;
  }
  private static byte[] read(InputStream in)throws IOException{
