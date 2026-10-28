@@ -74,7 +74,16 @@ public class MainActivity extends Activity {
  private static int parseTime(String s){try{if(!s.matches("\\d{2}:\\d{2}"))return -1;int h=Integer.parseInt(s.substring(0,2)),m=Integer.parseInt(s.substring(3,5));return h<24&&m<60?h*60+m:-1;}catch(Exception e){return -1;}}
  private void styleInput(EditText e){e.setSingleLine(true);e.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFF38BDF8));e.setPadding(12,16,12,16);}
  private void styleButton(Button b,int color){b.setTextColor(Color.WHITE);b.setAllCaps(false);b.setBackgroundTintList(android.content.res.ColorStateList.valueOf(color));b.setPadding(8,12,8,12);}
- private void updateStatus(){if(status==null)return;try{status.setText((prefs.getBoolean("enabled",false)?"🟢 Ativado":"⚪ Desativado")+"\nRegras importadas: "+RuleStore.count(this));}catch(Exception e){status.setText("Erro ao ler regras: "+e.getMessage());}}
+ private void updateStatus(){
+  if(status==null)return;
+  try{
+   status.setText((prefs.getBoolean("enabled",false)?"🟢 Ativado":"⚪ Desativado")
+    +"\nRegras disponíveis: "+RuleStore.count(this)
+    +"\nRespostas enviadas: "+prefs.getInt("replies",0)
+    +"\nAlertas detectados: "+prefs.getInt("alerts",0)
+    +"\nHorário: "+(prefs.getBoolean("schedule_enabled",false)?"Programado":"Sempre ativo"));
+  }catch(Exception e){status.setText("Erro ao ler regras: "+e.getMessage());}
+ }
  @Override protected void onActivityResult(int req,int result,Intent data){
   super.onActivityResult(req,result,data);
   if(req==EXPORT_CSV&&result==RESULT_OK&&data!=null&&data.getData()!=null){
