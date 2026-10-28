@@ -11,10 +11,18 @@ import java.util.*;
 public class AdmNotificationService extends NotificationListenerService {
  private static final Map<String,Long> recent=new LinkedHashMap<>();
  private static final Map<String,Long> spamHistory=new LinkedHashMap<>();
+ private static final Map<String,java.util.ArrayDeque<Long>> frequency=new LinkedHashMap<>();
  @Override public void onNotificationPosted(StatusBarNotification sbn){
   if(!"com.whatsapp.w4b".equals(sbn.getPackageName()))return;
   SharedPreferences p=getSharedPreferences("adm",MODE_PRIVATE);
   if(!p.getBoolean("enabled",false))return;
+  if(p.getBoolean("schedule_enabled",false)){
+   java.util.Calendar clock=java.util.Calendar.getInstance();
+   int minutes=clock.get(java.util.Calendar.HOUR_OF_DAY)*60+clock.get(java.util.Calendar.MINUTE);
+   int from=p.getInt("schedule_from",480),to=p.getInt("schedule_to",1320);
+   boolean allowed=from<=to?minutes>=from&&minutes<to:minutes>=from||minutes<to;
+   if(!allowed)return;
+  }
   String group=p.getString("group","🐔🌱 Granja Sustentável | Comunidade Oficial 🐣").trim();
   if(group.isEmpty())return;
   Notification n=sbn.getNotification();
@@ -29,9 +37,21 @@ public class AdmNotificationService extends NotificationListenerService {
   if(msg.isEmpty()||msg.startsWith("Você: ")||msg.startsWith("You: "))return;
   String answer=null;
   boolean link=p.getBoolean("detect_links",false)&&msg.matches("(?is).*?(https?://|www\\.|chat\\.whatsapp\\.com/|wa\\.me/).*");
+  String sender=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
+  if(sender.equals(group))sender="Participante não identificado";
   boolean spam=false;
+  boolean flood=false;
   if(p.getBoolean("detect_spam",false)){
-   String sender=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
+   long current=System.currentTimeMillis();
+   synchronized(frequency){
+    java.util.ArrayDeque<Long> times=frequency.get(sender);
+    if(times==null){times=new java.util.ArrayDeque<>();frequency.put(sender,times);}
+    while(!times.isEmpty()&&current-times.peekFirst()>30000L)times.removeFirst();
+    times.addLast(current);flood=times.size()>=5;
+    if(frequency.size()>200)frequency.clear();
+   }
+  }
+  if(p.getBoolean("detect_spam",false)){
    String spamKey=sender+"|"+msg.toLowerCase(Locale.ROOT);
    long now=System.currentTimeMillis();
    synchronized(spamHistory){
@@ -40,8 +60,12 @@ public class AdmNotificationService extends NotificationListenerService {
     spamHistory.put(spamKey,now);
    }
   }
-  if(link)answer="🛡️ ADM: Evite enviar links sem autorização da administração.";
-  else if(spam)answer="🛡️ ADM: Evite repetir mensagens no grupo.";
+  boolean emojiFlood=p.getBoolean("detect_spam",false)&&msg.codePointCount(0,msg.length())>100&&msg.replaceAll("[\\p{L}\\p{N}\\s]","").length()>60;
+  String violation=link?"Link":spam?"Mensagem repetida":flood?"Mensagens em excesso":emojiFlood?"Excesso de símbolos":null;
+  if(violation!=null){
+   ModerationLog.record(this,sender,violation);
+   answer="🛡️ ADM: Atenção às regras do grupo. Evite links e mensagens repetidas.";
+  }
   try{
    if(answer==null)answer=RuleStore.match(this,msg);
    if(answer==null){int i=msg.indexOf(": ");if(i>0)answer=RuleStore.match(this,msg.substring(i+2));}
@@ -62,7 +86,7 @@ public class AdmNotificationService extends NotificationListenerService {
     Intent intent=new Intent();RemoteInput.addResultsToIntent(inputs,intent,values);
     a.actionIntent.send(this,0,intent);
     synchronized(recent){recent.put(key,now);}
-    p.edit().putLong("last_reply_time",now).apply();
+    p.edit().putLong("last_reply_time",now).putInt("replies",p.getInt("replies",0)+1).apply();
     return;
    }catch(PendingIntent.CanceledException|RuntimeException e){return;}
   }
