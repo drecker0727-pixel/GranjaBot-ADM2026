@@ -23,11 +23,13 @@ public class MainActivity extends Activity {
   TextView customLabel=new TextView(this);customLabel.setText("Cores personalizadas (hexadecimal, ex.: #090F0B)");root.addView(customLabel);
   EditText customBg=new EditText(this);customBg.setSingleLine(true);customBg.setHint("Fundo #090F0B");customBg.setText(prefs.getString("theme_bg","#090F0B"));root.addView(customBg);
   EditText customAccent=new EditText(this);customAccent.setSingleLine(true);customAccent.setHint("Destaque #4ADE80");customAccent.setText(prefs.getString("theme_accent","#4ADE80"));root.addView(customAccent);
+  EditText customText=new EditText(this);customText.setHint("Cor das letras #FFFFFF");customText.setText(prefs.getString("theme_text","#FFFFFF"));root.addView(customText);
+  EditText customPanel=new EditText(this);customPanel.setHint("Cor dos campos #17271C");customPanel.setText(prefs.getString("theme_panel","#17271C"));root.addView(customPanel);
   Button applyTheme=new Button(this);applyTheme.setText("Aplicar e salvar meu tema");root.addView(applyTheme);
   applyTheme.setOnClickListener(v->{
    int theme=themePicker.getSelectedItemPosition();
-   if(theme==5){try{Color.parseColor(customBg.getText().toString().trim());Color.parseColor(customAccent.getText().toString().trim());}catch(Exception e){Toast.makeText(this,"Use cores como #090F0B",Toast.LENGTH_LONG).show();return;}}
-   prefs.edit().putInt("panel_theme",theme).putString("theme_bg",customBg.getText().toString().trim()).putString("theme_accent",customAccent.getText().toString().trim()).apply();
+   if(theme==5){try{Color.parseColor(customBg.getText().toString().trim());Color.parseColor(customAccent.getText().toString().trim());Color.parseColor(customText.getText().toString().trim());Color.parseColor(customPanel.getText().toString().trim());}catch(Exception e){Toast.makeText(this,"Use cores como #090F0B",Toast.LENGTH_LONG).show();return;}}
+   prefs.edit().putInt("panel_theme",theme).putString("theme_bg",customBg.getText().toString().trim()).putString("theme_accent",customAccent.getText().toString().trim()).putString("theme_text",customText.getText().toString().trim()).putString("theme_panel",customPanel.getText().toString().trim()).apply();
    applyPanelTheme(root,theme);Toast.makeText(this,"Tema salvo!",Toast.LENGTH_SHORT).show();
   });
   TextView title=new TextView(this);title.setText("🐔🤖 GranjaBot ADM");title.setTextSize(26);title.setTextColor(0xFF4ADE80);root.addView(title);
@@ -41,8 +43,8 @@ public class MainActivity extends Activity {
   TextView aiNote=new TextView(this);aiNote.setText("Requer backend Supabase configurado. Nunca coloque a chave da OpenAI no aplicativo. Mensagens podem ser enviadas ao provedor de IA quando ativado.");aiNote.setTextColor(0xFFC5E4CD);root.addView(aiNote);
   EditText aiUrl=new EditText(this);aiUrl.setHint("URL HTTPS da função granjabot-ia");aiUrl.setTextColor(0xFFF3FFF5);aiUrl.setHintTextColor(Color.LTGRAY);aiUrl.setText(prefs.getString("ai_endpoint",""));root.addView(aiUrl);styleInput(aiUrl);
   EditText aiSecret=new EditText(this);aiSecret.setHint("Segredo compartilhado do backend");aiSecret.setTextColor(0xFFF3FFF5);aiSecret.setHintTextColor(Color.LTGRAY);aiSecret.setInputType(129);aiSecret.setText(prefs.getString("ai_secret",""));root.addView(aiSecret);styleInput(aiSecret);
-  Switch aiToggle=new Switch(this);aiToggle.setText("Ativar atendimento IA");aiToggle.setTextColor(0xFFF3FFF5);aiToggle.setChecked(prefs.getBoolean("ai_enabled",false));root.addView(aiToggle);
-  Button aiSave=new Button(this);aiSave.setText("Salvar configuração IA");root.addView(aiSave);styleButton(aiSave,0xFF6EE7B7);
+  Switch aiToggle=new Switch(this);aiToggle.setText("🤖 ATIVAR ATENDIMENTO IA");aiToggle.setTextSize(20);aiToggle.setPadding(12,22,12,22);aiToggle.setTextColor(0xFFF3FFF5);aiToggle.setChecked(prefs.getBoolean("ai_enabled",false));root.addView(aiToggle);
+  Button aiSave=new Button(this);aiSave.setText("💾 SALVAR E ATIVAR CONFIGURAÇÃO IA");aiSave.setTextSize(19);root.addView(aiSave);styleButton(aiSave,0xFF6EE7B7);
   aiSave.setOnClickListener(v->{
    String url=aiUrl.getText().toString().trim(),secret=aiSecret.getText().toString().trim();
    if(aiToggle.isChecked()&&(!url.startsWith("https://")||secret.length()<16)){Toast.makeText(this,"Informe URL HTTPS e segredo de 16+ caracteres",Toast.LENGTH_LONG).show();return;}
@@ -96,7 +98,7 @@ public class MainActivity extends Activity {
   testButton.setOnClickListener(v->{try{String reply=RuleStore.match(this,test.getText().toString());result.setText(reply==null?"Nenhuma regra exata encontrada":reply);}catch(Exception e){result.setText("Erro: "+e.getMessage());}});
   status=new TextView(this);status.setTextColor(0xFFF3FFF5);status.setPadding(0,24,0,0);root.addView(status);
   TextView note=new TextView(this);note.setText("Requer acesso às notificações. Respostas dependem do botão Responder oferecido pelo WhatsApp Business. Não é integração oficial.");note.setTextColor(0xFFC5E4CD);root.addView(note);
-  status.setBackgroundColor(0xFF17271C);status.setPadding(18,20,18,20);status.setTextSize(17);updateStatus();
+  status.setBackgroundColor(0xFF17271C);status.setPadding(18,20,18,20);status.setTextSize(17);updateStatus();applyPanelTheme(root,savedTheme);
  }
  private void applyPanelTheme(LinearLayout root,int choice){
   int bg=0xFF090F0B,panel=0xFF17271C,fg=0xFFF3FFF5,accent=0xFF4ADE80,muted=0xFFC5E4CD,btnText=0xFF07170A;
@@ -106,7 +108,7 @@ public class MainActivity extends Activity {
   else if(choice==4){bg=0xFF101010;panel=0xFF242424;fg=0xFFFFF9E8;accent=0xFFFBBF24;muted=0xFFDDD1B3;btnText=0xFF1C1500;}
   else if(choice==5){
    try{bg=Color.parseColor(prefs.getString("theme_bg","#090F0B"));accent=Color.parseColor(prefs.getString("theme_accent","#4ADE80"));}catch(Exception ignored){}
-   boolean light=androidxColorLight(bg);panel=light?0xFFFFFFFF:0xFF17271C;fg=light?0xFF101820:0xFFFFFFFF;muted=light?0xFF334155:0xFFE2E8F0;btnText=androidxColorLight(accent)?0xFF07170A:0xFFFFFFFF;
+   boolean light=androidxColorLight(bg);panel=Color.parseColor(prefs.getString("theme_panel","#17271C"));fg=Color.parseColor(prefs.getString("theme_text","#FFFFFF"));muted=fg;btnText=androidxColorLight(accent)?0xFF07170A:0xFFFFFFFF;
   }
   root.setBackgroundColor(bg);
   recolorChildren(root,fg,muted,panel,accent,btnText);
