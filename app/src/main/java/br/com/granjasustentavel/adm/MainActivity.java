@@ -21,6 +21,18 @@ public class MainActivity extends Activity {
   EditText botNumber=new EditText(this);botNumber.setTextColor(Color.WHITE);botNumber.setHintTextColor(Color.LTGRAY);botNumber.setHint("Ex.: +55 62 99999-9999");botNumber.setInputType(android.text.InputType.TYPE_CLASS_PHONE);botNumber.setText(prefs.getString("bot_number",""));root.addView(botNumber);styleInput(botNumber);
   Button saveNumber=new Button(this);saveNumber.setText("Salvar número do robô");root.addView(saveNumber);styleButton(saveNumber,0xFF2563EB);
   saveNumber.setOnClickListener(v->{prefs.edit().putString("bot_number",botNumber.getText().toString().trim()).apply();Toast.makeText(this,"Número salvo. Ative esse número no WhatsApp Business.",Toast.LENGTH_LONG).show();});
+  TextView aiTitle=new TextView(this);aiTitle.setText("🤖 Atendimento com inteligência artificial");aiTitle.setTextSize(21);aiTitle.setTextColor(Color.WHITE);root.addView(aiTitle);
+  TextView aiNote=new TextView(this);aiNote.setText("Requer backend Supabase configurado. Nunca coloque a chave da OpenAI no aplicativo. Mensagens podem ser enviadas ao provedor de IA quando ativado.");aiNote.setTextColor(Color.LTGRAY);root.addView(aiNote);
+  EditText aiUrl=new EditText(this);aiUrl.setHint("URL HTTPS da função granjabot-ia");aiUrl.setTextColor(Color.WHITE);aiUrl.setHintTextColor(Color.LTGRAY);aiUrl.setText(prefs.getString("ai_endpoint",""));root.addView(aiUrl);styleInput(aiUrl);
+  EditText aiSecret=new EditText(this);aiSecret.setHint("Segredo compartilhado do backend");aiSecret.setTextColor(Color.WHITE);aiSecret.setHintTextColor(Color.LTGRAY);aiSecret.setInputType(129);aiSecret.setText(prefs.getString("ai_secret",""));root.addView(aiSecret);styleInput(aiSecret);
+  Switch aiToggle=new Switch(this);aiToggle.setText("Ativar atendimento IA");aiToggle.setTextColor(Color.WHITE);aiToggle.setChecked(prefs.getBoolean("ai_enabled",false));root.addView(aiToggle);
+  Button aiSave=new Button(this);aiSave.setText("Salvar configuração IA");root.addView(aiSave);styleButton(aiSave,0xFF059669);
+  aiSave.setOnClickListener(v->{
+   String url=aiUrl.getText().toString().trim(),secret=aiSecret.getText().toString().trim();
+   if(aiToggle.isChecked()&&(!url.startsWith("https://")||secret.length()<16)){Toast.makeText(this,"Informe URL HTTPS e segredo de 16+ caracteres",Toast.LENGTH_LONG).show();return;}
+   prefs.edit().putString("ai_endpoint",url).putString("ai_secret",secret).putBoolean("ai_enabled",aiToggle.isChecked()).apply();
+   Toast.makeText(this,"Configuração IA salva",Toast.LENGTH_SHORT).show();
+  });
   TextView moderationTitle=new TextView(this);moderationTitle.setText("🛡️ Moderação do grupo");moderationTitle.setTextSize(21);moderationTitle.setTextColor(Color.WHITE);root.addView(moderationTitle);
   CheckBox detectLinks=new CheckBox(this);detectLinks.setText("Detectar links nas mensagens");detectLinks.setTextColor(Color.WHITE);detectLinks.setChecked(prefs.getBoolean("detect_links",false));root.addView(detectLinks);
   detectLinks.setOnCheckedChangeListener((v,checked)->prefs.edit().putBoolean("detect_links",checked).apply());
