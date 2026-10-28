@@ -60,6 +60,10 @@ public final class RuleStore {
     for(Rule r:parse(in))if(seen.add(r.trigger))all.add(r);
    }catch(java.io.FileNotFoundException ignored){}
   }
+  MassReplies.populate((trigger,reply)->{
+   String key=norm(trigger);
+   if(seen.add(key))all.add(new Rule(key,reply));
+  });
   return all;
  }
  private static byte[] read(InputStream in)throws IOException{
