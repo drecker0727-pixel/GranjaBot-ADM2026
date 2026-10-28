@@ -130,6 +130,13 @@ public class AdmNotificationService extends NotificationListenerService {
  }
  private void sendReply(Notification n,String id,String answer,SharedPreferences p,String sender){
   long now=System.currentTimeMillis();
+  if(!answer.startsWith("🐣🌱")&&!answer.startsWith("🐓🌱")&&!sender.isEmpty()&&!sender.equals("Participante não identificado")){
+   String displayName=sender.trim();
+   int separator=displayName.indexOf(": ");
+   if(separator>0)displayName=displayName.substring(0,separator);
+   if(displayName.length()>40)displayName=displayName.substring(0,40);
+   if(!displayName.isEmpty())answer="🐓 ADM para "+displayName+":\n"+answer;
+  }
   String key=id+"|"+answer;
   synchronized(recent){recent.entrySet().removeIf(e->now-e.getValue()>120000L);if(recent.containsKey(key))return;}
   synchronized(senderReplies){
