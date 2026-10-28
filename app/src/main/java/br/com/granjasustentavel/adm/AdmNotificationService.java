@@ -33,7 +33,8 @@ public class AdmNotificationService extends NotificationListenerService {
   if(n==null||n.extras==null||(n.flags&Notification.FLAG_GROUP_SUMMARY)!=0)return;
   String conversation=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_CONVERSATION_TITLE,""));
   String title=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
-  if(!conversation.isEmpty()? !group.equals(conversation.trim()):!group.equals(title.trim()))return;
+  String subText=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_SUB_TEXT,""));
+  if(!group.equals(conversation.trim())&&!group.equals(title.trim())&&!group.equals(subText.trim()))return;
   if(n.category!=null&&!Notification.CATEGORY_MESSAGE.equals(n.category))return;
   CharSequence content=n.extras.getCharSequence(Notification.EXTRA_TEXT);
   if(content==null)return;
@@ -42,8 +43,13 @@ public class AdmNotificationService extends NotificationListenerService {
   String lastBotText=p.getString("last_bot_text","");
   if(!lastBotText.isEmpty()&&(msg.equals(lastBotText)||msg.endsWith(": "+lastBotText)))return;
 
-  String sender=String.valueOf(n.extras.getCharSequence(Notification.EXTRA_TITLE,""));
-  if(sender.equals(group))sender="Participante não identificado";
+  String sender=title;
+  if(sender.equals(group)||sender.isEmpty()){
+   int colon=msg.indexOf(": ");
+   sender=colon>0&&colon<70?msg.substring(0,colon):"Participante não identificado";
+   if(colon>0&&colon<70)msg=msg.substring(colon+2).trim();
+  }
+  p.edit().putLong("last_incoming_at",System.currentTimeMillis()).putString("last_incoming_preview",msg.length()>100?msg.substring(0,100):msg).apply();
   long receivedAt=System.currentTimeMillis();
   String incomingKey=group+"|"+sender+"|"+msg;
   synchronized(incoming){
@@ -96,7 +102,7 @@ public class AdmNotificationService extends NotificationListenerService {
   try{
    if(answer==null&&!aiCalled)answer=RuleStore.match(this,msg);
    if(answer==null&&!aiCalled){int i=msg.indexOf(": ");if(i>0)answer=RuleStore.match(this,msg.substring(i+2));}
-  }catch(Exception e){return;}
+  }catch(Exception e){p.edit().putString("last_reply_error","Falha ao consultar regras: "+e.getClass().getSimpleName()).apply();}
   if(answer==null && p.getBoolean("ai_enabled",false)){
    String normalized=msg.toLowerCase(new Locale("pt","BR"));
    boolean called=aiCalled;
@@ -143,12 +149,12 @@ public class AdmNotificationService extends NotificationListenerService {
    Long last=senderReplies.get(sender);
    if(last!=null&&now-last<3000L)return;
   }
-  if(n.actions==null)return;
+  if(n.actions==null){p.edit().putString("last_reply_error","Notificação sem ação de resposta").apply();return;}
   for(Notification.Action a:n.actions){
    RemoteInput[] inputs=a.getRemoteInputs();
    if(inputs==null||inputs.length==0||a.actionIntent==null)continue;
    String label=a.title==null?"":a.title.toString().toLowerCase(Locale.ROOT);
-   if(!label.contains("responder")&&!label.contains("reply"))continue;
+   if(!label.contains("responder")&&!label.contains("reply")&&!label.contains("respond"))continue;
    try{
     Bundle values=new Bundle();
     for(RemoteInput input:inputs)values.putCharSequence(input.getResultKey(),answer);
@@ -156,9 +162,9 @@ public class AdmNotificationService extends NotificationListenerService {
     a.actionIntent.send(this,0,intent);
     synchronized(recent){recent.put(key,now);}
     synchronized(senderReplies){senderReplies.put(sender,now);if(senderReplies.size()>300)senderReplies.clear();}
-    p.edit().putLong("last_reply_time",now).putLong("last_bot_at",now).putString("last_bot_text",answer).putInt("replies",p.getInt("replies",0)+1).apply();
+    p.edit().remove("last_reply_error").putLong("last_reply_time",now).putLong("last_bot_at",now).putString("last_bot_text",answer).putInt("replies",p.getInt("replies",0)+1).apply();
     return;
-   }catch(PendingIntent.CanceledException|RuntimeException e){return;}
+   }catch(PendingIntent.CanceledException|RuntimeException e){p.edit().putString("last_reply_error","Falha no envio: "+e.getClass().getSimpleName()).apply();return;}
   }
  }
 }
