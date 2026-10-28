@@ -166,13 +166,22 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
     e.setHintTextColor(ensureContrast(0xFF888888,panel));
     android.graphics.drawable.GradientDrawable d=new android.graphics.drawable.GradientDrawable();
     d.setColor(panel);d.setCornerRadius(14);d.setStroke(2,accent);e.setBackground(d);
-   }else if(v instanceof Button){
-    Button b=(Button)v;b.setTextColor(ensureContrast(fg,button));
-    b.setBackgroundTintList(android.content.res.ColorStateList.valueOf(button));
    }else if(v instanceof android.widget.CompoundButton){
     android.widget.CompoundButton c=(android.widget.CompoundButton)v;
     c.setTextColor(ensureContrast(fg,bg));
-    c.setButtonTintList(android.content.res.ColorStateList.valueOf(ensureContrast(accent,bg)));
+    c.setTextSize(18);
+    c.setPadding(12,18,12,18);
+    c.setBackgroundColor(bg);
+    int indicator=ensureContrast(accent,bg);
+    c.setButtonTintList(android.content.res.ColorStateList.valueOf(indicator));
+    if(c instanceof Switch){
+     Switch sw=(Switch)c;
+     sw.setThumbTintList(android.content.res.ColorStateList.valueOf(indicator));
+     sw.setTrackTintList(android.content.res.ColorStateList.valueOf(ensureContrast(0xFF7C8794,bg)));
+    }
+   }else if(v instanceof Button){
+    Button b=(Button)v;b.setTextColor(ensureContrast(fg,button));
+    b.setBackgroundTintList(android.content.res.ColorStateList.valueOf(button));
    }else if(v instanceof TextView){
     TextView t=(TextView)v;
     boolean header="section_header".equals(t.getTag())||t.getText().toString().startsWith("🐔🤖 GranjaBot");
