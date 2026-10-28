@@ -64,7 +64,6 @@ public class AdmNotificationService extends NotificationListenerService {
    if(answer!=null)sendReply(n,sbn.getKey()+"|"+msg,answer,p,sender);
    return;
   }
-  if(receivedAt-p.getLong("last_bot_at",0L)<30000L)return;
   boolean link=p.getBoolean("detect_links",false)&&msg.matches("(?is).*?(https?://|www\\.|chat\\.whatsapp\\.com/|wa\\.me/).*");
   boolean spam=false;
   boolean flood=false;
@@ -135,7 +134,7 @@ public class AdmNotificationService extends NotificationListenerService {
   synchronized(recent){recent.entrySet().removeIf(e->now-e.getValue()>120000L);if(recent.containsKey(key))return;}
   synchronized(senderReplies){
    Long last=senderReplies.get(sender);
-   if(last!=null&&now-last<12000L)return;
+   if(last!=null&&now-last<3000L)return;
   }
   if(n.actions==null)return;
   for(Notification.Action a:n.actions){
