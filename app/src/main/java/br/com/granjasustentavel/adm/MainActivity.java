@@ -189,6 +189,19 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
     catch(Exception ignored){Toast.makeText(this,"Abra Configurações > Apps > GranjaBot ADM > Bateria e permita segundo plano.",Toast.LENGTH_LONG).show();}
    }
   });
+  Button replyDiagnostic=new Button(this);replyDiagnostic.setText("🔎 DIAGNÓSTICO DE RESPOSTAS E LINKS");root.addView(replyDiagnostic);styleButton(replyDiagnostic,0xFF0F766E);
+  replyDiagnostic.setOnClickListener(v->{
+   long seen=prefs.getLong("last_incoming_at",0L);
+   String time=seen==0?"Nenhuma mensagem identificada":new java.text.SimpleDateFormat("dd/MM HH:mm:ss",java.util.Locale.getDefault()).format(new java.util.Date(seen));
+   String info="Robô: "+(prefs.getBoolean("enabled",false)?"ATIVO":"DESLIGADO")
+    +"\\nIA: "+(prefs.getBoolean("ai_enabled",false)?"ATIVA":"DESLIGADA")
+    +"\\nDetectar links: "+(prefs.getBoolean("detect_links",false)?"ATIVO":"DESLIGADO")
+    +"\\nÚltima mensagem recebida: "+time
+    +"\\nTexto: "+prefs.getString("last_incoming_preview","Nenhum")
+    +"\\nÚltima falha de resposta: "+prefs.getString("last_reply_error","Nenhuma registrada")
+    +"\\nAlertas registrados: "+prefs.getInt("alerts",0);
+   new android.app.AlertDialog.Builder(this).setTitle("Diagnóstico do GranjaBot").setMessage(info).setPositiveButton("Fechar",null).show();
+  });
   Button permissions=new Button(this);permissions.setText("Autorizar acesso às notificações");root.addView(permissions);styleButton(permissions,0xFF7C3AED);
   permissions.setOnClickListener(v->startActivity(new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)));
   Button importButton=new Button(this);importButton.setText("📂 Importar regras CSV");root.addView(importButton);styleButton(importButton,0xFFF59E0B);
