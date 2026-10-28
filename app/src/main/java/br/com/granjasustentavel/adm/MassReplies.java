@@ -19,6 +19,11 @@ final class MassReplies {
  "🌙 ADM: Até a próxima! Cuidem-se e bom descanso! 🐣",
  "🌾 ADM: Posso ajudar! Abra a granja e diga em qual etapa precisa de orientação. Para comandos, digite !menu.",
  "🐔 ADM: Boa conversa, pessoal! Compartilhem dicas com respeito e ajudem os novos jogadores. 🌱"};
+ static void populate(java.util.function.BiConsumer<String,String> add){
+  for(int c=0;c<STARTS.length;c++)for(String a:STARTS[c])for(String b:OBJECTS[c])for(String end:ENDS){
+   add.accept(a+" "+b+end,ANSWERS[c]);
+  }
+ }
  static String answer(String message){
   String m=message.toLowerCase(new Locale("pt","BR")).trim().replaceAll("[!?.,;:]+$","");
   for(int c=0;c<STARTS.length;c++)for(String a:STARTS[c])for(String b:OBJECTS[c]){
