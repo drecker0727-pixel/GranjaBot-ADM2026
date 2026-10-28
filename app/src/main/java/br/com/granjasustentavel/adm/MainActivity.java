@@ -49,13 +49,18 @@ public class MainActivity extends Activity {
   EditText aiUrl=new EditText(this);aiUrl.setHint("URL HTTPS da função granjabot-ia");aiUrl.setTextColor(0xFFF3FFF5);aiUrl.setHintTextColor(Color.LTGRAY);aiUrl.setText(prefs.getString("ai_endpoint",""));root.addView(aiUrl);styleInput(aiUrl);
   EditText aiSecret=new EditText(this);aiSecret.setHint("Segredo compartilhado do backend");aiSecret.setTextColor(0xFFF3FFF5);aiSecret.setHintTextColor(Color.LTGRAY);aiSecret.setInputType(129);aiSecret.setText(prefs.getString("ai_secret",""));root.addView(aiSecret);styleInput(aiSecret);
   Switch aiToggle=new Switch(this);aiToggle.setText("🤖 ATIVAR ATENDIMENTO IA");aiToggle.setTextSize(20);aiToggle.setPadding(12,22,12,22);aiToggle.setTextColor(0xFFF3FFF5);aiToggle.setChecked(prefs.getBoolean("ai_enabled",false));root.addView(aiToggle);
+  TextView aiStatus=new TextView(this);aiStatus.setTextSize(18);aiStatus.setPadding(12,16,12,16);aiStatus.setText(prefs.getBoolean("ai_enabled",false)?"🟢 IA ligada":"⚪ IA desligada");root.addView(aiStatus);
+  aiToggle.setOnCheckedChangeListener((button,checked)->aiStatus.setText(checked?"🟡 IA selecionada — toque em SALVAR":"⚪ IA desligada — toque em SALVAR"));
   Button aiSave=new Button(this);aiSave.setText("💾 SALVAR E ATIVAR CONFIGURAÇÃO IA");aiSave.setTextSize(19);root.addView(aiSave);styleButton(aiSave,0xFF6EE7B7);
   aiSave.setOnClickListener(v->{
    String url=aiUrl.getText().toString().trim(),secret=aiSecret.getText().toString().trim();
    if(aiToggle.isChecked()&&(!url.startsWith("https://")||secret.length()<16)){Toast.makeText(this,"Informe URL HTTPS e segredo de 16+ caracteres",Toast.LENGTH_LONG).show();return;}
    prefs.edit().putString("ai_endpoint",url).putString("ai_secret",secret).putBoolean("ai_enabled",aiToggle.isChecked()).apply();
-   Toast.makeText(this,"Configuração IA salva",Toast.LENGTH_SHORT).show();
+   aiStatus.setText(aiToggle.isChecked()?"🟢 IA ligada e salva":"⚪ IA desligada e salva");Toast.makeText(this,"Configuração IA salva",Toast.LENGTH_SHORT).show();
   });
+  Button aiDisable=new Button(this);aiDisable.setText("⏹ DESLIGAR IA AGORA");root.addView(aiDisable);styleButton(aiDisable,0xFFDC2626);
+  aiDisable.setOnClickListener(v->{aiToggle.setChecked(false);prefs.edit().putBoolean("ai_enabled",false).apply();aiStatus.setText("⚪ IA desligada");Toast.makeText(this,"Atendimento IA desativado",Toast.LENGTH_SHORT).show();});
+  TextView aiHelp=new TextView(this);aiHelp.setText("PASSOS DA IA: 1. Informe a URL HTTPS do Supabase. 2. Informe o segredo compartilhado (não é a chave OpenAI). 3. Marque ATIVAR IA. 4. Toque em SALVAR. A IA fica desligada até você ativar.");aiHelp.setTextSize(16);root.addView(aiHelp);
   TextView moderationTitle=new TextView(this);moderationTitle.setText("🛡️ Moderação do grupo");moderationTitle.setTextSize(23);moderationTitle.setTextColor(0xFFF3FFF5);root.addView(moderationTitle);sectionHeader(moderationTitle);
   CheckBox detectLinks=new CheckBox(this);detectLinks.setText("Detectar links nas mensagens");detectLinks.setTextColor(0xFFF3FFF5);detectLinks.setChecked(prefs.getBoolean("detect_links",false));root.addView(detectLinks);
   detectLinks.setOnCheckedChangeListener((v,checked)->prefs.edit().putBoolean("detect_links",checked).apply());
