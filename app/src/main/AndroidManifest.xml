@@ -1,9 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
  <uses-permission android:name="android.permission.INTERNET"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
  <application android:icon="@drawable/granjabot_rooster" android:roundIcon="@drawable/granjabot_rooster" android:label="GranjaBot ADM" android:theme="@android:style/Theme.Material.NoActionBar" android:allowBackup="false" android:supportsRtl="true">
   <activity android:name=".MainActivity" android:exported="true">
    <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
   </activity>
+  <service android:name=".AdmKeepAliveService" android:exported="false" android:foregroundServiceType="specialUse"><property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="Persistent status for user-enabled WhatsApp Business auto-reply assistant"/></service>
   <service android:name=".AdmNotificationService" android:label="GranjaBot ADM — notificações" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:exported="true">
    <intent-filter><action android:name="android.service.notification.NotificationListenerService"/></intent-filter>
   </service>
