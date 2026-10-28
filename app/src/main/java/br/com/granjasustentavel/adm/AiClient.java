@@ -22,7 +22,20 @@ public final class AiClient {
    conn.setDoOutput(true);conn.setRequestProperty("Content-Type","application/json");
    conn.setRequestProperty("x-granjabot-secret",token);
    try(OutputStream out=conn.getOutputStream()){out.write(payload.toString().getBytes(StandardCharsets.UTF_8));}
-   if(conn.getResponseCode()!=200){p.edit().putString("ai_last_error","Supabase retornou HTTP "+conn.getResponseCode()).apply();return null;}
+   if(conn.getResponseCode()!=200){
+    String detail="";
+    try(InputStream err=conn.getErrorStream()){
+     if(err!=null){
+      ByteArrayOutputStream out=new ByteArrayOutputStream();byte[] b=new byte[512];int n;
+      while((n=err.read(b))!=-1&&out.size()<2048)out.write(b,0,n);
+      JSONObject info=new JSONObject(out.toString("UTF-8"));
+      String upstream=info.optString("error",""),code=info.optString("code","");
+      if(upstream.matches("OpenAI HTTP [0-9]{3}"))detail=" | "+upstream;
+      if(code.matches("[a-zA-Z0-9_-]{1,80}"))detail+=" | "+code;
+     }
+    }catch(Exception ignored){}
+    p.edit().putString("ai_last_error","Supabase retornou HTTP "+conn.getResponseCode()+detail).apply();return null;
+   }
    ByteArrayOutputStream bytes=new ByteArrayOutputStream();
    try(InputStream in=conn.getInputStream()){byte[] buffer=new byte[2048];int n;while((n=in.read(buffer))!=-1&&bytes.size()<8192)bytes.write(buffer,0,n);}
    String answer=new JSONObject(bytes.toString("UTF-8")).optString("answer","").trim();
