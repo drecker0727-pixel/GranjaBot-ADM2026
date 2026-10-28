@@ -21,13 +21,13 @@ public final class RuleStore {
   String basic=plain(m);
   for(Rule r:rules)if(plain(r.trigger).equals(basic))return r.reply;
   // Comandos com prefixo são intencionais; não tentar aproximação em texto livre.
-  if(m.startsWith("!")||m.length()<9)return null;
+  if(m.startsWith("!")||m.length()<9)return MassReplies.answer(message);
   for(Rule r:rules){
    if(r.trigger.startsWith("!")||r.trigger.length()<9)continue;
    String candidate=plain(r.trigger);
    if(candidate.length()>=9 && (basic.equals(candidate+" por favor")||basic.equals("por favor "+candidate)))return r.reply;
   }
-  return null;
+  return MassReplies.answer(message);
  }
  private static List<Rule> load(Context c)throws IOException{
   if(cache!=null)return cache;
