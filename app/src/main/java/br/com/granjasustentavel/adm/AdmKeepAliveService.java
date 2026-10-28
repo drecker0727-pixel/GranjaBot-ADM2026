@@ -15,8 +15,15 @@ public class AdmKeepAliveService extends Service {
   PendingIntent pending=PendingIntent.getActivity(this,0,open,PendingIntent.FLAG_UPDATE_CURRENT|(Build.VERSION.SDK_INT>=23?PendingIntent.FLAG_IMMUTABLE:0));
   Notification.Builder builder=Build.VERSION.SDK_INT>=26?new Notification.Builder(this,CHANNEL):new Notification.Builder(this);
   builder.setSmallIcon(R.drawable.granjabot_rooster).setContentTitle("🐓 GranjaBot ADM ativo").setContentText("Monitorando notificações do WhatsApp Business").setContentIntent(pending).setOngoing(true).setShowWhen(false);
-  startForeground(2026,builder.build());
+  try{
+   startForeground(2026,builder.build());
+   getSharedPreferences("adm",MODE_PRIVATE).edit().putBoolean("foreground_running",true).putString("foreground_error","").apply();
+  }catch(RuntimeException e){
+   getSharedPreferences("adm",MODE_PRIVATE).edit().putBoolean("foreground_running",false).putString("foreground_error",e.getClass().getSimpleName()).apply();
+   stopSelf();return START_NOT_STICKY;
+  }
   return START_STICKY;
  }
+ @Override public void onDestroy(){getSharedPreferences("adm",MODE_PRIVATE).edit().putBoolean("foreground_running",false).apply();super.onDestroy();}
  @Override public android.os.IBinder onBind(Intent intent){return null;}
 }
