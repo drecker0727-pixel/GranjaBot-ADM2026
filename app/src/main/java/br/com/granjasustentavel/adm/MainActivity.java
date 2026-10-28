@@ -29,6 +29,8 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   EditText customAccent=new EditText(this);customAccent.setSingleLine(true);customAccent.setHint("Destaque #4ADE80");customAccent.setText(prefs.getString("theme_accent","#4ADE80"));options.addView(customAccent);
   EditText customText=new EditText(this);customText.setHint("Cor das letras #FFFFFF");customText.setText(prefs.getString("theme_text","#FFFFFF"));options.addView(customText);
   EditText customPanel=new EditText(this);customPanel.setHint("Cor dos campos #17271C");customPanel.setText(prefs.getString("theme_panel","#17271C"));options.addView(customPanel);
+  EditText customButton=new EditText(this);customButton.setSingleLine(true);customButton.setHint("Cor dos botões #4ADE80");customButton.setText(prefs.getString("theme_button","#4ADE80"));options.addView(customButton);
+  EditText customTitle=new EditText(this);customTitle.setSingleLine(true);customTitle.setHint("Cor dos títulos #4ADE80");customTitle.setText(prefs.getString("theme_title","#4ADE80"));options.addView(customTitle);
   TextView textColorLabel=new TextView(this);textColorLabel.setText("🔤 Cor de TODAS as letras");options.addView(textColorLabel);
   Spinner textColorPicker=new Spinner(this);String[] colorNames={"Automática (mais legível)","Preta","Amarela","Azul","Vermelha"};
   android.widget.ArrayAdapter<String> colorAdapter=new android.widget.ArrayAdapter<>(this,android.R.layout.simple_spinner_item,colorNames);
@@ -38,8 +40,8 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   Button applyTheme=new Button(this);applyTheme.setText("💾 Aplicar e salvar tema");options.addView(applyTheme);
   applyTheme.setOnClickListener(btn->{
    int theme=themePicker.getSelectedItemPosition();
-   if(theme==5){try{Color.parseColor(customBg.getText().toString().trim());Color.parseColor(customAccent.getText().toString().trim());Color.parseColor(customText.getText().toString().trim());Color.parseColor(customPanel.getText().toString().trim());}catch(Exception e){Toast.makeText(this,"Use cores como #090F0B",Toast.LENGTH_LONG).show();return;}}
-   prefs.edit().putInt("panel_theme",theme).putInt("text_color_choice",textColorPicker.getSelectedItemPosition()).putString("theme_bg",customBg.getText().toString().trim()).putString("theme_accent",customAccent.getText().toString().trim()).putString("theme_text",customText.getText().toString().trim()).putString("theme_panel",customPanel.getText().toString().trim()).apply();
+   if(theme==5){try{Color.parseColor(customBg.getText().toString().trim());Color.parseColor(customAccent.getText().toString().trim());Color.parseColor(customText.getText().toString().trim());Color.parseColor(customPanel.getText().toString().trim());Color.parseColor(customButton.getText().toString().trim());Color.parseColor(customTitle.getText().toString().trim());}catch(Exception e){Toast.makeText(this,"Use cores como #090F0B",Toast.LENGTH_LONG).show();return;}}
+   prefs.edit().putInt("panel_theme",theme).putInt("text_color_choice",textColorPicker.getSelectedItemPosition()).putString("theme_bg",customBg.getText().toString().trim()).putString("theme_accent",customAccent.getText().toString().trim()).putString("theme_text",customText.getText().toString().trim()).putString("theme_panel",customPanel.getText().toString().trim()).putString("theme_button",customButton.getText().toString().trim()).putString("theme_title",customTitle.getText().toString().trim()).apply();
    applyPanelTheme(root,theme);dialog.dismiss();Toast.makeText(this,"Tema salvo!",Toast.LENGTH_SHORT).show();
   });
   dialog.show();
@@ -118,27 +120,28 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   status.setBackgroundColor(0xFF17271C);status.setPadding(18,20,18,20);status.setTextSize(17);updateStatus();applyPanelTheme(root,savedTheme);
  }
  private void applyPanelTheme(LinearLayout root,int choice){
-  int bg=0xFF090F0B,panel=0xFF17271C,fg=0xFFF3FFF5,accent=0xFF4ADE80,muted=0xFFC5E4CD,btnText=0xFF07170A;
-  if(choice==1){bg=0xFFF1F5F9;panel=0xFFFFFFFF;fg=0xFF0F172A;accent=0xFF2563EB;muted=0xFF475569;btnText=0xFFFFFFFF;}
-  else if(choice==2){bg=0xFF0B1220;panel=0xFF1E293B;fg=0xFFF8FAFC;accent=0xFF38BDF8;muted=0xFFCBD5E1;btnText=0xFF08121F;}
-  else if(choice==3){bg=0xFF130D24;panel=0xFF2B2045;fg=0xFFFAF5FF;accent=0xFFC4B5FD;muted=0xFFD8CDEC;btnText=0xFF201336;}
-  else if(choice==4){bg=0xFF101010;panel=0xFF242424;fg=0xFFFFF9E8;accent=0xFFFBBF24;muted=0xFFDDD1B3;btnText=0xFF1C1500;}
+  int bg=0xFF090F0B,panel=0xFF17271C,fg=0xFFF3FFF5,accent=0xFF4ADE80,title=0xFF4ADE80,button=0xFF4ADE80;
+  if(choice==1){bg=0xFFF1F5F9;panel=0xFFFFFFFF;fg=0xFF0F172A;accent=0xFF2563EB;title=accent;button=accent;}
+  else if(choice==2){bg=0xFF0B1220;panel=0xFF1E293B;fg=0xFFF8FAFC;accent=0xFF38BDF8;title=accent;button=accent;}
+  else if(choice==3){bg=0xFF130D24;panel=0xFF2B2045;fg=0xFFFAF5FF;accent=0xFFC4B5FD;title=accent;button=accent;}
+  else if(choice==4){bg=0xFF101010;panel=0xFF242424;fg=0xFFFFF9E8;accent=0xFFFBBF24;title=accent;button=accent;}
   else if(choice==5){
-   try{bg=Color.parseColor(prefs.getString("theme_bg","#090F0B"));accent=Color.parseColor(prefs.getString("theme_accent","#4ADE80"));}catch(Exception ignored){}
-   boolean light=androidxColorLight(bg);panel=Color.parseColor(prefs.getString("theme_panel","#17271C"));fg=Color.parseColor(prefs.getString("theme_text","#FFFFFF"));muted=fg;btnText=androidxColorLight(accent)?0xFF07170A:0xFFFFFFFF;
+   try{
+    bg=Color.parseColor(prefs.getString("theme_bg","#090F0B"));
+    panel=Color.parseColor(prefs.getString("theme_panel","#17271C"));
+    fg=Color.parseColor(prefs.getString("theme_text","#FFFFFF"));
+    accent=Color.parseColor(prefs.getString("theme_accent","#4ADE80"));
+    button=Color.parseColor(prefs.getString("theme_button","#4ADE80"));
+    title=Color.parseColor(prefs.getString("theme_title","#4ADE80"));
+   }catch(IllegalArgumentException ignored){}
   }
   int selected=prefs.getInt("text_color_choice",0);
   if(selected==1)fg=Color.BLACK;
   else if(selected==2)fg=0xFFFFD600;
   else if(selected==3)fg=0xFF1565C0;
   else if(selected==4)fg=0xFFD32F2F;
-  // Campos e cartões recebem fundo contrastante para preservar a leitura.
-  if(selected!=0){panel=androidxColorLight(fg)?0xFF101820:0xFFFFFFFF;muted=fg;}
-  int inputBg=panel;
-  if(selected==0){inputBg=panel;fg=ensureContrast(fg,inputBg);muted=ensureContrast(muted,inputBg);}
   root.setBackgroundColor(bg);
-  recolorChildren(root,fg,muted,panel,accent,btnText,bg,selected);
-
+  recolorChildren(root,fg,panel,accent,button,title,bg);
  }
  private static int ensureContrast(int fg,int bg){
   double a=luminance(fg),b=luminance(bg);
@@ -153,21 +156,28 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   return 0.2126*r+0.7152*g+0.0722*b;
  }
  private static boolean androidxColorLight(int c){return (Color.red(c)*299+Color.green(c)*587+Color.blue(c)*114)>150000;}
- private void recolorChildren(android.view.ViewGroup parent,int fg,int muted,int panel,int accent,int btnText,int bg,int selected){
+ private void recolorChildren(android.view.ViewGroup parent,int fg,int panel,int accent,int button,int title,int bg){
   for(int i=0;i<parent.getChildCount();i++){
    android.view.View v=parent.getChildAt(i);
    if(v instanceof EditText){
-    EditText e=(EditText)v;e.setTextColor(fg);e.setHintTextColor(muted);
-    android.graphics.drawable.GradientDrawable d=new android.graphics.drawable.GradientDrawable();d.setColor(panel);d.setCornerRadius(14);d.setStroke(2,accent);e.setBackground(d);
+    EditText e=(EditText)v;e.setTextColor(ensureContrast(fg,panel));
+    e.setHintTextColor(ensureContrast(0xFF888888,panel));
+    android.graphics.drawable.GradientDrawable d=new android.graphics.drawable.GradientDrawable();
+    d.setColor(panel);d.setCornerRadius(14);d.setStroke(2,accent);e.setBackground(d);
    }else if(v instanceof Button){
-    Button b=(Button)v;b.setTextColor(selected==0?btnText:fg);b.setBackgroundTintList(android.content.res.ColorStateList.valueOf(selected==0?accent:panel));
+    Button b=(Button)v;b.setTextColor(ensureContrast(fg,button));
+    b.setBackgroundTintList(android.content.res.ColorStateList.valueOf(button));
+   }else if(v instanceof android.widget.CompoundButton){
+    android.widget.CompoundButton c=(android.widget.CompoundButton)v;
+    c.setTextColor(ensureContrast(fg,bg));
+    c.setButtonTintList(android.content.res.ColorStateList.valueOf(ensureContrast(accent,bg)));
    }else if(v instanceof TextView){
-    TextView t=(TextView)v;boolean header="section_header".equals(t.getTag());t.setTextColor(selected==0?(header?ensureContrast(accent,panel):ensureContrast(fg,bg)):fg);
-    if(header)t.setBackgroundColor(panel);
-   }else if(v instanceof Spinner){
-    Spinner spinner=(Spinner)v;spinner.setBackgroundTintList(android.content.res.ColorStateList.valueOf(accent));spinner.setBackgroundColor(panel);
+    TextView t=(TextView)v;
+    boolean header="section_header".equals(t.getTag())||t.getText().toString().startsWith("🐔🤖 GranjaBot");
+    t.setTextColor(header?ensureContrast(title,"section_header".equals(t.getTag())?panel:bg):ensureContrast(fg,v==status?panel:bg));
+    if("section_header".equals(t.getTag()))t.setBackgroundColor(panel);
    }
-   if(v instanceof android.view.ViewGroup)recolorChildren((android.view.ViewGroup)v,fg,muted,panel,accent,btnText,bg,selected);
+   if(v instanceof android.view.ViewGroup)recolorChildren((android.view.ViewGroup)v,fg,panel,accent,button,title,bg);
   }
  }
  private void sectionHeader(TextView v){v.setTag("section_header");v.setTextColor(0xFF4ADE80);v.setBackgroundColor(0xFF17271C);v.setPadding(16,22,16,22);android.widget.LinearLayout.LayoutParams p=new android.widget.LinearLayout.LayoutParams(-1,-2);p.setMargins(0,22,0,12);v.setLayoutParams(p);}
