@@ -7,11 +7,26 @@ public final class RuleStore {
  private static volatile List<Rule> cache;
  private static final String FILE="rules.csv";
  private static class Rule {String trigger,reply;Rule(String t,String r){trigger=t;reply=r;}}
- private static String norm(String s){return s==null?"":s.trim().toLowerCase(new Locale("pt","BR"));}
+ private static String norm(String s){
+  if(s==null)return "";
+  String t=java.text.Normalizer.normalize(s.toLowerCase(new Locale("pt","BR")),java.text.Normalizer.Form.NFD).replaceAll("\\p{M}+","");
+  return t.trim().replaceAll("[!?.,;:]+$","").replaceAll("\\s+"," ");
+ }
+ private static String plain(String s){return norm(s).replaceAll("[^a-z0-9 ]","").replaceAll("\\s+"," ").trim();}
  public static int count(Context c)throws IOException{return load(c).size();}
  public static String match(Context c,String message)throws IOException{
   String m=norm(message);if(m.isEmpty())return null;
-  for(Rule r:load(c))if(r.trigger.equals(m))return r.reply;
+  List<Rule> rules=load(c);
+  for(Rule r:rules)if(r.trigger.equals(m))return r.reply;
+  String basic=plain(m);
+  for(Rule r:rules)if(plain(r.trigger).equals(basic))return r.reply;
+  // Comandos com prefixo são intencionais; não tentar aproximação em texto livre.
+  if(m.startsWith("!")||m.length()<9)return null;
+  for(Rule r:rules){
+   if(r.trigger.startsWith("!")||r.trigger.length()<9)continue;
+   String candidate=plain(r.trigger);
+   if(candidate.length()>=9 && (basic.equals(candidate+" por favor")||basic.equals("por favor "+candidate)))return r.reply;
+  }
   return null;
  }
  private static List<Rule> load(Context c)throws IOException{
