@@ -55,6 +55,11 @@ public final class RuleStore {
   try(InputStream in=c.getAssets().open("saudacoes_extra.csv")){
    for(Rule r:parse(in))if(seen.add(r.trigger))all.add(r);
   }catch(java.io.FileNotFoundException ignored){}
+  for(int i=1;i<=5;i++){
+   try(InputStream in=c.getAssets().open("conversas_extra_"+i+".csv")){
+    for(Rule r:parse(in))if(seen.add(r.trigger))all.add(r);
+   }catch(java.io.FileNotFoundException ignored){}
+  }
   return all;
  }
  private static byte[] read(InputStream in)throws IOException{
