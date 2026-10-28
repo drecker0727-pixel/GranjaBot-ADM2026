@@ -64,7 +64,7 @@ public class AdmNotificationService extends NotificationListenerService {
    if(answer!=null)sendReply(n,sbn.getKey()+"|"+msg,answer,p,sender);
    return;
   }
-  boolean link=p.getBoolean("detect_links",false)&&msg.matches("(?is).*?(https?://|www\\.|chat\\.whatsapp\\.com/|wa\\.me/).*");
+  boolean link=p.getBoolean("detect_links",false)&&msg.matches("(?is).*(https?://|www\\.|chat\\.whatsapp\\.com/|wa\\.me/|[a-z0-9-]+(?:\\.[a-z0-9-]+)*\\.(?:com|com\\.br|net|org|br|io|gg|app|site|link|xyz|me|ly)(?:/|\\b)).*");
   boolean spam=false;
   boolean flood=false;
   if(p.getBoolean("detect_spam",false)){
@@ -90,7 +90,7 @@ public class AdmNotificationService extends NotificationListenerService {
   String violation=link?"Link":spam?"Mensagem repetida":flood?"Mensagens em excesso":emojiFlood?"Excesso de símbolos":null;
   if(violation!=null && answer==null){
    ModerationLog.record(this,sender,violation);
-   answer="🛡️ ADM: Atenção às regras do grupo. Evite links e mensagens repetidas.";
+   answer=link?"🚫 ADM: Links não são permitidos neste grupo. Por favor, não compartilhe links. Um administrador poderá remover a mensagem.":"🛡️ ADM: Atenção às regras do grupo. Evite mensagens repetidas e excesso de envios.";
   }
   boolean aiCalled=lower.matches("(?s).*(^|\\W)adm(\\W|$).*")||lower.contains("granjabot");
   try{
