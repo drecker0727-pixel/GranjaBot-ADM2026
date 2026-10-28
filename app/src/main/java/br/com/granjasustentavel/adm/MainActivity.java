@@ -135,6 +135,21 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   CheckBox detectSpam=new CheckBox(this);detectSpam.setText("Detectar mensagens repetidas (spam)");detectSpam.setTextColor(0xFFF3FFF5);detectSpam.setChecked(prefs.getBoolean("detect_spam",false));root.addView(detectSpam);
   detectSpam.setOnCheckedChangeListener((v,checked)->prefs.edit().putBoolean("detect_spam",checked).apply());
   TextView moderationInfo=new TextView(this);moderationInfo.setText("Avisos automáticos de links e spam dependem das notificações do WhatsApp Business. O app não apaga mensagens nem silencia membros automaticamente.");moderationInfo.setTextColor(0xFFC5E4CD);root.addView(moderationInfo);
+  Button moderationPanel=new Button(this);moderationPanel.setText("🚨 MODERAÇÃO ADM — VER ALERTAS");root.addView(moderationPanel);styleButton(moderationPanel,0xFFDC2626);
+  moderationPanel.setOnClickListener(v->{
+   String summary=ModerationLog.summary(this);
+   new android.app.AlertDialog.Builder(this).setTitle("🚨 Central de moderação ADM")
+    .setMessage(summary+"\nPara excluir mensagens ou remover participantes, abra o grupo no WhatsApp Business e faça a ação manualmente.")
+    .setNegativeButton("Fechar",null)
+    .setPositiveButton("📱 ABRIR WHATSAPP BUSINESS",(dialog,which)->{
+     android.content.pm.PackageManager pm=getPackageManager();
+     Intent launch=pm.getLaunchIntentForPackage("com.whatsapp.w4b");
+     if(launch!=null){try{startActivity(launch);}catch(Exception e){Toast.makeText(this,"Não foi possível abrir o WhatsApp Business.",Toast.LENGTH_LONG).show();}}
+     else Toast.makeText(this,"WhatsApp Business não encontrado.",Toast.LENGTH_LONG).show();
+    }).show();
+  });
+  TextView alertCount=new TextView(this);alertCount.setTextSize(17);alertCount.setTextColor(0xFFFFD166);
+  alertCount.setText("🚨 Alertas registrados: "+prefs.getInt("alerts",0)+" — toque em MODERAÇÃO ADM para atualizar.");root.addView(alertCount);
   TextView scheduleTitle=new TextView(this);scheduleTitle.setText("🕒 Horário de funcionamento");scheduleTitle.setTextSize(23);scheduleTitle.setTextColor(0xFFF3FFF5);root.addView(scheduleTitle);sectionHeader(scheduleTitle);
   CheckBox schedule=new CheckBox(this);schedule.setText("Ativar horário programado");schedule.setTextColor(0xFFF3FFF5);schedule.setChecked(prefs.getBoolean("schedule_enabled",false));root.addView(schedule);
   EditText start=new EditText(this);start.setHint("Início (HH:mm)");start.setTextColor(0xFFF3FFF5);start.setHintTextColor(Color.LTGRAY);start.setSingleLine(true);start.setText(timeText(prefs.getInt("schedule_from",480)));root.addView(start);styleInput(start);
