@@ -72,6 +72,21 @@ themePicker.setSelection(Math.max(0,Math.min(5,savedTheme)));
   TextView aiHelp=new TextView(this);aiHelp.setText("PASSOS DA IA: 1. Informe a URL HTTPS do Supabase. 2. Informe o segredo compartilhado (não é a chave OpenAI). 3. Marque ATIVAR IA. 4. Toque em SALVAR. A IA fica desligada até você ativar.");aiHelp.setTextSize(16);root.addView(aiHelp);
   Button aiDiagnostic=new Button(this);aiDiagnostic.setText("🔎 VERIFICAR ERRO DA IA");root.addView(aiDiagnostic);
   aiDiagnostic.setOnClickListener(v->{String error=prefs.getString("ai_last_error","Nenhum erro de conexão registrado. Faça uma pergunta no grupo e verifique novamente.");new android.app.AlertDialog.Builder(this).setTitle("Diagnóstico da IA").setMessage(error).setPositiveButton("OK",null).show();});
+  TextView sendTitle=new TextView(this);sendTitle.setText("📨 Mensagem para o grupo");sendTitle.setTextSize(23);sendTitle.setTextColor(0xFFF3FFF5);root.addView(sendTitle);sectionHeader(sendTitle);
+  EditText groupMessage=new EditText(this);groupMessage.setHint("Digite a mensagem que deseja enviar ao grupo");groupMessage.setMinLines(2);groupMessage.setTextColor(0xFFFFFFFF);groupMessage.setHintTextColor(Color.LTGRAY);root.addView(groupMessage);styleInput(groupMessage);
+  Button sendGroup=new Button(this);sendGroup.setText("📨 ABRIR WHATSAPP BUSINESS PARA ENVIAR");root.addView(sendGroup);styleButton(sendGroup,0xFF16A34A);
+  sendGroup.setOnClickListener(v->{
+   String message=groupMessage.getText().toString().trim();
+   if(message.isEmpty()){Toast.makeText(this,"Escreva uma mensagem primeiro.",Toast.LENGTH_SHORT).show();return;}
+   Intent share=new Intent(Intent.ACTION_SEND);share.setType("text/plain");share.putExtra(Intent.EXTRA_TEXT,message);share.setPackage("com.whatsapp.w4b");
+   try{startActivity(share);Toast.makeText(this,"Selecione seu grupo e confirme o envio no WhatsApp Business.",Toast.LENGTH_LONG).show();}
+   catch(Exception e){Toast.makeText(this,"Instale ou ative o WhatsApp Business para compartilhar.",Toast.LENGTH_LONG).show();}
+  });
+  CheckBox welcome=new CheckBox(this);welcome.setText("🐣 Dar boas-vindas quando alguém entrar");welcome.setTextColor(0xFFFFFFFF);welcome.setChecked(prefs.getBoolean("welcome_enabled",true));root.addView(welcome);
+  welcome.setOnCheckedChangeListener((v,checked)->prefs.edit().putBoolean("welcome_enabled",checked).apply());
+  CheckBox farewell=new CheckBox(this);farewell.setText("👋 Despedir quando alguém sair");farewell.setTextColor(0xFFFFFFFF);farewell.setChecked(prefs.getBoolean("farewell_enabled",true));root.addView(farewell);
+  farewell.setOnCheckedChangeListener((v,checked)->prefs.edit().putBoolean("farewell_enabled",checked).apply());
+  TextView notice=new TextView(this);notice.setText("Boas-vindas e despedidas dependem de o WhatsApp Business mostrar um aviso de entrada/saída como notificação com opção Responder. O envio manual abre o WhatsApp para você escolher o grupo.");notice.setTextColor(0xFFC5E4CD);root.addView(notice);
   TextView moderationTitle=new TextView(this);moderationTitle.setText("🛡️ Moderação do grupo");moderationTitle.setTextSize(23);moderationTitle.setTextColor(0xFFF3FFF5);root.addView(moderationTitle);sectionHeader(moderationTitle);
   CheckBox detectLinks=new CheckBox(this);detectLinks.setText("Detectar links nas mensagens");detectLinks.setTextColor(0xFFF3FFF5);detectLinks.setChecked(prefs.getBoolean("detect_links",false));root.addView(detectLinks);
   detectLinks.setOnCheckedChangeListener((v,checked)->prefs.edit().putBoolean("detect_links",checked).apply());
